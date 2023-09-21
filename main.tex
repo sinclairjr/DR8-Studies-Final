@@ -29,9 +29,18 @@
 
 \usepackage[binary-units,separate-uncertainty=true]{siunitx}
 \usepackage{mathtools} 
-\usepackage{amssymb}
+%\usepackage{amssymb}
 \usepackage{physics}
 \usepackage[colorinlistoftodos, textsize=tiny, obeyFinal]{todonotes}
+
+%bibliograph
+%\usepackage[autostyle]{csquotes} % recommended by biblatex
+%\usepackage{xpatch} % recommended by biblatex
+%\usepackage[backend=biber, giveninits, sorting=none, style=numeric-comp]{biblatex} % much more flexible than BibTeX
+%\addbibresource{DR8Bib.bib}
+
+
+
 
 \newcommand{\DR}{DR8}
 \newcommand{\RI}[1]{\textcolor{blue}{#1}}
@@ -109,14 +118,14 @@ Its electrical properties are expected to follow disordered system properties.
 The resistance of a given material $R$ depends on its geometry, and is described by the following equation:
 \begin{equation}
 \label{eq:Res_3D}
-    R \equiv \rho \frac{L}{S} \ [\Omega],
+R \equiv \rho \frac{L}{S} \ [\Omega],
 \end{equation}
 
 where $L$ is the length of the resistive material along the current direction, $S = W \cdot T$ is its cross-sectional area, and $\rho$ is the intrinsic resistivity of the material. 
 For thin films (such as {\DR}), the thickness $T$ of the sheets is considered negligible, and instead, the intrinsic characteristic is taken to be the \emph{sheet resistance} $R_s$ and is defined:
 \begin{equation}
 \label{eq:res_2D}
-    R_s \equiv \rho \frac{W}{L} \ [\Omega / \Box],
+R_s \equiv \rho \frac{W}{L} \ [\Omega / \Box],
 \end{equation}
 where $W$ is the width of the material perpendicular to the current direction. 
 Note that the units for sheet resistance is ``Ohms per square'' ($\Omega / \Box$), yet the physical dimension of sheet resistance is the same as that of usual resistance. 
@@ -132,15 +141,15 @@ In high electric fields, the charge carrier transport coefficient increases with
 In terms of resistivity this can be re-written as:
 
 \begin{equation}
-    \label{eq:efield}
-    {R_s} \propto e^{- (E / E_0)^{1/2}},
+\label{eq:efield}
+{R_s} \propto e^{- (E / E_0)^{1/2}},
 \end{equation}
 
 The temperature dependence follows
 
 \begin{equation}
 \label{eq:Tdep}
-    R_s \propto  e^{( \Delta(T) / k_B T)^{\beta}},
+R_s \propto  e^{( \Delta(T) / k_B T)^{\beta}},
 \end{equation}
 where $T$ is the temperature, $k_B$ is the Boltzmann constant, $\Delta(T)$ is the activation energy, and $\beta$ is an exponent which depends on the specific material.
 
@@ -148,8 +157,12 @@ where $T$ is the temperature, $k_B$ is the Boltzmann constant, $\Delta(T)$ is th
 
 \section{The Apparatus}
 \label{sec:expsetup}
-\todo{reduce section, kill most of the description of cryogenic setup, this can be 1 paragraph max!}
-The main apparatus, noted as Liquid Argon at Interaction Region 2 (LAIR2), is designed to achieve stable cryogenic conditions for periods of more than several months. The core of it consists of a system connecting in series an HV cable, a cathode made out of resistive Kapton XC~\footnote{DuPont High-Performance Materials}, a {\DR}~\footnote{DuPont High-Performance Materials} sample, and a return line. In addition, for quick turnaround tests, we use two auxiliary apparatus, both utilizing extruded polystyrene (XPS) boxes for thermal insulation to provide a simple cryostat. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Working From Here:
+
+The main apparatus is designed to achieve stable cryogenic conditions for periods of more than several months. 
+It consists of a system connecting in series a High Volatage (HV) cable, a cathode made out of resistive Kapton XC~\footnote{DuPont High-Performance Materials}, a {\DR} sample, and a ground return line. 
+In addition, for quick turnaround tests, we use two auxiliary apparatus, both utilizing extruded polystyrene boxes to provide simple cryostats. 
 
 LAIR2 is divided into six main subsystems (i) \emph{Piping and Purification System}, which delivers purified LAr to the system, as well as gases for activating the purifier; (ii) \emph{Cryogenic System}, which uses a thermosiphon to supply up to 80W of cooling power; (iii) \emph{High Voltage Delivery System}, which employs a polyethylene-based cable with a warm seal, to deliver up to 50\,kV (limited by the power supply unit); (iv) \emph{Slow Control}, which monitors the condition of the experiment using various sensors and gauges; (v) \emph{Data Acquisition}, through which commands are delivered to the other subsystems and the delivered high voltage and current are measured; and (vi) \emph{The Detector Assembly}, which consists of the dewar holding the LAr and the {\DR} test system. An image of the entire apparatus is shown in Figure~\ref{fig:full_sys}.
 
@@ -160,38 +173,13 @@ LAIR2 is divided into six main subsystems (i) \emph{Piping and Purification Syst
 \label{fig:full_sys}
 \end{figure}
 
-\subsection{Piping and Purification}
-\label{sec:piping}
 
-The piping and purification system is designed to deliver LAr through a designated purifier to the system. The concentration of contaminants, namely \ch{O2} and \ch{N2}, in the LAr as it reaches the detector assembly is at the parts-per-billion (ppb) level. This degree of purity degrades quickly due to outgassing of internal components and small leaks in the system. Although for the purposes of this study a ppb purity might be sufficient, this system also serves as a prototype for future experiments where the electron lifetime and light yield are crucial; therefore, care is taken to understand the performance of the purification system and to purify the LAr to the greatest degree possible. The system also supports the process of activating the purifier (see details below). All pipes are $\sfrac{1}{4}$" diameter stainless steel (SS). A schematic of the piping and purification system is shown in Figure~\ref{fig:pnid}.
-\begin{figure}[ht]
-\centerline{\includegraphics[width=0.95\linewidth]{P&ID_paper.png}}
-
-\caption{Parts and instrumentation diagram of LAIR2 \RI{add legend}}
-\label{fig:pnid}
-\end{figure}
-
-The purifier is made out of a 6" CF Nipple, and its length is 16".  On the upper flange, two pipes are welded with one serving as an inlet for the LAr while the other provides feed-through for safety mechanisms and a pressure gauge (see Figure~\ref{fig:pnid}).  The bottom flange has only one outlet port protected by a 1\,cm mesh to prevent sieves from clogging the port. Inside the nipple are two types of sieves mixed. Half of the sieve material (in volume) is a molecular sieve~\footnote{Research Catalyst, RCI-DRI 13X Mol-Sieve, 4x8 Mesh Beads} designed to absorb any water contamination, and the other half is a Copper-based sieve~\footnote{GetterMax 133 Copper Catalyst, 3x3 mm Tablets}, for absorbing \ch{O2} impurities. Before the first run, and after filtering a large quantity of LAr, these sieves need to be regenerated to remove all water and absorbed \ch{O2} molecules from them (for a detailed description of the regeneration process see section~\ref{sec:ExpOp}). 
-\todo{totally irrelevant to DR8}
-
-
-\subsection{Cryogenic System}
-\label{sec:TS}
-
-The cooling power provided to the system uses a  thermosiphon (TS) developed by the LUX collaboration~\cite{5204619,Akerib:2012ys}.  The TS utilizes freely boiling L\ch{N2} to cool down the LAr, providing about 80\,W of cooling power to the system.  This is the first usage of this type of cryogenic cooling applied in a LAr system. The cold head which provides the actual cooling is referred to as \quotes{evaporator}\ as L\ch{N2} is evaporated in it. The evaporator is slightly modified from the original design which was intended for use in liquid xenon systems; the rest of the design is similar. Unlike liquid xenon, the boiling temperature of argon differs from that of nitrogen by only $\sim10$\,K, this allows it to be used in direct contact with the argon, and not by cooling the vessel (as done in the LUX experiment).  This provides more efficient cooling by exploiting the condensation and evaporation of LAr to transfer the heat. The design of the evaporator is shown in Figure~\ref{fig:TS}. 
-
-\begin{figure}[htb]
-\centerline{\includegraphics[width=0.75\linewidth]{evaporator.png}}
-
-\caption{CAD design of the thermosiphon evaporator.  In this apparatus, the cold head (left) is fed through the top flange of the main dewar and is oriented downwards. The volume left of the yellow disk is filled with L\ch{N2} whose evaporation supplies the cooling for the system. The pt-111 and heater location used for temperature control are marked with arrows, both are attached externally using a Kapton tape.}
-\label{fig:TS}
-\end{figure}
-
-The L\ch{N2} within the evaporator is cooled by a freely boiling L\ch{N2} tank; hence, the steady-state temperature is 77.3\,K which is lower than the working temperature of the main vessel (operating at 19.7\,psi absolute). A simple control loop is implemented such that a dedicated heater heats the evaporator externally to the desired temperatures (89-92)\,K, this is implemented in the SC system (see Sec.~\ref{sec:SC}).
 
 \subsection{High Voltage Delivery}
 \label{sec:HVdel}
 \RI{Add in high voltage splice information if new run}
+
+\todo{replace HVFT description with a cite of exo tech paper}
 
 The high voltage assembly consists of a power supply unit~\footnote{Glassman FR50R6}, a multi-layer polyethylene-based cable, a CF-40 flange with a warm O-ring seal, and a metal pill which provides the contact of the HV supply system to the cathode. For an early design of this assembly see Ref.~\cite{Rebel:2014uia}. The high voltage is first delivered to a splice which connects the copper-core Glassman high voltage cable to the resistive-core high voltage cable. 
 
@@ -206,7 +194,6 @@ The cable~\footnote{Dielectric Science LTS 1/C 150\,kV DC} consists of 5 layers,
 \end{figure}
 
 
-
 The cable is stripped at the cold end and attached to a SS pill that connects to the cathode, layer C (ground) is stripped to a distance of 2.1\," from the pill (HV) to prevent arcs. The layer is then rolled into itself to prevent sharp edges (referred to as ``roll sock''). In addition, 2 polyethylene rings are placed between the pill and layer C endpoint see Figure~\ref{fig:HV}c. 
 
 We use a warm seal, consisting of two Viton O-rings sealing between the cable and the CF-40 flange, see Figure~\ref{fig:HV}b. Layer D is clamped to the sealing mechanism which provides common grounding between the vessel (via the CF flange) and the shielding of the cable (layers D and E).
@@ -217,26 +204,26 @@ The cable is inserted via a Teflon tube to guide it to the socket in case an ins
 
 \subsection{Slow Control}
 \label{sec:SC}
-The slow control system is based on the \quotes{Ignition} software~\footnote{Ignition is developed by Inductive Automation}. Four temperature sensors~\footnote{Lakeshore pt-111 or Omega equivalent} serve as input to the system. The system also controls two 150\,W heaters~\footnote{Watlow, ultramic advanced ceramic heater }, one located at the bottom of the dewar attached to a copper block (bottom heater) the other located on the evaporator (TS heater). For the exact locations of the heaters see Figure~\ref{fig:TS} and Figure~\ref{fig:mainDewar}. Pressure measurements are done via analog dial gauges and are not connected to the SC system.
 
-The four temperature sensors are distributed within the main dewar. One temperature sensor is located on the TS, near the bottom, and is used to measure the temperature of the TS. The second is located one inch above the HV cable roll sock and is used to verify liquid level is above this point. The third sensor is located near the {\DR} to monitor its temperature. Finally, the last sensor is located on a copper block at the bottom of the dewar. For exact locations of all temperature sensors see Figure~\ref{fig:mainDewar}. 
+\todo{maybe keep this bit}
 
 Apart from monitoring and saving the data taken from the temperature sensors, two control loops are implemented in the SC system. The first is to verify the TS temperature does not drop below the argon triple point (83.8\,K). This is a simple feedback loop, turning the heater on when the temperature drops below $T_{\mathrm{low}}$ and turning it off when the temperature rises above $T_{\mathrm{high}}$. The values found to be best for this loop were $T_{\mathrm{low}} = 89$\,K and $T_{\mathrm{high}}=92$\,K.  Once steady state is reached, the temperature of the liquid is constant within 0.1\,K. The second control loop is used when heating the system to evacuate the LAr after data acquisition has concluded. This loop is to ensure that the heater does not continue to run once all LAr has evaporated. 
- 
+
 \subsection{Data Acquisition}
 \label{sec:DAQ}
 
-The goal of this experiment is to characterize the resistive behavior of {\DR} under different regimes, which in practice consists of monitoring the current accurately at a given voltage and temperature. The temperature is monitored via the SC system (see sec~\ref{sec:SC}). The current running through the sample is monitored with a picoammeter~\footnote{Keithley 6485} connected in series which is sensitive to currents as low as 10\,pA. The meter is connected to the return line of the system on one end and the building ground on the other. A gas discharge tube is connected in parallel to the picoammeter to protect it from high voltage discharges. The voltage is measured by the internal voltage monitor of the high voltage power supply~\footnote{Glassman FR50R6} and recorded using the supply's digital serial interface.
+The goal of this experiment is to characterize the resistive behavior of {\DR} under different regimes, which in practice consists of monitoring the current accurately at a given voltage and temperature. 
+The temperature is monitored via the an array of sensors within the cryostat. 
+The current running through the sample is monitored with a picoammeter~\footnote{Keithley 6485} connected in series with the \DR sample in the path of the HV ground. 
+A gas discharge tube is connected in parallel to the picoammeter to protect it from high voltage discharges. 
+The voltage is measured by the internal voltage monitor of the high voltage power supply~\footnote{Glassman FR50R6} and recorded using the supply's digital serial interface.
 
-The data acquisition software (DAQ) consists of a simple Dash\footnote{\href{https://plotly.com/dash/}{https://plotly.com/dash/}}-based GUI\footnote{\href{https://github.com/francois-drielsma/kapton_daq}{https://github.com/francois-drielsma/kapton\_daq}} driving the InstrumentKit\footnote{\href{https://github.com/Galvant/InstrumentKit}{https://github.com/Galvant/InstrumentKit}} API as a back-end. The DAQ is configured with a configuration file which specifies the instruments to readout and their respective communication protocols.
+The data acquisition software (DAQ) consists of a simple Dash\footnote{\href{https://plotly.com/dash/}{https://plotly.com/dash/}}-based GUI\footnote{\href{https://github.com/francois-drielsma/kapton_daq}{https://github.com/francois-drielsma/kapton\_daq}} driving the InstrumentKit\footnote{\href{https://github.com/Galvant/InstrumentKit}{https://github.com/Galvant/InstrumentKit}} API as a back-end. 
 
 The software periodically queries the picoammeter and the high voltage power supply through two serial ports. The picoammeter returns a string at each query which provides a seven-digit signed mantissa and a power of 10 exponent. The power supply returns an unsigned 10-bit hex string for the voltage. The string divides the full voltage range from 0\,kV (000) to 50\,kV (3FF) in 1024 steps of $\sim50$\,V, which limits the voltage resolution of the system. The query speed limits the acquisition rate to about 10\,Hz.
 
 \subsection{The Detector Assembly}
 \label{sec:det_ass}
-The detector assembly refers to the dewar containing the LAr, the device under test, and all of the instruments used in the SC system. The device under test consists of a {\DR} sample connected to a cathode made out of Kapton XC on one side and a return line on the other. The measurements presented in section~\ref{sec:res} are performed on this sample.
-
-The vessel holding the LAr and the {\DR} assembly consists of a 13" inner diameter and 30" height double-walled commercial dewar.  The top flange sealing it is a custom made 20" diameter 0.75" thick SS plate. The seal to the dewar is made using a 14" Viton O-ring. The top flange holds 8 CF ports used for electrical and LAr feed-throughs, viewports, and interface for the TS. The bottom of the flange has an array of 14 tapped holes (1/4-20) for mounting. In addition, a safety mechanism is attached to the top flange consisting of a back pressure regulator (BPR) set to 6\,psig, a pressure relief valve (PRV) set to 10\,psig, and a manual valve. This safety mechanism is used to control the pressure within the vessel.
 
 The {\DR} assembly is constructed in the shape of a triangle to verify it is rigid. The top side (parallel to the top flange) is made of FR4 and is mounted to the top flange via four 14.55\," long 0.25\," threaded rods. perpendicular to the top panel is the cathode and the third side of the triangle is the {\DR} sample itself, see Figure~\ref{fig:mainDewar}. 
 
@@ -266,25 +253,25 @@ The main apparatus, designed for long-term cryogenic testing, is supplemented by
 A schematic of the SLAC secondary system is shown in Figure~\ref{fig:slac_styro_setup}. It is built around an off-the-shelf cooler box, which provides sufficient insulation to hold $\mathcal{O}(10)$\,liters of cryogen for periods of a few hours. The walls and the lid of the box consist of $\sim5$\,cm of expanded polystyrene foam (EPS) with inner dimensions of $\sim30\times60\times30$\,cm$^3$. The lid is modified by adding a $\sim5$\,cm layer of extruded polystyrene foam (XPS), a $\sim20$\,cm XPS chimney and a removable windowed port. Several holes are drilled to accommodate the high voltage cable, a ground line, the high voltage probe and a cryogen funnel.
 
 \begin{figure}[htb]
-    \centering
-    \begin{subfigure}[c]{0.49\linewidth}
-    \begin{center}
-    \includegraphics[width=\linewidth]{slac_styro_setup.png}
-    (a)
-    \end{center}
-    \end{subfigure}
-    \begin{subfigure}[c]{0.49\linewidth}
-    \begin{center}
-    \vspace*{1em}
-    
-    \includegraphics[width=\linewidth]{slac_styro_setup_picture.png}
-    \vspace*{0.5em}
-    
-    (b)
-    \end{center}
-    \end{subfigure}
-    \caption{(a) Schematics and (b) picture of the secondary apparatus operated at SLAC.}
-    \label{fig:slac_styro_setup}
+\centering
+\begin{subfigure}[c]{0.49\linewidth}
+	\begin{center}
+		\includegraphics[width=\linewidth]{slac_styro_setup.png}
+		(a)
+	\end{center}
+\end{subfigure}
+\begin{subfigure}[c]{0.49\linewidth}
+	\begin{center}
+		\vspace*{1em}
+		
+		\includegraphics[width=\linewidth]{slac_styro_setup_picture.png}
+		\vspace*{0.5em}
+		
+		(b)
+	\end{center}
+\end{subfigure}
+\caption{(a) Schematics and (b) picture of the secondary apparatus operated at SLAC.}
+\label{fig:slac_styro_setup}
 \end{figure}
 
 The high voltage delivery is very similar to the main system and uses the same resistive-core high voltage cable. A Glassman FR50N6 power supply provides up to 50\,kV/6\,mA of DC voltage.  A flange holds the cable in place using an 80/20 stand fitted with a Delrin plate. The cold side of the cable is shielded by XPS chimney and its exposed end is submerged in $\sim10$\,cm of cryogen. The conductive pill is connected to the one edge of the sample under test by an 18 AWG wire attached to the pill with a hose clamp and to the sample with an alligator clip.
@@ -307,26 +294,30 @@ The return path is completed through the outer conductor of the BNC cables, whic
 The multimeter is used for measuring both the current through the sample and the voltage probe, and is controlled remotely via computer over a serial interface.  This meter has a resolution of 10 nA, and so samples for testing in this chamber are designed with a much wider aspect ratio than those used in the SLAC system, meaning a relatively shorter distance between contacts.  This allows for greater currents through the samples, as well as the ability to reach higher field strengths with lower voltage.
 
 \begin{figure}[htb]
-    \centering
-    \begin{subfigure}[c]{0.59\linewidth}
-    \begin{center}
-    \includegraphics[width=\linewidth]{MSU_styro_setup.png}
-    (a)
-    \end{center}
-    \end{subfigure}
-    \begin{subfigure}[c]{0.39\linewidth}
-    \begin{center}
-    \vspace*{4em} 
-    
-    \includegraphics[width=\linewidth]{MSU_styro_setup_picture.jpg}
-    \vspace*{3em} 
-    
-    (b)
-    \end{center}
-    \end{subfigure}
-    \caption{Schematic representation (a) and photograph (b) of the secondary apparatus operated at MSU.}
-    \label{fig:msu_styro_setup}
+\centering
+\begin{subfigure}[c]{0.59\linewidth}
+	\begin{center}
+		\includegraphics[width=\linewidth]{MSU_styro_setup.png}
+		(a)
+	\end{center}
+\end{subfigure}
+\begin{subfigure}[c]{0.39\linewidth}
+	\begin{center}
+		\vspace*{4em} 
+		
+		\includegraphics[width=\linewidth]{MSU_styro_setup_picture.jpg}
+		\vspace*{3em} 
+		
+		(b)
+	\end{center}
+\end{subfigure}
+\caption{Schematic representation (a) and photograph (b) of the secondary apparatus operated at MSU.}
+\label{fig:msu_styro_setup}
 \end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Working until here
+
 
 \section{Field Shell}
 \label{sec:field_shell}
@@ -334,10 +325,10 @@ The multimeter is used for measuring both the current through the sample and the
 
 The material studies conducted on Kapton DR8 in this paper are performed with the intention of evaluating its viability in a field shell, i.e. a field-shaping structure which uses continuously resistive sheets to smoothly decrease the voltage. This approach to field-shaping has several key advantages over a traditional TPC field cage:
 \begin{itemize}
-  \item It extends the achievable active volume by having a smaller footprint and also by reducing local field non-uniformity created by field-shaping rings;
-  \item The resistive heating is spread over entire panels instead of being localized on the surface of resistors, which drastically stifles liquid argon nucleation;
-  \item It does not suffer from single points of failure, as the whole panel drives the resistance;
-  \item The field does not spike around rings, considerably reducing the risk of arcing.
+\item It extends the achievable active volume by having a smaller footprint and also by reducing local field non-uniformity created by field-shaping rings;
+\item The resistive heating is spread over entire panels instead of being localized on the surface of resistors, which drastically stifles liquid argon nucleation;
+\item It does not suffer from single points of failure, as the whole panel drives the resistance;
+\item The field does not spike around rings, considerably reducing the risk of arcing.
 \end{itemize}
 %@francois Can you have a lok at intro where I explain this in less details, and maybe moidify one of them, I think its OK to re explain this as iti s explained in the intro and the reader already forgot
 This section summarizes the field shell designs studied in the context of this paper and the techniques developed to make them feasible.
@@ -348,12 +339,12 @@ Previous prototypes~\cite{bern_lartpc,srmu_tpc} used frames on which the resisti
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.4\textwidth}
-\includegraphics[width=\linewidth]{field_shell_design.PNG}
+	\includegraphics[width=\linewidth]{field_shell_design.PNG}
 \end{minipage}
 \qquad
 \begin{minipage}[b]{.4\textwidth}
-\includegraphics[width=\linewidth]{field_shell_cathode_top.PNG}
-\includegraphics[width=\linewidth]{field_shell_bottom.PNG}
+	\includegraphics[width=\linewidth]{field_shell_cathode_top.PNG}
+	\includegraphics[width=\linewidth]{field_shell_bottom.PNG}
 \end{minipage}
 \caption{(a) Exploded-view drawing of the field-shaping structure of a TPC module. (b) High-voltage socket at the top of the cathode. (c) Bottom field-shell panel.}
 \label{fig:field_shell}
@@ -376,28 +367,28 @@ The aforementioned baseline design presupposes that each field shell panel is co
 \label{sec:lamination}
 In order to build field shell panels, a method to laminate the conductive Kapton onto the copper-clad FR4 panels was demonstrated. It employs a purpose-built lamination device or \textit{laminator} (Figure~\ref{fig:field_shell_laminations}a), and follows these steps:
 \begin{enumerate}
-    \item Etch copper-clad FR4 panels leaving only a 1.25\,cm-thick bands of copper on the cathode and anode sides;
-    \item Laminate a sheet of protective plastic on the back of the panel, mask part of the copper bands with tape to prevent epoxy from getting on them;
-    \item Tape Kapton sheets or strips in the desired pattern onto the laminator table, laminate them with protective film, lift the film off the table;
-    \item Apply $250$\,g/m$^2$ of epoxy\footnote{Master Bond EP29LPSP} on the FR4 panel, roll {\DR} onto the glue, ensure $>5\,$mm overlap with each copper band;
-    \item Cover the laminate with bleeder cloth, vacuum bag the assembly, cure for seven days at room temperature, with the first two days under vacuum.
+\item Etch copper-clad FR4 panels leaving only a 1.25\,cm-thick bands of copper on the cathode and anode sides;
+\item Laminate a sheet of protective plastic on the back of the panel, mask part of the copper bands with tape to prevent epoxy from getting on them;
+\item Tape Kapton sheets or strips in the desired pattern onto the laminator table, laminate them with protective film, lift the film off the table;
+\item Apply $250$\,g/m$^2$ of epoxy\footnote{Master Bond EP29LPSP} on the FR4 panel, roll {\DR} onto the glue, ensure $>5\,$mm overlap with each copper band;
+\item Cover the laminate with bleeder cloth, vacuum bag the assembly, cure for seven days at room temperature, with the first two days under vacuum.
 \end{enumerate}
 Three small panels produced using this method are shown on Figure~\ref{fig:field_shell_laminations}b.
 
 \begin{figure}[htbp]
 \centering
 \begin{subfigure}[c]{0.3575\linewidth}
-\begin{center}
-\includegraphics[width=\linewidth]{laminator.jpg}
-(a)
-\end{center}
+	\begin{center}
+		\includegraphics[width=\linewidth]{laminator.jpg}
+		(a)
+	\end{center}
 \end{subfigure}
 \qquad
 \begin{subfigure}[c]{0.5425\linewidth}
-\begin{center}
-\includegraphics[width=\linewidth]{laminations.jpg}
-(b)
-\end{center}
+	\begin{center}
+		\includegraphics[width=\linewidth]{laminations.jpg}
+		(b)
+	\end{center}
 \end{subfigure}
 \caption{(a) Lamination device used to adhere Kapton onto FR4 panels. (b) Small $15\times15$\,cm$^2$ test panel laminations; left to right: zebra, alternate material (not discussed), full.}
 \label{fig:field_shell_laminations}
@@ -437,10 +428,10 @@ At the end of a run, to speed up the evacuation of LAr, the heater attached to t
 \label{sec:stab}
 
 \begin{figure}[htb]
-    \centerline{\includegraphics[width=\linewidth]{Results_figs/longrun.png}}
-
-\caption{Our recorded run, with the DR8 temperature, chosen voltage, and recorded current. \RI{Can we make solid rectangles over down times.. also this caption needs much more info, finally can you try to produce this plot a bit less symmetric (maybe make x=1.5y in length)} }
-\label{fig:stab}
+	\centerline{\includegraphics[width=\linewidth]{Results_figs/longrun.png}}
+	
+	\caption{Our recorded run, with the DR8 temperature, chosen voltage, and recorded current. \RI{Can we make solid rectangles over down times.. also this caption needs much more info, finally can you try to produce this plot a bit less symmetric (maybe make x=1.5y in length)} }
+	\label{fig:stab}
 \end{figure}
 In this section, we will discuss the long, mostly continuous operation of our system across a range of voltages. The goal of this run is two-fold. First, we wish to explore the behavior of Kapton DR8 at a wide range of electric field intensities and verify its high resistance for use in DUNE ND and other TPCs. Second, we want to verify the behaviour and stability of Kapton DR8 over a long period of time, as, for the intended use case, this material will need to operate at a target voltage uninterrupted in liquid argon for years without replacement. Finally, we want to characterize its breakdown electric field regime and possible rate of breakdown. We do this so we can be confident that even at electric fields much larger than 500V/cm, the material will remain stable. Presented in Figure~\ref{fig:stab} is the record of our long run. During this approximately 20 week run starting from 11/12/2020, we were interrupted FILL IN LATER times: twice due to a software bug in our DAQ, once due to a lab power outage, and finally once due to evaporation of argon below the pill months into the run. However, none of these stoppages were the result of any electrical failure on the part of the system.
 
@@ -465,10 +456,10 @@ where $R_{s}^{meas}(T)\equiv V/I$ is the measured sheet resistance and $R_{s}$ a
 % @Zach Can you say something on how you got these coefficients?
 
 \begin{figure}
-    \centering
-    \includegraphics[width=0.95\textwidth]{Results_figs/temp_sheetRes_dr8_cooldown.png}
-    \caption{The observed resistivity of a sample of DR8 as a function of temperature, taken at a field of 80 V/cm. We also show excellent fit with the model from Eq. \ref{Rmeas}. \RI{Zach is this an old plot, not from the time period I gave you ?}}
-    \label{fig:cooldown}
+\centering
+\includegraphics[width=0.95\textwidth]{Results_figs/temp_sheetRes_dr8_cooldown.png}
+\caption{The observed resistivity of a sample of DR8 as a function of temperature, taken at a field of 80 V/cm. We also show excellent fit with the model from Eq. \ref{Rmeas}. \RI{Zach is this an old plot, not from the time period I gave you ?}}
+\label{fig:cooldown}
 \end{figure}
 % @Zach, this is unclear, maybe you should say something, like: For the rest of the analysis we integrate-out the temperature depandance by normalizing to a temperature of 95K which is close to the working temperature (question: is this true isnt it better to choose 92) (note that this temeprature choice is arbitrary and is chosen to this value for connivance ) 
 In order to extract the dependence of the resistance on the applied electric field, the temperature dependence needs to be taken into account. We normalize the rest of the measurements to a temperature of (95\,K) using 
@@ -516,9 +507,9 @@ As a final note, the very beginning of each voltage interval, after having chang
 \label{sec:efield_dep}
 \begin{figure}
 \begin{center}
-\includegraphics[width=.75\linewidth]{Efield.png}
-\caption{Resistance as a function of square root electric field, with fit to the Hopping model plus additional parameter.}
-\label{fig:resvsvol}
+	\includegraphics[width=.75\linewidth]{Efield.png}
+	\caption{Resistance as a function of square root electric field, with fit to the Hopping model plus additional parameter.}
+	\label{fig:resvsvol}
 \end{center}
 \end{figure}
 As discussed in section \ref{sec:disorder_Mattrial}, in the temperature and voltage regime of interest, The resistivity of DR8 depends exponentially on the  square root of the electric field. To validate this, we scan electric fields ranging from $416$V/cm to $3200$V/cm and measure the current through our sample. Specifically, starting from $400$V/cm we increment the electric field in steps of $40$V/cm up to $2.4$V/cm, with multiple hour long stops at $1.2$V/cm and $2.4$V/cm before continuing to $3200$V/cm with shorter increments.
@@ -541,10 +532,10 @@ We have added a term linear in electric field in the exponent corresponding to a
 Transmission Line Measurement (TLM) is a standard method for measuring the resistance associated with the contact between two materials.  In this method, a series of samples are constructed with varying distances between contacts, and the resulting resistance is measured.  The resistance of a given sample is modelled as the sum of the resistance of the two contact patches and the resistance of the material itself.  The contact resistance is then measured as half of the limit of the measured resistance as the distance between contacts approaches zero.
 
 \begin{equation} \label{eq:TLM}
-    \begin{split} 
-        R_{\mathrm{total}}(L) &= 2 R_{\mathrm{contact}} + R_{\mathrm{sample}}(L), \\
-        R_{\mathrm{contact}}  &= \tfrac{1}{2} R_{\mathrm{total}}(L = 0),
-    \end{split}
+\begin{split} 
+	R_{\mathrm{total}}(L) &= 2 R_{\mathrm{contact}} + R_{\mathrm{sample}}(L), \\
+	R_{\mathrm{contact}}  &= \tfrac{1}{2} R_{\mathrm{total}}(L = 0),
+\end{split}
 \end{equation}
 where $L$ is the distance between contacts, $R_{\mathrm{total}}(L)$ is the total resistance of a sample of linear size $L$, $R_\mathrm{contact}$ is the contact resistance, and $R_{\mathrm{sample}}(L)$ is the bulk resistance of a sample of linear size $L$.
 
@@ -557,18 +548,18 @@ We measure the current in the sample, applying voltages in the range of (0-5)\,k
 \begin{figure}[htb]
 \centering
 \begin{subfigure}[c]{0.32\textheight}
-\begin{center}
-    \includegraphics[width=\textwidth]{TLM_length_current.png}
-
-    \vspace*{-\baselineskip} \hspace{1em} (a)
-\end{center}
+	\begin{center}
+		\includegraphics[width=\textwidth]{TLM_length_current.png}
+		
+		\vspace*{-\baselineskip} \hspace{1em} (a)
+	\end{center}
 \end{subfigure}
 \begin{subfigure}[c]{0.32\textheight}
-\begin{center}
-    \includegraphics[width=\textwidth]{TLM_length_resistance.png}
-
-    \vspace*{-\baselineskip} \hspace{2em} (b)
-\end{center}
+	\begin{center}
+		\includegraphics[width=\textwidth]{TLM_length_resistance.png}
+		
+		\vspace*{-\baselineskip} \hspace{2em} (b)
+	\end{center}
 \end{subfigure}
 \caption{(a) The current measured as a function of voltage from each of the five samples considered. (b) The corresponding resistance as a function of the square root of the applied electric field values calculated from those measurements.  Note that the plotted model fits are essentially parallel, differing only by a multiplicative factor.} 
 \label{fig:TLM_length_I_and_R}
@@ -577,18 +568,18 @@ We measure the current in the sample, applying voltages in the range of (0-5)\,k
 \begin{figure}[htb]
 \centering
 \begin{subfigure}[c]{0.32\textheight}
-\begin{center}
-    \includegraphics[width=\textwidth]{TLM_length_TLMfit.png}
-    
-    \vspace*{-\baselineskip} \hspace{1em} (a)
-\end{center}
+	\begin{center}
+		\includegraphics[width=\textwidth]{TLM_length_TLMfit.png}
+		
+		\vspace*{-\baselineskip} \hspace{1em} (a)
+	\end{center}
 \end{subfigure}
 \begin{subfigure}[c]{0.32\textheight}
-\begin{center}
-    \includegraphics[width=\textwidth]{TLM_length_contactRes.png}
-
-    \vspace*{-\baselineskip} \hspace{2em} (b)
-\end{center}
+	\begin{center}
+		\includegraphics[width=\textwidth]{TLM_length_contactRes.png}
+		
+		\vspace*{-\baselineskip} \hspace{2em} (b)
+	\end{center}
 \end{subfigure}
 \caption{(a) For a single value of the electric field, the model-fit values follow a very linear trend as a function of contact-to-contact distance.  The y-intercept of the linear fit corresponds to the resistance of both contacts. (b) The measured contact resistance as a function of the electric field (central dark orange line) and the associated uncertainty band in light orange. The associated uncertainty is obtained from the variance of the intercept parameter in the TLM fit.} 
 \label{fig:TLM_length_contactRes}
@@ -605,18 +596,18 @@ In order to test the dependence on the contact size (i.e., overlap between the {
 \begin{figure}[htb]
 \centering
 \begin{subfigure}[c]{0.32\textheight}
-\begin{center}
-    \includegraphics[width=\textwidth]{TLM_contact_resistance.png}
-    
-    \vspace*{-\baselineskip} \hspace{1em} (a)
-\end{center}
+	\begin{center}
+		\includegraphics[width=\textwidth]{TLM_contact_resistance.png}
+		
+		\vspace*{-\baselineskip} \hspace{1em} (a)
+	\end{center}
 \end{subfigure}
 \begin{subfigure}[c]{0.32\textheight}
-\begin{center}
-    \includegraphics[width=\textwidth]{TLM_contact_fit.png}
-    
-    \vspace*{-\baselineskip} \hspace{2em} (b)
-\end{center}
+	\begin{center}
+		\includegraphics[width=\textwidth]{TLM_contact_fit.png}
+		
+		\vspace*{-\baselineskip} \hspace{2em} (b)
+	\end{center}
 \end{subfigure}
 \caption{(a) The measured resistances of the different samples.  These values are constructed in the same manner as in Figure~\ref{fig:TLM_length_I_and_R}.  The measured values are nearly identical from sample to sample. (b) For a given value of the electric field (500\,V/cm), the measured resistance is shown to have very weak dependence upon the width of the contact for the range of (0.06--2.58)\,".} 
 \label{fig:TLM_contact_contactRes}
@@ -630,17 +621,17 @@ The result of this measurement, shown in Figure~\ref{fig:TLM_contact_contactRes}
 A voltage scan from (0--40)\,kV was performed in L\ch{N2} with each of the four samples described in section~\ref{sec:alt_samples}, in the system described in~\ref{sec:beerBox}. Figure~\ref{fig:alt_design_res} shows the sheet resistance measured in each configuration and their ratio with respect to the baseline design. The sheet resistance accounts for the aspect ratio which is computed by taking the total length of DR8 from cathode to anode that does not overlap copper over the total width of DR8 and is summarized for each configuration in table~\ref{tab:alt_design}.
 
 \begin{table}[h]
-    \centering
-    \begin{tabular}{c|c|c|c|c|c|c|c}
-         Design & Strip(s) & Strip width & Width & Gap(s) & Gap length & Length & Aspect ratio \\
-         \hline
-         Baseline & 1 & 15.25 & 15.25 & 1 & 12.7 & 12.7 & 0.83 \\
-         Zebra 50\,\% & 6 & 1.27 & 7.62 & 1 & 11.43 & 11.43 & 1.5 \\
-         Zebra 75\,\% & 4 & 2.40 & 9.60 & 1 & 12.7 & 12.7 & 1.32 \\
-         Ladder & 3 & 1.27 & 3.81 & 7 & 1.27 & 8.89 & 2.33
-    \end{tabular}
-    \caption{Summary of the geometric parameters (in cm) of the alternative configurations.}
-    \label{tab:alt_design}
+\centering
+\begin{tabular}{c|c|c|c|c|c|c|c}
+	Design & Strip(s) & Strip width & Width & Gap(s) & Gap length & Length & Aspect ratio \\
+	\hline
+	Baseline & 1 & 15.25 & 15.25 & 1 & 12.7 & 12.7 & 0.83 \\
+	Zebra 50\,\% & 6 & 1.27 & 7.62 & 1 & 11.43 & 11.43 & 1.5 \\
+	Zebra 75\,\% & 4 & 2.40 & 9.60 & 1 & 12.7 & 12.7 & 1.32 \\
+	Ladder & 3 & 1.27 & 3.81 & 7 & 1.27 & 8.89 & 2.33
+\end{tabular}
+\caption{Summary of the geometric parameters (in cm) of the alternative configurations.}
+\label{tab:alt_design}
 \end{table}
 
 These plots show that the aspect ratio does not fully account for the difference in resistance observed between the panels. Both the zebra and ladder designs exhibit a resistance higher than obtained by simply scaling the baseline resistance. This could be explained by the fact that each strip in those configurations is independent from the other strips, which restricts the number of potential paths. The 75\,\% Zebra design has wider strips of DR8 and a lower overall resistance, which is consistent. In the ladder case, contact resistance could also contribute to increase the overall resistance of the sample. This effect has to be accounted for at each ladder step, and so quantifying the exact effect of the absolute DR8 width on sheet resistance is beyond the scope of this paper.
@@ -648,18 +639,18 @@ These plots show that the aspect ratio does not fully account for the difference
 \begin{figure}[htb]
 \centering
 \begin{subfigure}[c]{0.32\textheight}
-\begin{center}
-    \includegraphics[width=\textwidth]{r_vs_e_0-5_dr8_multiple_ln2.png}
-    
-    \vspace*{-\baselineskip} \hspace{1em} (a)
-\end{center}
+	\begin{center}
+		\includegraphics[width=\textwidth]{r_vs_e_0-5_dr8_multiple_ln2.png}
+		
+		\vspace*{-\baselineskip} \hspace{1em} (a)
+	\end{center}
 \end{subfigure}
 \begin{subfigure}[c]{0.32\textheight}
-\begin{center}
-    \includegraphics[width=\textwidth]{r_s_vs_e_0-5_dr8_multiple_ln2_ratio.png}
-    
-    \vspace*{-\baselineskip} \hspace{2em} (b)
-\end{center}
+	\begin{center}
+		\includegraphics[width=\textwidth]{r_s_vs_e_0-5_dr8_multiple_ln2_ratio.png}
+		
+		\vspace*{-\baselineskip} \hspace{2em} (b)
+	\end{center}
 \end{subfigure}
 \caption{(a) The absolute sheet resistance and (b) sheet resistance relative to the baseline design for the different panel designs as a function of the applied electric field, at L\ch{N2} temperature.} 
 \label{fig:alt_design_res}
@@ -683,11 +674,11 @@ During the cooling of the system ($\approx3$\,hrs) this effect is negligible, bo
 
 
 \begin{equation}
-R_{s}^{meas}(t,T)=R_s\exp\bigg(\sqrt{\frac{T_0}{T}}- \frac{t}{\tau}\bigg)=R_s(t)\exp\bigg(\sqrt{\frac{T_0}{T}}\bigg),
+	R_{s}^{meas}(t,T)=R_s\exp\bigg(\sqrt{\frac{T_0}{T}}- \frac{t}{\tau}\bigg)=R_s(t)\exp\bigg(\sqrt{\frac{T_0}{T}}\bigg),
 \end{equation}
 where $t$ is the measured time and $\tau$ is the time constant of the decay at a particular electric field. In addition to better account for any tim-varying temperature depandance we modufy eq~\ref{eq:Tdep} to
 \begin{equation}
-R_{s}^{meas}(t,T)=R_{s}^{meas}(t,T')\exp\bigg(-\sqrt{\frac{T_0}{T'}}+\sqrt{\frac{T_0}{T}}\bigg).
+	R_{s}^{meas}(t,T)=R_{s}^{meas}(t,T')\exp\bigg(-\sqrt{\frac{T_0}{T'}}+\sqrt{\frac{T_0}{T}}\bigg).
 \end{equation}
 where again, we choose $T=95$\,K s our reference temperature.
 
@@ -703,13 +694,13 @@ where again, we choose $T=95$\,K s our reference temperature.
 In order to analyze the resistive decay of the sample during a time interval at a given electric field, the quantity of interest is the time constant, $\tau$, which we extract by fitting the sample's sheet resistance as described in section~\ref{resdecayfit}. However, the uncertainties on the fit parameters, specifically $\tau$, are not the relevant uncertainties for a ``measurement'' of $\tau$, as they are suppressed by the Poisson error, while the number of "measurements" of $\tau$ is certainly not this high\RI{do you want to give numbers here}. In order to understand the true uncertainties of our measurement, we make the assumption of constant exponential resistive decay throughout the entire time interval \RI{Zach maybe here add allowing us to use a sequential bootstrapping bla bla}. With this assumption, we remove the temperature dependence across the whole multi-hour sample according to the same methods described in section~\ref{resdecayfit}. With this multi-hour temperature-normalized sample, we take each successive hour-long interval to comprise an independent sample with a corresponding measurement of $\tau$. We fit each interval to an exponential, recording the resulting $\tau$, and this results in an independent measurement of $\tau$'s for each hour of the full sample with a resultant measurement uncertainty. We can see the resulting $\tau$ measurements in Figure~\ref{fig:invtaulog}.
 
 \begin{figure}
-\begin{center}
-    
-\includegraphics[width=0.75\linewidth]{tau.png}
-\caption{Inverse decay constants as a function of voltage. Runs with less than a 24 hour period are suppressed.} 
-\label{fig:invtaulog}
-\end{center}
-
+	\begin{center}
+		
+		\includegraphics[width=0.75\linewidth]{tau.png}
+		\caption{Inverse decay constants as a function of voltage. Runs with less than a 24 hour period are suppressed.} 
+		\label{fig:invtaulog}
+	\end{center}
+	
 \end{figure}
 
 \end{comment}
@@ -723,12 +714,12 @@ Our first point to verify is the resistive properties of this material in liquid
 \end{comment}
 \begin{comment} 
 \begin{figure}
-\begin{center}
-   
-\includegraphics[width=0.75\linewidth]{Efield_Z.png}
-\caption{Resistance as a function of the voltage of the subrun, with fit to the Hopping model described previously.\RI{no need for the words fit function, or for the function itself, one is enough. I guess we can leave the function}} 
-\label{fig:resvsvol}
-\end{center}
+	\begin{center}
+		
+		\includegraphics[width=0.75\linewidth]{Efield_Z.png}
+		\caption{Resistance as a function of the voltage of the subrun, with fit to the Hopping model described previously.\RI{no need for the words fit function, or for the function itself, one is enough. I guess we can leave the function}} 
+		\label{fig:resvsvol}
+	\end{center}
 \end{figure}
 
 
@@ -756,70 +747,70 @@ summary
 \section{Sub Runs of Long Run }
 blah
 \begin{figure}[htb]
-\centering
-\includegraphics[width=\textwidth]{Results_figs/6250final.png}
-\caption{First and second subruns at 6.25kV, or 500 V/cm, the DUNE near detector design field \RI{more info and larger fonts, true for all set of images}} 
-\label{fig:6250}
+	\centering
+	\includegraphics[width=\textwidth]{Results_figs/6250final.png}
+	\caption{First and second subruns at 6.25kV, or 500 V/cm, the DUNE near detector design field \RI{more info and larger fonts, true for all set of images}} 
+	\label{fig:6250}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\linewidth]{Results_figs/12500final.png}
-\caption{First and second subruns at 12.5kV} 
-\label{fig:12500}
+	\includegraphics[width=\linewidth]{Results_figs/12500final.png}
+	\caption{First and second subruns at 12.5kV} 
+	\label{fig:12500}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\linewidth]{Results_figs/18750final.png}
-\caption{First and second subruns at 18.75kV} 
-\label{fig:18750}
+	\includegraphics[width=\linewidth]{Results_figs/18750final.png}
+	\caption{First and second subruns at 18.75kV} 
+	\label{fig:18750}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\linewidth]{Results_figs/20000final.png}
-\caption{Run at 20kV} 
-\label{fig:20000}
+	\includegraphics[width=\linewidth]{Results_figs/20000final.png}
+	\caption{Run at 20kV} 
+	\label{fig:20000}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\linewidth]{Results_figs/25000final.png}
-\caption{First and second subruns at 25kV} 
-\label{fig:25000}
+	\includegraphics[width=\linewidth]{Results_figs/25000final.png}
+	\caption{First and second subruns at 25kV} 
+	\label{fig:25000}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\linewidth]{Results_figs/30000final.png}
-\caption{Run at 30kV} 
-\label{fig:30000}
+	\includegraphics[width=\linewidth]{Results_figs/30000final.png}
+	\caption{Run at 30kV} 
+	\label{fig:30000}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\linewidth]{Results_figs/31250final.png}
-\caption{First and second subruns at 31.25kV} 
-\label{fig:31250}
+	\includegraphics[width=\linewidth]{Results_figs/31250final.png}
+	\caption{First and second subruns at 31.25kV} 
+	\label{fig:31250}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\linewidth]{Results_figs/37500final.png}
-\caption{Run at 37.5kV} 
-\label{fig:37500}
+	\includegraphics[width=\linewidth]{Results_figs/37500final.png}
+	\caption{Run at 37.5kV} 
+	\label{fig:37500}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\linewidth]{Results_figs/40000final.png}
-\caption{Run at 40kV} 
-\label{fig:40000}
+	\includegraphics[width=\linewidth]{Results_figs/40000final.png}
+	\caption{Run at 40kV} 
+	\label{fig:40000}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\linewidth]{Results_figs/43750final.png}
-\caption{Run at 43.75kV} 
-\label{fig:43750}
+	\includegraphics[width=\linewidth]{Results_figs/43750final.png}
+	\caption{Run at 43.75kV} 
+	\label{fig:43750}
 \end{figure}
 
 \begin{figure}
-\includegraphics[width=\linewidth]{Results_figs/50000final.png}
-\caption{Run at 50000kV} 
-\label{fig:50000}
+	\includegraphics[width=\linewidth]{Results_figs/50000final.png}
+	\caption{Run at 50000kV} 
+	\label{fig:50000}
 \end{figure}
 
 \end{comment}
@@ -828,6 +819,7 @@ blah
 % ========================================================================
 % bibliography
 % ========================================================================
+%\printbibliography
 \bibliographystyle{JHEP}
 \bibliography{DR8Bib}
 
