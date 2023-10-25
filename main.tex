@@ -150,8 +150,7 @@ where $T$ is the temperature, $k_B$ is the Boltzmann constant, $\Delta(T)$ is th
 \section{The Apparatus}
 \label{sec:expsetup}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Working From Here:
-
+%%%%%%%%%%%%%%%5*******************
 The main apparatus is designed to achieve stable cryogenic conditions for periods of multiple months. 
 It consists of a system connecting in series a High Volatage (HV) cable, a cathode made out of resistive Kapton XC~\footnote{DuPont High-Performance Materials}, a {\DR} sample, and a ground return line. 
 In addition, for quick turnaround tests, we use two auxiliary apparatus, both utilizing extruded polystyrene boxes to provide simple cryostats. 
@@ -162,12 +161,13 @@ New plan:
 
 \todo{get  better picture, kill all mention of filtering.}
 \begin{figure}[ht]
-	\centerline{\includegraphics[width=0.85\linewidth]{full_sys.png}}
-	
-	\caption{An image of the apparatus. a) The purification system, b) the detector assembly, c) The cryogenic system, d) The {\DR} sample. The HV delivery cable is inside the white Teflon tube}
+	{\includegraphics[width=0.85\linewidth]{full_sys.png}}
+	{\includegraphics[width=0.75\linewidth]{Dewar.png}}
+	\caption{An image of the apparatus. a) The purification system, b) the detector assembly, c) The cryogenic system, d) The {\DR} sample. The HV delivery cable is inside the white Teflon tube
+	A CAD schematic of the main dewar. The blue surface is the minimal LL required, and the LL pt is located an inch above it. Indicated as well the location of other pts and heaters as well as the cathode, the HV FT, and the TS.}
 	\label{fig:full_sys}
 \end{figure}
-
+\todo{fix caption combine with setup figure. get a better picture}
 
 The system, shown in Figure~\ref{fig:full_sys}, is a \SI{60}{\litre} \todo{confirm volume} vacuum-jacketed cryostat which is filled with liquid argon. 
 For long term operation, cooling is provided by a liquid nitrogen thermosyphon as described in cite one of the tech papers from xenon.
@@ -175,38 +175,19 @@ The temperature is maintained between \SIrange{89}{92}{\kelvin} at an accuracy o
 This is achieved with control loop using a heater to mitigate freezing at the there thermosyphon and an array of temperature sensors\todo{get spec, rtd/thermocouple?}.
 The temperature is logged throughout data taking.   
 
-The high voltage feedthrough utilizes the nEXO design~\cite{nEXO_pcdr}, as also adopted by DUNE~\cite{DUNE:2021tad}. 
+The high voltage (HV) feedthrough utilizes the nEXO design~\cite{nEXO_pcdr}, as also adopted by DUNE~\cite{DUNE:2021tad}. 
 The feedthrough is designed for \SI{150}{\kilo\volt}, but the voltage in this application is limited by the power supply~\footnote{Glassman FR50R6} to \SI{50}{\kilo\volt}. 
 
-The sample field shell material is of \SI{15x15}{\centi\metre}; requiring a cathode voltage of \SI{10}{\kilo\volt}\todo{confirm cathode voltage (read on...)} to achieve a field of \SI{1}{\kilo\volt\per\centi\metre}.    
 
-%%%%%%%%Sample/structure original test to modify
-\todo{simplify this, make it SI. god damn it!}
-A drawing of the test stand is shown in Figure~\ref{fig:mainDewar}. 
-The {\DR} assembly is constructed in the shape of a triangle to verify it is rigid. The top side (parallel to the top flange) is made of FR4 and is mounted to the top flange via four 14.55\," long 0.25\," threaded rods. perpendicular to the top panel is the cathode and the third side of the triangle is the {\DR} sample itself. 
-
-The cathode is constructed similar to the process explained in section~\ref{sec:lamination} and is 11"$\times$3" with a 1.5" copper stripe at both sides, it is laminated to a 12"X4" FR4 plate. At the top of the cathode, there is a socket for the HV cable to enter, the ``pill'' sits inside that socket. 
-At the bottom part of the cathode, a SS plate is attached via PEEK~\footnote{Polyether ether ketone} screws. 
-The SS is attached to the ~{\DR} sample on the other side, using another SS plate, forming a clamp. 
-The same clamp is attached on the upper side of the {\DR} and connects to a return line going back to the HV power supply via a 19-pin CF feed-through.
-
-The {\DR} sample is 6"$\times$6" sample laminated to an FR4 as explained in section~\ref{sec:lamination}, 
-
-%%%%%%%%%%%
-
-
-
-
-\todo{fix caption combine with setup figure. get a better picture}
-\begin{figure}[ht]
-	\centerline{\includegraphics[width=0.75\linewidth]{Dewar.png}}
-	
-	\caption{A CAD schematic of the main dewar. The blue surface is the minimal LL required, and the LL pt is located an inch above it. Indicated as well the location of other pts and heaters as well as the cathode, the HV FT, and the TS.}
-	\label{fig:mainDewar}
-\end{figure}
-
-
-
+%%%%%%%%%%%%%%%5*******************
+The testing assembly can be thought of as a partial TPC with the HV feedthrough terminating at a cathode that connects to a ground return via a sample of field-shaping material. 
+Here, {\DR} is used as the field-shaping, but any resistive material can be tested in this assembly.    
+The structure of the assembly is FR4, chosen for its dielectric strength and cryogenic compatibility.
+All electrical connections are made with stainless-steel brackets. 
+The cathode consists of a sheet of FR4 with a conductive Kapton foil laminated to it.   
+The \SI{15x15}{\centi\metre} {\DR} sample is metallized section of FR4 with {\DR} laminated to it.   
+The lamination process is explained in section~\ref{sec:lamination}.
+At these dimensions, the {\DR} samples requires a cathode voltage of \SI{15}{\kilo\volt}\todo{confirm cathode voltage (read on...)} to achieve a field of \SI{1}{\kilo\volt\per\centi\metre}.    
 
 The data acquisition (DAQ) monitors the current running through the sample with a picoammeter~\footnote{Keithley 6485} connected in series with the \DR sample in the path of the HV ground. 
 A gas discharge tube is connected in parallel to the picoammeter to protect it from high voltage discharges. 
