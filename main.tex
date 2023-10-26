@@ -57,7 +57,7 @@
 	We find that the resistance dependence is exponential with the square root of the temperature, resulting in an increase in the resistivity of {\DR} by an order of magnitude when cooled to \SIrange{77}{90}{\kelvin}. 
 	We also find that the dependence on the applied voltage follows the hopping-transportation model, with an exponential decay with respect to the square root of the electric field.} 
 
-%Finally, we have found that the resistance of {\DR} decreases with time, We set a lower bound on the resistance degradation to be less then a factor of $e$ every year. However these measurements have high uncertainties and will be the subject of further study in future work.}
+
 
 \keywords{Cryogenic detectors}
 
@@ -152,7 +152,7 @@ where $T$ is the temperature, $k_B$ is the Boltzmann constant, $\Delta(T)$ is th
 
 %%%%%%%%%%%%%%%5*******************
 The main apparatus is designed to achieve stable cryogenic conditions for periods of multiple months. 
-It consists of a system connecting in series a High Volatage (HV) cable, a cathode made out of resistive Kapton XC~\footnote{DuPont High-Performance Materials}, a {\DR} sample, and a ground return line. 
+
 In addition, for quick turnaround tests, we use two auxiliary apparatus, both utilizing extruded polystyrene boxes to provide simple cryostats. 
 
 
@@ -169,10 +169,10 @@ New plan:
 \end{figure}
 \todo{fix caption combine with setup figure. get a better picture}
 
-The system, shown in Figure~\ref{fig:full_sys}, is a \SI{60}{\litre} \todo{confirm volume} vacuum-jacketed cryostat which is filled with liquid argon. 
-For long term operation, cooling is provided by a liquid nitrogen thermosyphon as described in cite one of the tech papers from xenon.
+The system, shown in Figure~\ref{fig:full_sys}, is a \SI{65}{\litre} vacuum-jacketed cryostat which is filled with liquid argon. 
+For long term operation, cooling is provided by a liquid nitrogen thermosyphon of the type developed for LUX~\cite{lux}.
 The temperature is maintained between \SIrange{89}{92}{\kelvin} at an accuracy of \SI{0.1}{\kelvin}. 
-This is achieved with control loop using a heater to mitigate freezing at the there thermosyphon and an array of temperature sensors\todo{get spec, rtd/thermocouple?}.
+This is achieved with control loop using a heater to mitigate freezing at the there thermosyphon and an array of PT100 Resistance Temperature Detectors (RTDs).
 The temperature is logged throughout data taking.   
 
 The high voltage (HV) feedthrough utilizes the nEXO design~\cite{nEXO_pcdr}, as also adopted by DUNE~\cite{DUNE:2021tad}. 
@@ -180,6 +180,10 @@ The feedthrough is designed for \SI{150}{\kilo\volt}, but the voltage in this ap
 
 
 %%%%%%%%%%%%%%%5*******************
+
+It consists of a system connecting in series a High Volatage (HV) cable, a cathode made out of resistive Kapton XC~\footnote{DuPont High-Performance Materials}, a {\DR} sample, and a ground return line. 
+
+
 The testing assembly can be thought of as a partial TPC with the HV feedthrough terminating at a cathode that connects to a ground return via a sample of field-shaping material. 
 Here, {\DR} is used as the field-shaping, but any resistive material can be tested in this assembly.    
 The structure of the assembly is FR4, chosen for its dielectric strength and cryogenic compatibility.
@@ -187,12 +191,20 @@ All electrical connections are made with stainless-steel brackets.
 The cathode consists of a sheet of FR4 with a conductive Kapton foil laminated to it.   
 The \SI{15x15}{\centi\metre} {\DR} sample is metallized section of FR4 with {\DR} laminated to it.   
 The lamination process is explained in section~\ref{sec:lamination}.
-At these dimensions, the {\DR} samples requires a cathode voltage of \SI{15}{\kilo\volt}\todo{confirm cathode voltage (read on...)} to achieve a field of \SI{1}{\kilo\volt\per\centi\metre}.    
+At these dimensions, the {\DR} samples requires a cathode voltage of \SI{12.5}{\kilo\volt} to achieve a field of \SI{1}{\kilo\volt\per\centi\metre}.    
 
 The data acquisition (DAQ) monitors the current running through the sample with a picoammeter~\footnote{Keithley 6485} connected in series with the \DR sample in the path of the HV ground. 
 A gas discharge tube is connected in parallel to the picoammeter to protect it from high voltage discharges. 
 The voltage is measured by the internal voltage monitor of the power supply.
-\todo{circuit diagram}
+\todo{circuit diagram, fix caption}
+
+\begin{figure}[ht]
+	{\includegraphics[width=0.85\linewidth]{circuit.jpg}}
+	\caption{circuit diagram}
+	\label{fig:circuit}
+\end{figure}
+
+
 The DAQ software consists of a simple Dash\footnote{\href{https://plotly.com/dash/}{https://plotly.com/dash/}}-based GUI\footnote{\href{https://github.com/francois-drielsma/kapton_daq}{https://github.com/francois-drielsma/kapton\_daq}} driving the InstrumentKit\footnote{\href{https://github.com/Galvant/InstrumentKit}{https://github.com/Galvant/InstrumentKit}} API as a back-end. 
 The software periodically queries the picoammeter and the power supply. 
 The picoammeter returns a string at each query which provides a seven-digit signed mantissa and a power of 10 exponent. 
