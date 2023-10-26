@@ -2,8 +2,8 @@
 \documentclass[a4paper,12pt]{article}
 
 \usepackage{graphicx}% Include figure files
-\graphicspath{{The_App_figs/}{Results_figs/}}%{subdir2/}}
 
+\graphicspath{{./Figures/}}
 % packages
 \usepackage{comment}
 \usepackage{amsfonts}
@@ -397,12 +397,12 @@ When the temperature on the TS drops below 0\,C$^\circ$ the TS is filled gradual
 The entire filling takes $\sim2.5$\,hours until the liquid level reaches the desired level (one inch above the roll sock). At that point the system is left for 24 hours to reach steady state and more LAr is needed it is added then. Throughout the filling we apply a voltage of 1\,kV to get temperature dependency measurement.
 
 At the end of a run, to speed up the evacuation of LAr, the heater attached to the copper brick at the bottom of the dewar is operated and supplies 150\,W of heating to evaporate the LAr, the evaporated LAr is exhausted through the BPR and PRV until the dewar is empty. The HV is set to 5\,kV to get another temperature dependency measurement. 
-\begin{comment}
+
 \subsection{Stability}
 \label{sec:stab}
 
 \begin{figure}[htb]
-	\centerline{\includegraphics[width=\linewidth]{Results_figs/longrun.png}}
+	\centerline{\includegraphics[width=\linewidth]{longrun.png}}
 	
 	\caption{Our recorded run, with the DR8 temperature, chosen voltage, and recorded current. \RI{Can we make solid rectangles over down times.. also this caption needs much more info, finally can you try to produce this plot a bit less symmetric (maybe make x=1.5y in length)} }
 	\label{fig:stab}
@@ -411,7 +411,7 @@ In this section, we will discuss the long, mostly continuous operation of our sy
 
 We begin our scan with a couple days each at 20kV, 30kV, and 40kV, followed by a return to DUNE ND design electric field of 500 V/cm, or 6.125kV. At this stage we ramp up in voltage in multiples of 6.125kV up to 31.25kV, again taking at most a couple days at each step, before stepping down again to 6.125kV with the same steps, but for approximately a week at each run.
 At the end of this ramp down, we experience a lab power outage, explaining the second gap in Figure~\ref{fig:stab}. We will compare the resistivity before and after the ramp in the following section, in order to ascertain the existence of any resistive decay from this process. With this complete we continue the second ramp up from 31.25kV to 50 kV with the same steps, analyzing the behavior and resistive decay of the sample at these much higher voltages.
-\end{comment}
+
 
 
 \section{Results}
@@ -431,7 +431,7 @@ where $R_{s}^{meas}(T)\equiv V/I$ is the measured sheet resistance and $R_{s}$ a
 
 \begin{figure}
 \centering
-\includegraphics[width=0.95\textwidth]{Results_figs/temp_sheetRes_dr8_cooldown.png}
+\includegraphics[width=0.95\textwidth]{temp_sheetRes_dr8_cooldown.png}
 \caption{The observed resistivity of a sample of DR8 as a function of temperature, taken at a field of 80 V/cm. We also show excellent fit with the model from Eq. \ref{Rmeas}. \RI{Zach is this an old plot, not from the time period I gave you ?}}
 \label{fig:cooldown}
 \end{figure}
