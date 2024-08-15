@@ -68,13 +68,13 @@
 \todo{implement new structure}
 \begin{comment}
 	
-	Introduction and concept of resistive sheet
+	\section{Introduction} and concept of resistive sheet
 	Concept of resistive sheet
 	Possible physics applications -> requirements (which motivate the measurements we did)
-	Methodology
+	\section{Methodology}
 	Fabrication of resistive sheet
 	Test stands
-	Results
+	\section{Results}
 	Voltage dependance
 	Temperature dependance - includes LN temperature
 	Surface area of contact overlap
@@ -82,7 +82,7 @@
 	Aging measurement - Not in the paper yet - to be prepared, needs Zach
 	=> Francois will clean up results section except for aging
 	=> Francois, who else do we need and what specific figure edit needs to happen?
-	Discussion  and conclusions 
+	\section{Discussion  and conclusions} 
 	Suitability of applications
 	
 \end{comment}
@@ -171,7 +171,7 @@ where $T$ is the temperature, $k_B$ is the Boltzmann constant, $\Delta(T)$ is th
 
 
 
-\section{The Apparatus}
+\section{Methodology}
 \label{sec:expsetup}
 
 %%%%%%%%%%%%%%%5*******************
@@ -317,7 +317,7 @@ The multimeter is used for measuring both the current through the sample and the
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Working until here
 
 
-\section{Field Shell}
+\subsection{Field Shell}
 \label{sec:field_shell}
 \textcolor{blue}{Francois}
 
@@ -405,7 +405,7 @@ In the ladder design, two additional free parameters can be set, the width of th
 \label{fig:shell_designs_picture}
 \end{figure}
 
-\section{Experimental Operation}
+\subsection{Experimental Operation}
 \label{sec:ExpOp}
 
 \RI{for run 0, we did voltage scan, for run 1 we did drift measurements}
@@ -467,7 +467,7 @@ R_{s}^{meas}(95)=R_{s}^{meas}(T')\exp\bigg(-\sqrt{\frac{T_0}{T'}}+\sqrt{\frac{T_
 where $R_s^{meas}(95)$ is the resistance at 95\,K $T'$ is the temperature measured, and $R_{s}^{meas}(T')$ is the measured resistance at the measured temperature. 
 
 \subsubsection{Temperature Measurement Uncertainties}
-% @zach start with there are several sources of unc for this measurements, give a quantification of them or a sentence we conclude they are negligible for the purpose of T dep. also try not to wirte fraction inline use / instead of sfrac. side note, Im not sure I would even discuss this entire thing if the conclusion is that it is negligible. I doubt someone will imagine that the T measurement is not done adequately and that we need to explain. If referee asks we can give hime this calculation.  
+\todo{zach start with there are several sources of unc for this measurements, give a quantification of them or a sentence we conclude they are negligible for the purpose of T dep. also try not to wirte fraction inline use / instead of sfrac. side note, Im not sure I would even discuss this entire thing if the conclusion is that it is negligible. I doubt someone will imagine that the T measurement is not done adequately and that we need to explain. If referee asks we can give hime this calculation.}  
 One source of uncertainty for us is the placement of our temperature sensor. While in the vicinity of the sample and roughly at the same vertical level, we place the sensor a couple inches away in order to minimize possible arcing when ramping up all the way to higher voltages. This results in a slight delay of temperature propagation from the sample, loss of contact heat-transfer, as well as a reduction in correlation from localized temperature changes driven by the heat of the sample itself. In order to characterize the possible extent of this temperature difference, we model our system as a vertical sheet in liquid argon, with one temperature sensor on the sample, and one infinitely far away, and we calculate the steady state difference between the two with heat transfer dynamics governing the system. In other words, we note that, for a sample surrounded by a steady temperature, the heat lost from contact with the liquid argon has to equal the resistive heat generated, or that $\frac{dQ}{dt}=hA(T_{\infty}-T_{sample})+IV=0$, where $h$ is the heat transfer coefficient which needs to be calculated, $A$ is the surface area of the board, and the final term is the power generated from the sample itself.
 
 Following the equations in~\cite{CHURCHILL19751323} for free convection near a vertical wall, where we have adjusted the gravitational constant to reflect the 30 degree incline of our sample as well as ignored the FR4 board on one side of the sample, we insert the characteristic length of our material, 6 inches, as well as approximate thermodynamic and material properties of liquid argon around our pressure. We need a liquid argon density, $\rho=1.396\frac{g}{ml}$, a specific heat, $c_p=45\frac{J}{mole \cdot K}$, a viscosity, $\mu=270.7(10)^{-6}Pa s$, a thermal conductivity, $k=0.1256\frac{W}{m K}$, and a coefficient of thermal expansion $\beta=4.55(10)^{ -3}/K$~\cite{GLADUN1971205}\cite{STREETT197459}\cite{lbnl}. As $h$ is a function of $\Delta T$ as well, we have $\frac{dQ}{dt}(\Delta T)=0$, and thus we can find $\Delta T$ by root-finding. We find that the difference in the two sensors at 12.5kV would be around 0.03K, while the difference in the two sensors at 50kV would be around 1.3K. From these rough estimates, we can conclude that across all measured voltage regimes, the temperature is almost entirely driven by the liquid argon, and the temperature sensor in the vicinity should be an accurate measurement of the temperature of the material. On top of that, our model for the temperature correction includes a constant, $T_0$, which absorbs any overall scaling between the true temperature of the sample and the measured value.
@@ -655,11 +655,10 @@ These plots show that the aspect ratio does not fully account for the difference
 \end{figure}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Begin Comment %%%%%%%%%%%%%%%%%%
-
-\begin{comment}
 \subsection{Time dependence, and resistivity degradation}
 \label{resdecayfit}
+
+\todo{Frankie this is the aging bit; too old for you}
 
 As we explored higher electric fields, for longer periods of time, we noticed the sheet resistance decreases with time. We try to to characterize this time-dependence using an empirical model of an exponential decay, introducing $\tau$, the decay constant. Notice that this behaviour dependence on the electric field and so $\tau$ is actually a function of the electric field.
 
@@ -701,16 +700,15 @@ In order to analyze the resistive decay of the sample during a time interval at 
 	
 \end{figure}
 
-\end{comment}
 
-\begin{comment}
+
+
 \subsubsection{Long Term Results \RI{change title}}
 \label{sec:long_term_results}
 Now, we return to our original goal for this set of runs, to ascertain the viability of DR8 as a material for long term use in liquid Argon at the DUNE near detector. 
 
 Our first point to verify is the resistive properties of this material in liquid argon; specifically, does this material meet the resistive demands from DUNE ND and other TPCs? For DUNE ND specifically, the lower bound on the required resistivity comes from the heat dissipation, while the necessity of dissipating the deposited charge in the system sets a maximum allowable resistivity???
-\end{comment}
-\begin{comment} 
+
 \begin{figure}
 	\begin{center}
 		
@@ -726,92 +724,16 @@ Second, at what electric field scale does this material begin to decay? Our meas
 
 Finally, what can we say about the longevity of this material in operating conditions at DUNE ND?
 As shown in Figure~\ref{fig:resvsvol}, the scaling decay of the sample with voltage is well modeled by the  decay rate exponentially increasing with voltage. At 6.25 kV, the voltage corresponding to 500 V/cm, the time constant is consistent with infinitely long at the 1-sigma level and predicted by this simple model to be at least on the order of decades. Thus, from a longevity point-of-view, our measurements discern no problem with using this material in DUNE-ND.
-\end{comment} 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%% End Comment %%%%%%%%%%%%%%%%%%
 
 
-
-\section{Summary}
+\section{Discussion and Conclusions}
 \label{sec:sum}
 
 summary
 
 \section{Acknowledgment} 
 
-\begin{comment}
-\newpage
-\appendix
-\section{Sub Runs of Long Run }
-blah
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=\textwidth]{Results_figs/6250final.png}
-	\caption{First and second subruns at 6.25kV, or 500 V/cm, the DUNE near detector design field \RI{more info and larger fonts, true for all set of images}} 
-	\label{fig:6250}
-\end{figure}
 
-\begin{figure}
-	\includegraphics[width=\linewidth]{Results_figs/12500final.png}
-	\caption{First and second subruns at 12.5kV} 
-	\label{fig:12500}
-\end{figure}
-
-\begin{figure}
-	\includegraphics[width=\linewidth]{Results_figs/18750final.png}
-	\caption{First and second subruns at 18.75kV} 
-	\label{fig:18750}
-\end{figure}
-
-\begin{figure}
-	\includegraphics[width=\linewidth]{Results_figs/20000final.png}
-	\caption{Run at 20kV} 
-	\label{fig:20000}
-\end{figure}
-
-\begin{figure}
-	\includegraphics[width=\linewidth]{Results_figs/25000final.png}
-	\caption{First and second subruns at 25kV} 
-	\label{fig:25000}
-\end{figure}
-
-\begin{figure}
-	\includegraphics[width=\linewidth]{Results_figs/30000final.png}
-	\caption{Run at 30kV} 
-	\label{fig:30000}
-\end{figure}
-
-\begin{figure}
-	\includegraphics[width=\linewidth]{Results_figs/31250final.png}
-	\caption{First and second subruns at 31.25kV} 
-	\label{fig:31250}
-\end{figure}
-
-\begin{figure}
-	\includegraphics[width=\linewidth]{Results_figs/37500final.png}
-	\caption{Run at 37.5kV} 
-	\label{fig:37500}
-\end{figure}
-
-\begin{figure}
-	\includegraphics[width=\linewidth]{Results_figs/40000final.png}
-	\caption{Run at 40kV} 
-	\label{fig:40000}
-\end{figure}
-
-\begin{figure}
-	\includegraphics[width=\linewidth]{Results_figs/43750final.png}
-	\caption{Run at 43.75kV} 
-	\label{fig:43750}
-\end{figure}
-
-\begin{figure}
-	\includegraphics[width=\linewidth]{Results_figs/50000final.png}
-	\caption{Run at 50000kV} 
-	\label{fig:50000}
-\end{figure}
-
-\end{comment}
 
 \clearpage
 % ========================================================================
