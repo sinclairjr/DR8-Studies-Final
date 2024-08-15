@@ -2,6 +2,8 @@
 \documentclass[a4paper,12pt]{article}
 
 \usepackage{graphicx}% Include figure files
+\usepackage{numproduct}
+
 
 \graphicspath{{./Figures/}}
 % packages
@@ -613,47 +615,6 @@ In order to test the dependence on the contact size (i.e., overlap between the {
 
 The result of this measurement, shown in Figure~\ref{fig:TLM_contact_contactRes}, is a very weak dependence on contact width.  This is consistent with the findings in section~\ref{sec:transLine}, which indicate that the overall resistance of the sample is dominated by the {\DR} material itself, and not the contacting method used.  It is also possible that, if a strong dependence on this aspect of the sample exists, it is observable only on scales much smaller than are achievable by our methods (down to $\approx 0.5$ mm).  A TPC using a field cage of this design would typically have 1 cm of contact overlap in the field shaping elements.
 
-\subsection{Alternate designs}
-\textcolor{blue}{Francois}
-
-A voltage scan from (0--40)\,kV was performed in L\ch{N2} with each of the four samples described in section~\ref{sec:alt_samples}, in the system described in~\ref{sec:beerBox}. Figure~\ref{fig:alt_design_res} shows the sheet resistance measured in each configuration and their ratio with respect to the baseline design. The sheet resistance accounts for the aspect ratio which is computed by taking the total length of DR8 from cathode to anode that does not overlap copper over the total width of DR8 and is summarized for each configuration in table~\ref{tab:alt_design}.
-
-\begin{table}[h]
-\centering
-\begin{tabular}{c|c|c|c|c|c|c|c}
-	Design & Strip(s) & Strip width & Width & Gap(s) & Gap length & Length & Aspect ratio \\
-	\hline
-	Baseline & 1 & 15.25 & 15.25 & 1 & 12.7 & 12.7 & 0.83 \\
-	Zebra 50\,\% & 6 & 1.27 & 7.62 & 1 & 11.43 & 11.43 & 1.5 \\
-	Zebra 75\,\% & 4 & 2.40 & 9.60 & 1 & 12.7 & 12.7 & 1.32 \\
-	Ladder & 3 & 1.27 & 3.81 & 7 & 1.27 & 8.89 & 2.33
-\end{tabular}
-\caption{Summary of the geometric parameters (in cm) of the alternative configurations.}
-\label{tab:alt_design}
-\end{table}
-
-These plots show that the aspect ratio does not fully account for the difference in resistance observed between the panels. Both the zebra and ladder designs exhibit a resistance higher than obtained by simply scaling the baseline resistance. This could be explained by the fact that each strip in those configurations is independent from the other strips, which restricts the number of potential paths. The 75\,\% Zebra design has wider strips of DR8 and a lower overall resistance, which is consistent. In the ladder case, contact resistance could also contribute to increase the overall resistance of the sample. This effect has to be accounted for at each ladder step, and so quantifying the exact effect of the absolute DR8 width on sheet resistance is beyond the scope of this paper.
-
-\begin{figure}[htb]
-\centering
-\begin{subfigure}[c]{0.32\textheight}
-	\begin{center}
-		\includegraphics[width=\textwidth]{r_vs_e_0-5_dr8_multiple_ln2.png}
-		
-		\vspace*{-\baselineskip} \hspace{1em} (a)
-	\end{center}
-\end{subfigure}
-\begin{subfigure}[c]{0.32\textheight}
-	\begin{center}
-		\includegraphics[width=\textwidth]{r_s_vs_e_0-5_dr8_multiple_ln2_ratio.png}
-		
-		\vspace*{-\baselineskip} \hspace{2em} (b)
-	\end{center}
-\end{subfigure}
-\caption{(a) The absolute sheet resistance and (b) sheet resistance relative to the baseline design for the different panel designs as a function of the applied electric field, at L\ch{N2} temperature.} 
-\label{fig:alt_design_res}
-\end{figure}
-
 
 \subsection{Time dependence, and resistivity degradation}
 \label{resdecayfit}
@@ -663,9 +624,9 @@ These plots show that the aspect ratio does not fully account for the difference
 As we explored higher electric fields, for longer periods of time, we noticed the sheet resistance decreases with time. We try to to characterize this time-dependence using an empirical model of an exponential decay, introducing $\tau$, the decay constant. Notice that this behaviour dependence on the electric field and so $\tau$ is actually a function of the electric field.
 
 During the cooling of the system ($\approx3$\,hrs) this effect is negligible, both because the time scale and as it is less profound in lower voltages (the system is set to $\approx5$\,kV \RI{(Zach please check this number)} during the cooling of it). However, for higher electric fields and longer periods of time, we need to better account for the time dependence in addition to the temperature dependence, in order to quantify the resistance as a function of the applied electric-field. Thus, we simultaneously fit the time, temperature and electric-field using
-%we began to notice that fits with the above model were worse and worse. Visual inspection of sheet resistance and temperature curves such as those in Figure\ref{fig:43750} forced us to model a decreasing sheet resistance with time, independent of temperature, in order to fit. As a very simple model, we posit that this behavior is characterized by exponential sheet resistance decay caused by breakdown at such high electric field. 
+we began to notice that fits with the above model were worse and worse. Visual inspection of sheet resistance and temperature curves such as those in Figure\ref{fig:43750} forced us to model a decreasing sheet resistance with time, independent of temperature, in order to fit. As a very simple model, we posit that this behavior is characterized by exponential sheet resistance decay caused by breakdown at such high electric field. 
 
-%This is not visible in the cooldown curve because the voltage was is necessarily low before the sample is fully submerged, and thus no resistive decay with time is observed during that period, leading to a good fit with the previous method. However, at higher electric field, we can no longer expect that the resistivity is constant in time, even with arbitrarily constant temperature. Thus for a particular electric field sub-run, in order to isolate and separate these effects, we need to eliminate the time-varying temperature dependence from the time-varying electric-field decay. We model both of these behaviors as 
+This is not visible in the cooldown curve because the voltage was is necessarily low before the sample is fully submerged, and thus no resistive decay with time is observed during that period, leading to a good fit with the previous method. However, at higher electric field, we can no longer expect that the resistivity is constant in time, even with arbitrarily constant temperature. Thus for a particular electric field sub-run, in order to isolate and separate these effects, we need to eliminate the time-varying temperature dependence from the time-varying electric-field decay. We model both of these behaviors as 
 
 \RI{Zach - Im not sure you discussed the "decay" at this point, I actually think it would be good not to, keep the focus here on the temperature only, I think the next step would be to explain how we "integrate-out" the temperature, which allows us to get the E-field dependency}
 
@@ -679,12 +640,12 @@ where $t$ is the measured time and $\tau$ is the time constant of the decay at a
 \end{equation}
 where again, we choose $T=95$\,K s our reference temperature.
 
-%Now with inputs of the temperature as a function of time, $T(t)$ and the resistance as a function of time, $R_{s}^{meas}(t,T)$, we can fit for our three fit constants $R_s,T_0,$ and $\tau$.
-%Also, our new temperature "normalization" for sheet resistance curves taken at different temperatures is :
-%\begin{equation}
-%R_{s}^{meas}(t,T)=R_{s}^{meas}(t,T')\exp\bigg(-\sqrt{\frac{T_0}{T'}}+\sqrt{\frac{T_0}{T}}\bigg).
-%\end{equation}
-%where again, we compare all curves at the choice of constant $T=95K$.
+Now with inputs of the temperature as a function of time, $T(t)$ and the resistance as a function of time, $R_{s}^{meas}(t,T)$, we can fit for our three fit constants $R_s,T_0,$ and $\tau$.
+Also, our new temperature "normalization" for sheet resistance curves taken at different temperatures is :
+\begin{equation}
+R_{s}^{meas}(t,T)=R_{s}^{meas}(t,T')\exp\bigg(-\sqrt{\frac{T_0}{T'}}+\sqrt{\frac{T_0}{T}}\bigg).
+\end{equation}
+where again, we compare all curves at the choice of constant $T=95K$.
 
 
 \subsubsection{Bootstrapping and Time Constants}
