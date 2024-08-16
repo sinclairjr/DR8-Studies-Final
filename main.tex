@@ -2,7 +2,7 @@
 \documentclass[a4paper,12pt]{article}
 
 \usepackage{graphicx}% Include figure files
-\usepackage{numproduct}
+
 
 
 \graphicspath{{./Figures/}}
@@ -183,9 +183,9 @@ In addition, for quick turnaround tests, we use two auxiliary apparatus, both ut
 
 
 New plan:
-\todo{1st check the voltage vs purity that Mooney mentioned. Follow up with Sarah.} 
+\todo{NOT CHECKED YET 1st check the voltage vs purity that Mooney mentioned. Follow up with Sarah.} 
 
-\todo{get  better picture, kill all mention of filtering.}
+\todo{NOT CHECKED YET kill all mention of filtering.}
 \begin{figure}[ht]
 	{\includegraphics[width=0.85\linewidth]{full_sys.png}}
 	{\includegraphics[width=0.75\linewidth]{Dewar.png}}
@@ -193,7 +193,7 @@ New plan:
 	A CAD schematic of the main dewar. The blue surface is the minimal LL required, and the LL pt is located an inch above it. Indicated as well the location of other pts and heaters as well as the cathode, the HV FT, and the TS.}
 	\label{fig:full_sys}
 \end{figure}
-\todo{fix caption combine with setup figure. get a better picture}
+\todo{Francois: fix caption; keep a CAD (bare) and/or get a photograph or both. (replicate the other simpler one)}
 
 The system, shown in Figure~\ref{fig:full_sys}, is a \SI{65}{\litre} vacuum-jacketed cryostat which is filled with liquid argon. 
 For long term operation, cooling is provided by a liquid nitrogen thermosyphon of the type developed for LUX~\cite{lux}.
@@ -237,10 +237,10 @@ The picoammeter returns a string at each query which provides a seven-digit sign
 The power supply returns an unsigned 10-bit hex string for the voltage. 
 The string divides the full voltage range from \SIrange{0}{50}{\kilo\volt} (3FF) in 1024 steps of $\sim$~\SI{50}{\volt}, limiting the system's resolution. The query speed limits the acquisition rate to $\sim$~\SI{10}{\hertz}.
 
-\todo{Details on Lamination - NO mention of DUNE!! not a word.}
 
-\todo{Kill all alternative design, this is a tech paper not DoE politics.} 
+\todo{NOT CHECKED YET Details on Lamination - NO mention of DUNE!! not a word.}
 
+\todo{NOT CHECKED YET Kill all alternative design, this is a tech paper not DoE politics.} 
 
 \subsection{Auxiliary Setups}
 \label{sec:auxsetup}
@@ -350,9 +350,14 @@ Previous prototypes~\cite{bern_lartpc,srmu_tpc} used frames on which the resisti
 \label{fig:field_shell}
 \end{figure}
 
+\todo{Francois: Add text about material for field shell and replace this figure with a picture of SLAC single cube}
+
 The cathode panel is covered on both sides with a layer of 25\,$\mu$m-thick Kapton XC, a material which provides a $\mathcal{O}(1)\,$M$\Omega/\Box$ sheet resistance, identical to the one used in the protoDUNE-SP cathode~\cite{protodune_sp_tdr}. It is not subject to further study in this paper. The field shell panels are covered with 100\,$\mu$m-thick sheets of {\DR}, a variant of Kapton XC which exhibits a higher $\mathcal{O}(1)\,$G$\Omega/\Box$ sheet resistance at room temperature and under low voltage loads \RI{ Francois, should we change to e-fields, as this is our claim?}. This material is a suitable basis to replace traditional field cages as it provides sufficient bulk resistance to constrain the heat load and limit the necessary power supply power. The properties of {\DR} are extensively studied in this paper.%@francois do we really need the last senatnce here it should go in the intro ?
 
 The aforementioned baseline design presupposes that each field shell panel is completely covered, from cathode to anode, with a single sheet of {\DR}. While this might be the easiest approach in practice, alternative designs might have desirable properties. Figure~\ref{fig:shell_designs} shows the three possible shell configurations under consideration. The \textit{full} design corresponds to the baseline, the \textit{zebra} design reduces the Kapton coverage by connecting the anode and cathode with a series of parallel {\DR} strips of fixed width and the \textit{ladder} design steps the voltage discretely between successive copper bands connected by a few strips of {\DR}. The last two designs have the advantage of reducing the amount of {\DR} needed in each field shell, reducing the cost of the manufacturing and increasing the bulk resistance of the shell, thus reducing the resistive heat load. Their electrical properties are briefly investigated in this paper.
+
+\begin{comment}
+	content...
 
 \begin{figure}[htbp]
 \centering
@@ -362,6 +367,9 @@ The aforementioned baseline design presupposes that each field shell panel is co
 \caption{Field shell designs under study: (a) full, (b) zebra and (c) ladder.}
 \label{fig:shell_designs}
 \end{figure}
+\end{comment}
+\todo{Francois? removed figure 6, adjust text since Figure 7 will show it}
+
 
 \subsection{Lamination}
 \label{sec:lamination}
@@ -394,6 +402,10 @@ Three small panels produced using this method are shown on Figure~\ref{fig:field
 \label{fig:field_shell_laminations}
 \end{figure}
 
+\todo{Francois: Replace with SLAC single cube panels. Consider adding picture of panel being laminated }
+
+
+
 \subsection{Samples}
 \label{sec:alt_samples}
 For both the zebra and ladder designs, several parameters can be adjusted. In the zebra design, the {\DR} strip width, $w_s$, and the number of strips, $n_s$, can be adjusted to yield a bulk resistance of $R_z=\frac{L}{n_sw}R_S$ with $L$, the distance between the cathode and the anode and $R_S$ the sheet resistance of {\DR}. In this study, two sets of parameters were tested: $w=12.7\,$mm and $n_s=6$ (Z1) and $w=19.5$\,mm, $n_s=4$ (Z2).
@@ -424,8 +436,13 @@ The entire filling takes $\sim2.5$\,hours until the liquid level reaches the des
 
 At the end of a run, to speed up the evacuation of LAr, the heater attached to the copper brick at the bottom of the dewar is operated and supplies 150\,W of heating to evaporate the LAr, the evaporated LAr is exhausted through the BPR and PRV until the dewar is empty. The HV is set to 5\,kV to get another temperature dependency measurement. 
 
+
+
 \subsection{Stability}
 \label{sec:stab}
+
+\todo{Francois: remake the plot, useful to see how long we ran (better than hours -> days). remake style}
+
 
 \begin{figure}[htb]
 	\centerline{\includegraphics[width=\linewidth]{longrun.png}}
@@ -447,6 +464,10 @@ At the end of this ramp down, we experience a lab power outage, explaining the s
 \label{sec:TNEFit}
 % @zach I think I would start with something that is saying fitrst how do we measure the T dep. say something like, In ordr to quantify the depandance of the resistance with T, the data from the cooling down of the system is used. This data spans over the temperature range of XXXX
 The results in this section are obtained from the LAIR2 apparatus (see section~\ref{sec:expsetup}). The measured current exhibits modest temperature dependence which is well modelled by a general hopping transport model (see eq.~\ref{eq:Tdep}), following~\cite{electronicPhotonicMaterials} for the low temperature regime, we make the assumption that $\beta=0.5$. Using the data obtained when the system is cooling down, spanning the temperature range of (278--90)\,K, we get a temperature dependence that follows
+
+\todo{Francois talk to Dan and decide on best way to remake this plot. Fig 10- nice to show 1/sqrt(T) see linear dependance but the problem is that the reader can’t see it to temperature-- find resistance of operation.
+}
+% 
 
 \begin{equation}
 \label{Rmeas}
@@ -512,6 +533,9 @@ As a final note, the very beginning of each voltage interval, after having chang
 	\label{fig:resvsvol}
 \end{center}
 \end{figure}
+
+\todo{FD: Fig 11, should be log scale for y axis; talk to Dan to remake it. Also, are there any lower field measurements?}
+
 As discussed in section \ref{sec:disorder_Mattrial}, in the temperature and voltage regime of interest, The resistivity of DR8 depends exponentially on the  square root of the electric field. To validate this, we scan electric fields ranging from $416$V/cm to $3200$V/cm and measure the current through our sample. Specifically, starting from $400$V/cm we increment the electric field in steps of $40$V/cm up to $2.4$V/cm, with multiple hour long stops at $1.2$V/cm and $2.4$V/cm before continuing to $3200$V/cm with shorter increments.
 Converting the measured current into resistivity with the voltage recorded from the power supply, we can compare with 
 \begin{equation}
@@ -565,6 +589,9 @@ We measure the current in the sample, applying voltages in the range of (0-5)\,k
 \label{fig:TLM_length_I_and_R}
 \end{figure}
 
+\todo{Increase size of this figure after clean up}
+
+
 \begin{figure}[htb]
 \centering
 \begin{subfigure}[c]{0.32\textheight}
@@ -584,6 +611,9 @@ We measure the current in the sample, applying voltages in the range of (0-5)\,k
 \caption{(a) For a single value of the electric field, the model-fit values follow a very linear trend as a function of contact-to-contact distance.  The y-intercept of the linear fit corresponds to the resistance of both contacts. (b) The measured contact resistance as a function of the electric field (central dark orange line) and the associated uncertainty band in light orange. The associated uncertainty is obtained from the variance of the intercept parameter in the TLM fit.} 
 \label{fig:TLM_length_contactRes}
 \end{figure}
+
+\todo{Increase size of this figure after clean up}
+
 
 \subsection{Contact Overlap}
 \label{sec:contactOverlap}
@@ -683,12 +713,16 @@ Our first point to verify is the resistive properties of this material in liquid
 Second, at what electric field scale does this material begin to decay? Our measurements are consistent with zero decay below 2000V/cm at the 1-sigma level, although increasing measurement uncertainty at lower E-fields does cloud the measurement of the decay there. However, from Figure~\ref{fig:invtaulog}, we can see a clear trend of increasing decay as the E-field increases.
 
 
+\todo{Kendall: Does Dan have this data, if not him then need Zach. Add a new subfigure--  one clear example how the drift looks, see how it is changing. Then, plo  field str not voltage }
+
 Finally, what can we say about the longevity of this material in operating conditions at DUNE ND?
 As shown in Figure~\ref{fig:resvsvol}, the scaling decay of the sample with voltage is well modeled by the  decay rate exponentially increasing with voltage. At 6.25 kV, the voltage corresponding to 500 V/cm, the time constant is consistent with infinitely long at the 1-sigma level and predicted by this simple model to be at least on the order of decades. Thus, from a longevity point-of-view, our measurements discern no problem with using this material in DUNE-ND.
 
 
 \section{Discussion and Conclusions}
 \label{sec:sum}
+
+\todo{Confirm discussion of Hopping model is sufficiently covered by Fig 11}
 
 summary
 
