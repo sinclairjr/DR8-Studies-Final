@@ -168,32 +168,45 @@ The temperature dependence follows
 \label{eq:Tdep}
 R_s \propto  e^{( \Delta(T) / k_B T)^{\beta}},
 \end{equation}
+
 where $T$ is the temperature, $k_B$ is the Boltzmann constant, $\Delta(T)$ is the activation energy, and $\beta$ is an exponent which depends on the specific material.
 
-
+\todo{add a take-away summary. what does this mean for our case?}
 
 \section{Methodology}
 \label{sec:expsetup}
 
-The main apparatus is designed to achieve stable cryogenic conditions for periods of multiple months. 
+ 
+Three test stands we used for characterizing {\DR}; two at SLAC and one at Michigan State University (MSU).
+The larger of the two SLAC test stands, shown in Figure~\ref{fig:full_sys}, is used for long-term measurements in liquid argon.    
+The smaller SLAC test stand, shown in Figure~\ref{fig:slac_styro_setup}, was used for initial measurements and validation of prototypes in liquid nitrogen. 
+The MSU test stand is shown in Figure~\ref{fig:msu_styro_setup}. 
+The MSU test stand was used to characterize construction parameters of the {\DR} samples and for the transmission line measurements.  
 
-In addition, for quick turnaround tests, we use two auxiliary apparatus, both utilizing extruded polystyrene boxes to provide simple cryostats. 
+
+
+
 
 
 New plan:
 \todo{NOT CHECKED YET 1st check the voltage vs purity that Mooney mentioned. Follow up with Sarah.} 
 
+\subsection{Liquid argon test stand}
+
 \todo{NOT CHECKED YET kill all mention of filtering.}
 \begin{figure}[ht]
-	{\includegraphics[width=0.85\linewidth]{full_sys.png}}
-	{\includegraphics[width=0.75\linewidth]{Dewar.png}}
-	\caption{An image of the apparatus. a) The purification system, b) the detector assembly, c) The cryogenic system, d) The {\DR} sample. The HV delivery cable is inside the white Teflon tube
-	A CAD schematic of the main dewar. The blue surface is the minimal LL required, and the LL pt is located an inch above it. Indicated as well the location of other pts and heaters as well as the cathode, the HV FT, and the TS.}
+	{\includegraphics[width=0.6\linewidth]{inside_rans.jpg}}
+	{\includegraphics[width=0.42\linewidth]{rans.png}}
+	\caption{(left) A
+	(right) A CAD schematic of the main dewar, the blue surface is the liquid level.}
 	\label{fig:full_sys}
 \end{figure}
 \todo{Francois: fix caption; keep a CAD (bare) and/or get a photograph or both. (replicate the other simpler one)}
 
 The system, shown in Figure~\ref{fig:full_sys}, is a \SI{65}{\litre} vacuum-jacketed cryostat which is filled with liquid argon. 
+is designed to achieve stable cryogenic conditions for periods of multiple months. 
+
+
 For long term operation, cooling is provided by a liquid nitrogen thermosyphon of the type developed for LUX~\cite{lux}.
 The temperature is maintained between \SIrange{89}{92}{\kelvin} at an accuracy of \SI{0.1}{\kelvin}. 
 This is achieved with control loop using a heater to mitigate freezing at the there thermosyphon and an array of PT100 Resistance Temperature Detectors (RTDs).
@@ -202,8 +215,8 @@ The temperature is logged throughout data taking.
 The high voltage (HV) feedthrough utilizes the nEXO design~\cite{nEXO_pcdr}, as also adopted by DUNE~\cite{DUNE:2021tad}. 
 The feedthrough is designed for \SI{150}{\kilo\volt}, but the voltage in this application is limited by the power supply~\footnote{Glassman FR50R6} to \SI{50}{\kilo\volt}. 
 
+describe HV probe. 
 
-%%%%%%%%%%%%%%%5*******************
 
 It consists of a system connecting in series a High Volatage (HV) cable, a cathode made out of resistive Kapton XC~\footnote{DuPont High-Performance Materials}, a {\DR} sample, and a ground return line. 
 
@@ -224,10 +237,10 @@ The voltage is measured by the internal voltage monitor of the power supply.
 
 \begin{figure}[ht]
 	{\includegraphics[width=0.85\linewidth]{circuit.jpg}}
-	\caption{circuit diagram}
+	\caption{circuit diagram of the long-term test stand. the voltage is measure via a potential divider, the current is measured using  picoammeter in the ground path. }
 	\label{fig:circuit}
 \end{figure}
-
+\todo{confirm values of divider}
 
 The DAQ software consists of a simple Dash\footnote{\href{https://plotly.com/dash/}{https://plotly.com/dash/}}-based GUI\footnote{\href{https://github.com/francois-drielsma/kapton_daq}{https://github.com/francois-drielsma/kapton\_daq}} driving the InstrumentKit\footnote{\href{https://github.com/Galvant/InstrumentKit}{https://github.com/Galvant/InstrumentKit}} API as a back-end. 
 The software periodically queries the picoammeter and the power supply. 
@@ -240,13 +253,9 @@ The string divides the full voltage range from \SIrange{0}{50}{\kilo\volt} (3FF)
 
 \todo{NOT CHECKED YET Kill all alternative design, this is a tech paper not DoE politics.} 
 
-\subsection{Auxiliary Setups}
-\label{sec:auxsetup}
-The main apparatus, designed for long-term cryogenic testing, is supplemented by two smaller-scale systems developed for flexibility and fast turnaround. One was operated in parallel to the main system at SLAC and the other was constructed by the group at MSU. This subsection briefly describes the specifics of the two systems.
 
-\subsubsection{SLAC}
-\label{sec:beerBox}
-\textcolor{blue}{Francois}
+\subsection{SLAC liquid nitrogen test stand}
+
 
 A schematic of the SLAC secondary system is shown in Figure~\ref{fig:slac_styro_setup}. It is built around an off-the-shelf cooler box, which provides sufficient insulation to hold $\mathcal{O}(10)$\,liters of cryogen for periods of a few hours. The walls and the lid of the box consist of $\sim5$\,cm of expanded polystyrene foam (EPS) with inner dimensions of $\sim30\times60\times30$\,cm$^3$. The lid is modified by adding a $\sim5$\,cm layer of extruded polystyrene foam (XPS), a $\sim20$\,cm XPS chimney and a removable windowed port. Several holes are drilled to accommodate the high voltage cable, a ground line, the high voltage probe and a cryogen funnel.
 
@@ -272,18 +281,21 @@ A schematic of the SLAC secondary system is shown in Figure~\ref{fig:slac_styro_
 \label{fig:slac_styro_setup}
 \end{figure}
 
+\todo{fix text significant overlap, put description in previous section.}
 The high voltage delivery is very similar to the main system and uses the same resistive-core high voltage cable. A Glassman FR50N6 power supply provides up to 50\,kV/6\,mA of DC voltage.  A flange holds the cable in place using an 80/20 stand fitted with a Delrin plate. The cold side of the cable is shielded by XPS chimney and its exposed end is submerged in $\sim10$\,cm of cryogen. The conductive pill is connected to the one edge of the sample under test by an 18 AWG wire attached to the pill with a hose clamp and to the sample with an alligator clip.
 
-The voltage is monitored with a 40\,kV high voltage probe, i.e. a 1:1000 voltage divider composed of one 1\,G$\Omega$ and one 1\,M$\Omega$ resistors connected in series. A Keithley DMM6500 digital multimeter is connected in parallel to the 1\,M$\Omega$ resitor and measures the scaled DC voltage upstream of the sample. It achieves an absolute voltage resolution of $\mathcal{O}(1)\,$V.
+The voltage is monitored with a commercial 40\,kV high voltage probe, i.e. a 1:1000 voltage divider composed of one 1\,G$\Omega$ and one 1\,M$\Omega$ resistors connected in series. A Keithley DMM6500 digital multimeter is connected in parallel to the 1\,M$\Omega$ resitor and measures the scaled DC voltage upstream of the sample. It achieves an absolute voltage resolution of $\mathcal{O}(1)\,$V.
 
 The current running through the sample is monitored in series with a Keithley 6485 picoammeter which is sensitive to currents as low as 10\,pA. It is connected to the ground side of the sample on one end and to the building ground on the other. A gas discharge tube is connected in parallel of the picoammeter in order to protect it from discharges. The current flow bypasses the picoammeter if the voltage across it exceeds 10\,V.
 
-Two classes of samples are tested. Loose sheets of Kapton DR8 are clamped on both sides with two pairs of copper bars pressed together with thumb screws. Laminated samples that are not copper clad are metalized with conductive-adhesive copper tape. Both of them are connected on either side with an alligator clip. The samples can be tested both at room temperature and completely submerged in liquid nitrogen. No test was conducted using liquid argon in this system. The temperature is monitored with a K-type thermocouple placed nearby the ground side of the sample. The thermocouple is read out with Fluke t3000 FC wireless temperature module.
+Two classes of samples are tested. Loose sheets of DR8 are clamped on both sides with two pairs of copper bars pressed together with thumb screws. Laminated samples that are not copper clad are metalized with conductive-adhesive copper tape. Both of them are connected on either side with an alligator clip. The samples can be tested both at room temperature and completely submerged in liquid nitrogen. No test was conducted using liquid argon in this system. The temperature is monitored with a K-type thermocouple placed nearby the ground side of the sample. The thermocouple is read out with Fluke t3000 FC wireless temperature module.
 
-\subsubsection{MSU}
+\subsubsection{MSU liquid nitrogen test stand}
 \label{sec:MSU}
 
-A diagram of the auxillary apparatus used at Michigan State University (MSU) is shown in Figure~\ref{fig:msu_styro_setup}.  Similar to the SLAC apparatus, the main testing chamber is a re-purposed EPS cooler box with inner dimensions of $\sim 15 \times 20 \times 10\,$cm$^3$, for a total capacity of $\sim 3.2\,$ L.  The walls of the chamber are of a similar thickness to the SLAC apparatus, $\sim 5\,$ cm, which provides for several hours of operation with little cryogen evaporation.  Feedthrough of high-voltage power is achieved by a square aluminum panel mounted over a small cutout in the chamber lid.  This panel features an SHV connector for the power supply side and a BNC connector for the low-voltage return side.  Internally, the connectors interface with two Polytetrafluoroethylene (PTFE) insulated conductors, each connected to a copper clamp for contacting the sample.  The high voltage delivery system for this apparatus does not feature a resistive-core cable and pill assembly for HV delivery as in the other two systems.
+\todo{eliminate any redundancy with previous section}
+
+A diagram of the MSU test stand is shown in Figure~\ref{fig:msu_styro_setup}.  Similar to the SLAC apparatus, the main testing chamber is a re-purposed EPS cooler box with inner dimensions of $\sim 15 \times 20 \times 10\,$cm$^3$, for a total capacity of $\sim 3.2\,$ L.  The walls of the chamber are of a similar thickness to the SLAC apparatus, $\sim 5\,$ cm, which provides for several hours of operation with little cryogen evaporation.  Feedthrough of high-voltage power is achieved by a square aluminum panel mounted over a small cutout in the chamber lid.  This panel features an SHV connector for the power supply side and a BNC connector for the low-voltage return side.  Internally, the connectors interface with two Polytetrafluoroethylene (PTFE) insulated conductors, each connected to a copper clamp for contacting the sample.  The high voltage delivery system for this apparatus does not feature a resistive-core cable and pill assembly for HV delivery as in the other two systems.
 
 High voltage power is supplied by a Bertan model 5900 HVPS.  This unit is connected directly to the input connection of the testing chamber.  Inside, the high voltage line is connected to a 40 kV high voltage probe, a 1:1000 voltage divider identical to the one used in the SLAC secondary apparatus.  At this point, the high voltage line is also connected to one end of the sample under test via copper clamps.  The other end of the sample is then connected to the return BNC line, which in turn connects to a Kiethley 2000 multimeter.
 
@@ -314,45 +326,33 @@ The multimeter is used for measuring both the current through the sample and the
 \end{figure}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Working until here
-
-
-\subsection{Field Shell}
+\subsection{DR8 Sample production}
 \label{sec:field_shell}
 \textcolor{blue}{Francois}
 
 The material studies conducted on Kapton DR8 in this paper are performed with the intention of evaluating its viability in a field shell, i.e. a field-shaping structure which uses continuously resistive sheets to smoothly decrease the voltage. This approach to field-shaping has several key advantages over a traditional TPC field cage:
+
+\todo{move following to the introduction. if not repetition}
 \begin{itemize}
 \item It extends the achievable active volume by having a smaller footprint and also by reducing local field non-uniformity created by field-shaping rings;
 \item The resistive heating is spread over entire panels instead of being localized on the surface of resistors, which drastically stifles liquid argon nucleation;
 \item It does not suffer from single points of failure, as the whole panel drives the resistance;
 \item The field does not spike around rings, considerably reducing the risk of arcing.
 \end{itemize}
-%@francois Can you have a lok at intro where I explain this in less details, and maybe moidify one of them, I think its OK to re explain this as iti s explained in the intro and the reader already forgot
+
 This section summarizes the field shell designs studied in the context of this paper and the techniques developed to make them feasible.
 
 \subsection{Designs}
 Previous prototypes~\cite{bern_lartpc,srmu_tpc} used frames on which the resistive material was attached. Figure~\ref{fig:field_shell} shows schematics of the baseline DUNE-ND field-shaping design as a whole. It is composed of five copper-clad FR4 panels covered with electroconductive Kapton sheets. The central panel in the figure is the cathode -- which splits the TPC module into two drift volumes and sets the maximum potential -- while the other four form the `field shell': a resistive structure which continuously decreases the voltage from the cathode to the grounded anode. The field-shaping structure also provides mechanical support for the entire TPC module and optically isolates it from adjacent modules.
+\todo{add single cube figure, drawing and pictures}
 
-\begin{figure}[htbp]
-\centering
-\begin{minipage}[b]{.4\textwidth}
-	\includegraphics[width=\linewidth]{field_shell_design.PNG}
-\end{minipage}
-\qquad
-\begin{minipage}[b]{.4\textwidth}
-	\includegraphics[width=\linewidth]{field_shell_cathode_top.PNG}
-	\includegraphics[width=\linewidth]{field_shell_bottom.PNG}
-\end{minipage}
-\caption{(a) Exploded-view drawing of the field-shaping structure of a TPC module. (b) High-voltage socket at the top of the cathode. (c) Bottom field-shell panel.}
-\label{fig:field_shell}
-\end{figure}
 
 \todo{Francois: Add text about material for field shell and replace this figure with a picture of SLAC single cube}
 
-The cathode panel is covered on both sides with a layer of 25\,$\mu$m-thick Kapton XC, a material which provides a $\mathcal{O}(1)\,$M$\Omega/\Box$ sheet resistance, identical to the one used in the protoDUNE-SP cathode~\cite{protodune_sp_tdr}. It is not subject to further study in this paper. The field shell panels are covered with 100\,$\mu$m-thick sheets of {\DR}, a variant of Kapton XC which exhibits a higher $\mathcal{O}(1)\,$G$\Omega/\Box$ sheet resistance at room temperature and under low voltage loads \RI{ Francois, should we change to e-fields, as this is our claim?}. This material is a suitable basis to replace traditional field cages as it provides sufficient bulk resistance to constrain the heat load and limit the necessary power supply power. The properties of {\DR} are extensively studied in this paper.%@francois do we really need the last senatnce here it should go in the intro ?
+The cathode panel is covered on both sides with a layer of 25\,$\mu$m-thick Kapton XC, a material which provides a $\mathcal{O}(1)\,$M$\Omega/\Box$ sheet resistance, identical to the one used in the protoDUNE-SP cathode~\cite{protodune_sp_tdr}. It is not subject to further study in this paper. The field shell panels are covered with 100\,$\mu$m-thick sheets of {\DR}, a variant of Kapton XC which exhibits a higher $\mathcal{O}(1)\,$G$\Omega/\Box$ sheet resistance at room temperature and under low voltage loads \RI{ Francois, should we change to e-fields, as this is our claim?}. This material is a suitable basis to replace traditional field cages as it provides sufficient bulk resistance to constrain the heat load and limit the necessary power supply power. The properties of {\DR} are extensively studied in this paper.
 
-The aforementioned baseline design presupposes that each field shell panel is completely covered, from cathode to anode, with a single sheet of {\DR}. While this might be the easiest approach in practice, alternative designs might have desirable properties. Figure~\ref{fig:shell_designs} shows the three possible shell configurations under consideration. The \textit{full} design corresponds to the baseline, the \textit{zebra} design reduces the Kapton coverage by connecting the anode and cathode with a series of parallel {\DR} strips of fixed width and the \textit{ladder} design steps the voltage discretely between successive copper bands connected by a few strips of {\DR}. The last two designs have the advantage of reducing the amount of {\DR} needed in each field shell, reducing the cost of the manufacturing and increasing the bulk resistance of the shell, thus reducing the resistive heat load. Their electrical properties are briefly investigated in this paper.
+
+Figure~\ref{fig:shell_designs} shows the three possible shell configurations under consideration. The \textit{full} design corresponds to the baseline, the \textit{zebra} design reduces the Kapton coverage by connecting the anode and cathode with a series of parallel {\DR} strips of fixed width and the \textit{ladder} design steps the voltage discretely between successive copper bands connected by a few strips of {\DR}. The last two designs have the advantage of reducing the amount of {\DR} needed in each field shell, reducing the cost of the manufacturing and increasing the bulk resistance of the shell, thus reducing the resistive heat load. Their electrical properties are briefly investigated in this paper.
 
 \begin{comment}
 	content...
@@ -417,6 +417,9 @@ In the ladder design, two additional free parameters can be set, the width of th
 \label{fig:shell_designs_picture}
 \end{figure}
 
+\subsection{Measurement plan}
+
+
 \subsection{Experimental Operation}
 \label{sec:ExpOp}
 
@@ -438,6 +441,7 @@ At the end of a run, to speed up the evacuation of LAr, the heater attached to t
 
 \subsection{Stability}
 \label{sec:stab}
+\todo {does this need it's own section, suggest combine with above.}
 
 \todo{Francois: remake the plot, useful to see how long we ran (better than hours -> days). remake style}
 
