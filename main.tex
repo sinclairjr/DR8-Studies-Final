@@ -61,7 +61,7 @@
 
 
 
-\keywords{Cryogenic detectors}
+\keywords{cryogenic detectors}
 
 \begin{document}
 \listoftodos
@@ -115,7 +115,7 @@ However, for kilotonne-scale TPCs like the DUNE far detectors the stored energy 
 This issue is compounded by the use of metal in traditional field cages, if a ring is allowed to short to ground the energy at that point in the TPC will be dumped instantaneously. 
 The DUNE collaboration investigated the use of a resistive cathode~\cite{DUNE:2017pqt} to reduce the energy release rate in the case of a discharge.
 To prevent discharges from the metallic field cage to the cryostat or pressure vessel, clearance volumes set by the dielectric strength of the target material are used. 
-In the case of liquid argon, the dielectric strength is only \SI{40}{\kilo\volt\per\centi\metre}~\cite{MicroBooNE:2014php}, which leads to nearly \SI{7}{\kilo\tonne} of un-instrumented argon per DUNE far detector cryostat~\cite{Acciarri:2016ooe}.
+In the case of liquid argon (LAr), the dielectric strength is only \SI{40}{\kilo\volt\per\centi\metre}~\cite{MicroBooNE:2014php}, which leads to nearly \SI{7}{\kilo\tonne} of un-instrumented argon per DUNE far detector cryostat~\cite{Acciarri:2016ooe}.
 Neglecting the cost of purchasing, purifying, and cooling the target material, un-instrumented mass is not desirable in any statistics-limited experiment.        
 There are methods to mitigate discharges~\cite{Auger:2014eba}, but is safer to avoid very high electric fields.  
 The ArgonCube collaboration proposed to segment the TPC, reducing the required electric field, and using copper-on-fiberglass printed circuit board technology to produce the TPC~\cite{Auger:2268439}. 
@@ -177,8 +177,8 @@ Both the temperature and electric-field dependence will be characterized in the 
 
  
 Three test stands we used for characterizing {\DR}; two at SLAC and one at Michigan State University (MSU).
-The larger of the two SLAC test stands, shown in Figure~\ref{fig:full_sys}, is used for long-term measurements in liquid argon.    
-The smaller SLAC test stand, shown in Figure~\ref{fig:slac_styro_setup}, was used for initial measurements and validation of prototypes in liquid nitrogen. 
+The larger of the two SLAC test stands, shown in Figure~\ref{fig:full_sys}, is used for long-term measurements in LAr.    
+The smaller SLAC test stand, shown in Figure~\ref{fig:slac_styro_setup}, was used for initial measurements and validation of prototypes in liquid nitrogen (LN2). 
 The MSU test stand is shown in Figure~\ref{fig:msu_styro_setup}, it was used to characterize construction parameters of the {\DR} samples and for the transmission line measurements.  
 
 
@@ -187,53 +187,49 @@ The MSU test stand is shown in Figure~\ref{fig:msu_styro_setup}, it was used to 
 \begin{figure}[ht]
 	{\includegraphics[width=0.6\linewidth]{inside_rans.jpg}}
 	{\includegraphics[width=0.42\linewidth]{rans.png}}
-	\caption{(Left) A photograph of the liquid argon test assembly.
+	\caption{(Left) A photograph of the LAr test assembly.
 		The white tube is a polytetrafluoroethylene dielectric shield for the high voltage feedthrough that connects to a stainless port in the top of the dummy cathode. 
 		The {\DR} sample is mounted at an angle between the base of the cathode and a ground point on the fiber glass support structure. 
 		The cathode resistance is four orders of magnitude lower than the {\DR} sample.
-		(Right) A CAD of the liquid argon test stand. 
+		(Right) A CAD of the LAr test stand. 
 		The blue surface is the liquid level. 
 		The cylinder on the right is a thermosyphon used to provide cooling.}
 	\label{fig:full_sys}
 \end{figure}
 
 The system, shown in Figure~\ref{fig:full_sys}, is designed to achieve stable cryogenic conditions for periods of multiple months. 
-It consists of a \SI{65}{\litre} vacuum-jacketed cryostat which is filled with liquid argon. 
-Cooling is provided by a liquid nitrogen thermosyphon of the type developed for LUX~\cite{lux}.
+It consists of a \SI{65}{\litre} vacuum-jacketed cryostat which is filled with LAr. 
+Cooling is provided by a LN2 thermosyphon of the type developed for LUX~\cite{lux}.
 The temperature is maintained between \SIrange{89}{92}{\kelvin} at an accuracy of \SI{0.1}{\kelvin}. 
 This is achieved with control loop using a heater to mitigate freezing at the thermosyphon and an array of Resistance Temperature Detectors (RTDs); the temperature is logged throughout data taking.   
 The high voltage (HV) feedthrough utilizes the nEXO design~\cite{nEXO_pcdr}, as also adopted by DUNE~\cite{DUNE:2021tad}. 
 The feedthrough is designed for \SI{150}{\kilo\volt}, but the voltage in this application is limited by the power supply~\footnote{Glassman FR50R6} to \SI{50}{\kilo\volt}. 
 
 
-
-
-The test assembly is a dielectric fiberglass (FR4) structure connecting in series a HV feedthrough, a cathode made out of resistive Kapton XC~\footnote{DuPont High-Performance Materials}, a {\DR} sample, and a ground return line.
-Kapton XC was selected for the cathode as it is four orders of magnitude less restive than the {\DR}  
+The test assembly is a dielectric fiberglass (FR4) structure connecting in series a HV feedthrough, a cathode made of resistive Kapton XC~\footnote{DuPont High-Performance Materials}, a {\DR} sample, and a ground return line.
+Kapton XC was selected for the cathode as it is four orders of magnitude less restive than {\DR}.  
 The test assembly can be thought of as a partial TPC with the HV feedthrough terminating at a cathode that connects to a ground return via a sample of field-shaping material. 
-Here, {\DR} is used as the field-shaping, but any resistive material can be tested in this assembly.    
+Here, {\DR} is used as the field-shaping, but any resistive material could be tested.    
 All electrical connections are made with stainless-steel brackets.    
 The \numproduct{15 x 15}~\unit{\centi\metre\squared} {\DR} sample is metallized section of FR4 with {\DR} laminated to it.
 The lamination process is explained in section~\ref{sec:lamination}.
 At these dimensions, the {\DR} samples requires a cathode voltage of \SI{12.5}{\kilo\volt} to achieve a field of \SI{1}{\kilo\volt\per\centi\metre}.    
 
-The data acquisition (DAQ) monitors the current running through the sample with a picoammeter~\footnote{Keithley 6485} connected in series with the \DR sample in the path of the HV ground. 
-A gas discharge tube is connected in parallel to the picoammeter to protect it from high voltage discharges. 
-
-The voltage is monitored with a commercial \SI{40}{\kilo\volt} probe, i.e. a 1:1000 potential divider composed of a \SI{1}{\giga\ohm} and a \SI{1}{\mega\ohm} resistors connected in series. 
-A Keithley DMM6500 digital multimeter is connected in parallel to the \SI{1}{\mega\ohm} resitor and measures the scaled DC voltage upstream of the sample. 
+The data acquisition (DAQ) monitors the current running through the sample with a picoammeter~\footnote{Keithley 6485} connected in series with the \DR sample in the ground path. 
+A gas discharge tube is connected in parallel to the picoammeter for HV discharge protection. 
+The voltage is monitored with a commercial \SI{40}{\kilo\volt} probe and a multimeter~\footnote{Keithley DMM6500} in a 1:1000 potential divider. 
+The potential divider is composed of a \SI{1}{\giga\ohm} and a \SI{1}{\mega\ohm} resistors connected in series. 
+The multimeter is connected in parallel to the \SI{1}{\mega\ohm} resistor and measures the scaled DC voltage upstream of the sample. 
 It achieves an absolute voltage resolution of $\order{\SI{1}{\volt}}$.
-\todo{describe HV probe. check values} 
-
+Figure~\ref{fig:circuit} shows the circuit diagram of the system. 
 
 \begin{figure}[ht]
-	{\includegraphics[width=0.85\linewidth]{circuit.jpg}}
-	\caption{circuit diagram of the long-term test stand. the voltage is measure via a potential divider, the current is measured using  picoammeter in the ground path. }
+	{\includegraphics[width=0.8\linewidth]{circuit.jpg}}
+	\caption{The circuit diagram of the liquid argon test stand. The voltage is measured via a potential divider, and the current is measured using  picoammeter in the ground path.}
 	\label{fig:circuit}
 \end{figure}
 
 \todo{circuit diagram, fix caption}
-\todo{confirm values of divider}
 
 The DAQ software consists of a simple Dash\footnote{\href{https://plotly.com/dash/}{https://plotly.com/dash/}}-based GUI\footnote{\href{https://github.com/francois-drielsma/kapton_daq}{https://github.com/francois-drielsma/kapton\_daq}} driving the InstrumentKit\footnote{\href{https://github.com/Galvant/InstrumentKit}{https://github.com/Galvant/InstrumentKit}} API as a back-end. 
 The software periodically queries the picoammeter and the power supply. 
@@ -242,16 +238,13 @@ The power supply returns an unsigned 10-bit hex string for the voltage.
 The string divides the full voltage range from \SIrange{0}{50}{\kilo\volt} (3FF) in 1024 steps of $\sim$~\SI{50}{\volt}, limiting the system's resolution. 
 The query speed limits the acquisition rate to $\sim$~\SI{10}{\hertz}.
 
-
-\todo{NOT CHECKED YET Details on Lamination - NO mention of DUNE!! not a word.}
-
-\todo{NOT CHECKED YET Kill all alternative design, this is a tech paper not DoE politics.} 
-
-
 \subsection{SLAC liquid nitrogen test stand}
 
-
-A schematic of the SLAC secondary system is shown in Figure~\ref{fig:slac_styro_setup}. It is built around an off-the-shelf cooler box, which provides sufficient insulation to hold $\mathcal{O}(10)$\,liters of cryogen for periods of a few hours. The walls and the lid of the box consist of $\sim5$\,cm of expanded polystyrene foam (EPS) with inner dimensions of $\sim30\times60\times30$\,cm$^3$. The lid is modified by adding a $\sim5$\,cm layer of extruded polystyrene foam (XPS), a $\sim20$\,cm XPS chimney and a removable windowed port. Several holes are drilled to accommodate the high voltage cable, a ground line, the high voltage probe and a cryogen funnel.
+A schematic of the SLAC secondary system is shown in Figure~\ref{fig:slac_styro_setup}. 
+It is built around an off-the-shelf cooler box, which provides sufficient insulation to hold $\order{\SI{10}{\liter}}$ of LN2 for periods of a few hours. 
+The walls and the lid of the box consist of $\sim$\SI{5}{\centi\meter} of expanded polystyrene foam (EPS) with inner dimensions of $\sim$\numproduct{30x60x30}~\unit{\centi\metre\cubed}.
+The lid is modified by adding a $\sim5$\,cm layer of extruded polystyrene foam (XPS), a $\sim20$\,cm XPS chimney and a removable windowed port. 
+Several holes are drilled to accommodate the HV feedthrough, a ground line, the HV probe and a LN2 supply.
 
 \begin{figure}[htb]
 \centering
@@ -276,22 +269,30 @@ A schematic of the SLAC secondary system is shown in Figure~\ref{fig:slac_styro_
 \end{figure}
 
 \todo{fix text significant overlap, put description in previous section.}
-The high voltage delivery is very similar to the main system and uses the same resistive-core high voltage cable. A Glassman FR50N6 power supply provides up to 50\,kV/6\,mA of DC voltage.  A flange holds the cable in place using an 80/20 stand fitted with a Delrin plate. The cold side of the cable is shielded by XPS chimney and its exposed end is submerged in $\sim10$\,cm of cryogen. The conductive pill is connected to the one edge of the sample under test by an 18 AWG wire attached to the pill with a hose clamp and to the sample with an alligator clip.
+The HV delivery uses the same cable as the LAr system. 
+A Glassman FR50N6 power supply provides up to \SI{50}{\kilo\volt} and \SI{6}{\milli\ampere}.  
+A flange holds the HV cable in place using an 80/20 stand fitted with a Delrin plate. 
+The cold side of the HV cable is shielded by the XPS chimney and its exposed end is submerged in $\sim$\SI{10}{\centi\meter} of LN2. 
+The HV cable termination is connected to the test sample via 18 AWG wire and an alligator clip.
 
-The voltage is monitored with a commercial 40\,kV high voltage probe, i.e. a 1:1000 voltage divider composed of one 1\,G$\Omega$ and one 1\,M$\Omega$ resistors connected in series. A Keithley DMM6500 digital multimeter is connected in parallel to the 1\,M$\Omega$ resitor and measures the scaled DC voltage upstream of the sample. It achieves an absolute voltage resolution of $\mathcal{O}(1)\,$V.
+Both voltage and current are monitored using the same method as the LAr test stand. 
 
-The current running through the sample is monitored in series with a Keithley 6485 picoammeter which is sensitive to currents as low as 10\,pA. It is connected to the ground side of the sample on one end and to the building ground on the other. A gas discharge tube is connected in parallel of the picoammeter in order to protect it from discharges. The current flow bypasses the picoammeter if the voltage across it exceeds 10\,V.
-
-Two classes of samples are tested. Loose sheets of DR8 are clamped on both sides with two pairs of copper bars pressed together with thumb screws. Laminated samples that are not copper clad are metalized with conductive-adhesive copper tape. Both of them are connected on either side with an alligator clip. The samples can be tested both at room temperature and completely submerged in liquid nitrogen. No test was conducted using liquid argon in this system. The temperature is monitored with a K-type thermocouple placed nearby the ground side of the sample. The thermocouple is read out with Fluke t3000 FC wireless temperature module.
+Two classes of samples are tested: 
+Loose sheets of DR8 are clamped on both sides with pairs of copper bars screwed together. 
+Laminated samples that are not copper clad are metallized with conductive-adhesive copper tape. 
+Both of them are connected on either side with an alligator clip. 
+The samples can be tested both at room temperature and completely submerged in LN2. 
+The temperature is monitored with a K-type thermocouple placed nearby the ground side of the sample. 
+The thermocouple is read out with Fluke t3000 FC wireless temperature module.
 
 \subsubsection{MSU liquid nitrogen test stand}
 \label{sec:MSU}
 
 \todo{eliminate any redundancy with previous section}
 
-A diagram of the MSU test stand is shown in Figure~\ref{fig:msu_styro_setup}.  Similar to the SLAC apparatus, the main testing chamber is a re-purposed EPS cooler box with inner dimensions of $\sim 15 \times 20 \times 10\,$cm$^3$, for a total capacity of $\sim 3.2\,$ L.  The walls of the chamber are of a similar thickness to the SLAC apparatus, $\sim 5\,$ cm, which provides for several hours of operation with little cryogen evaporation.  Feedthrough of high-voltage power is achieved by a square aluminum panel mounted over a small cutout in the chamber lid.  This panel features an SHV connector for the power supply side and a BNC connector for the low-voltage return side.  Internally, the connectors interface with two Polytetrafluoroethylene (PTFE) insulated conductors, each connected to a copper clamp for contacting the sample.  The high voltage delivery system for this apparatus does not feature a resistive-core cable and pill assembly for HV delivery as in the other two systems.
+A diagram of the MSU test stand is shown in Figure~\ref{fig:msu_styro_setup}.  Similar to the SLAC apparatus, the main testing chamber is a re-purposed EPS cooler box with inner dimensions of $\sim 15 \times 20 \times 10\,$cm$^3$, for a total capacity of $\sim 3.2\,$ L.  The walls of the chamber are of a similar thickness to the SLAC apparatus, $\sim 5\,$ cm, which provides for several hours of operation with little LN2 evaporation.  Feedthrough of high-voltage power is achieved by a square aluminum panel mounted over a small cutout in the chamber lid.  This panel features an SHV connector for the power supply side and a BNC connector for the low-voltage return side.  Internally, the connectors interface with two Polytetrafluoroethylene (PTFE) insulated conductors, each connected to a copper clamp for contacting the sample.  The HV delivery system for this apparatus does not feature a resistive-core cable and pill assembly for HV delivery as in the other two systems.
 
-High voltage power is supplied by a Bertan model 5900 HVPS.  This unit is connected directly to the input connection of the testing chamber.  Inside, the high voltage line is connected to a 40 kV high voltage probe, a 1:1000 voltage divider identical to the one used in the SLAC secondary apparatus.  At this point, the high voltage line is also connected to one end of the sample under test via copper clamps.  The other end of the sample is then connected to the return BNC line, which in turn connects to a Kiethley 2000 multimeter.
+HV power is supplied by a Bertan model 5900 HVPS.  This unit is connected directly to the input connection of the testing chamber.  Inside, the HV line is connected to a 40 kV HV probe, a 1:1000 voltage divider identical to the one used in the SLAC secondary apparatus.  At this point, the HV line is also connected to one end of the sample under test via copper clamps.  The other end of the sample is then connected to the return BNC line, which in turn connects to a Kiethley 2000 multimeter.
 
 The return path is completed through the outer conductor of the BNC cables, which is tied to ground at the meter, the chamber panel, and the power supply and its housing.
 
@@ -329,7 +330,7 @@ The material studies conducted on Kapton DR8 in this paper are performed with th
 \todo{move following to the introduction. if not repetition}
 \begin{itemize}
 \item It extends the achievable active volume by having a smaller footprint and also by reducing local field non-uniformity created by field-shaping rings;
-\item The resistive heating is spread over entire panels instead of being localized on the surface of resistors, which drastically stifles liquid argon nucleation;
+\item The resistive heating is spread over entire panels instead of being localized on the surface of resistors, which drastically stifles LAr nucleation;
 \item It does not suffer from single points of failure, as the whole panel drives the resistance;
 \item The field does not spike around rings, considerably reducing the risk of arcing.
 \end{itemize}
@@ -417,6 +418,8 @@ In the ladder design, two additional free parameters can be set, the width of th
 \subsection{Experimental Operation}
 \label{sec:ExpOp}
 
+\todo{simplify, kill filtering}
+
 \RI{for run 0, we did voltage scan, for run 1 we did drift measurements}
 
 The system was tested  in a series of commissioning runs that included a full cycle of operation: $(a)$ activating the purifier;  $(b)$ filling the system with LAr; $(c)$ collecting data in stable conditions; $(d)$ evacuation of argon. The SC readings for a typical operation of steps $(b) - (d)$ are shown in Figure~\ref{fig:stab}.
@@ -446,7 +449,7 @@ At the end of a run, to speed up the evacuation of LAr, the heater attached to t
 	\caption{Our recorded run, with the DR8 temperature, chosen voltage, and recorded current. \RI{Can we make solid rectangles over down times.. also this caption needs much more info, finally can you try to produce this plot a bit less symmetric (maybe make x=1.5y in length)} }
 	\label{fig:stab}
 \end{figure}
-In this section, we will discuss the long, mostly continuous operation of our system across a range of voltages. The goal of this run is two-fold. First, we wish to explore the behavior of Kapton DR8 at a wide range of electric field intensities and verify its high resistance for use in DUNE ND and other TPCs. Second, we want to verify the behaviour and stability of Kapton DR8 over a long period of time, as, for the intended use case, this material will need to operate at a target voltage uninterrupted in liquid argon for years without replacement. Finally, we want to characterize its breakdown electric field regime and possible rate of breakdown. We do this so we can be confident that even at electric fields much larger than 500V/cm, the material will remain stable. Presented in Figure~\ref{fig:stab} is the record of our long run. During this approximately 20 week run starting from 11/12/2020, we were interrupted FILL IN LATER times: twice due to a software bug in our DAQ, once due to a lab power outage, and finally once due to evaporation of argon below the pill months into the run. However, none of these stoppages were the result of any electrical failure on the part of the system.
+In this section, we will discuss the long, mostly continuous operation of our system across a range of voltages. The goal of this run is two-fold. First, we wish to explore the behavior of Kapton DR8 at a wide range of electric field intensities and verify its high resistance for use in DUNE ND and other TPCs. Second, we want to verify the behaviour and stability of Kapton DR8 over a long period of time, as, for the intended use case, this material will need to operate at a target voltage uninterrupted in LAr for years without replacement. Finally, we want to characterize its breakdown electric field regime and possible rate of breakdown. We do this so we can be confident that even at electric fields much larger than 500V/cm, the material will remain stable. Presented in Figure~\ref{fig:stab} is the record of our long run. During this approximately 20 week run starting from 11/12/2020, we were interrupted FILL IN LATER times: twice due to a software bug in our DAQ, once due to a lab power outage, and finally once due to evaporation of argon below the pill months into the run. However, none of these stoppages were the result of any electrical failure on the part of the system.
 
 We begin our scan with a couple days each at 20kV, 30kV, and 40kV, followed by a return to DUNE ND design electric field of 500 V/cm, or 6.125kV. At this stage we ramp up in voltage in multiples of 6.125kV up to 31.25kV, again taking at most a couple days at each step, before stepping down again to 6.125kV with the same steps, but for approximately a week at each run.
 At the end of this ramp down, we experience a lab power outage, explaining the second gap in Figure~\ref{fig:stab}. We will compare the resistivity before and after the ramp in the following section, in order to ascertain the existence of any resistive decay from this process. With this complete we continue the second ramp up from 31.25kV to 50 kV with the same steps, analyzing the behavior and resistive decay of the sample at these much higher voltages.
@@ -487,11 +490,11 @@ where $R_s^{meas}(95)$ is the resistance at 95\,K $T'$ is the temperature measur
 
 \subsubsection{Temperature Measurement Uncertainties}
 \todo{zach start with there are several sources of unc for this measurements, give a quantification of them or a sentence we conclude they are negligible for the purpose of T dep. also try not to wirte fraction inline use / instead of sfrac. side note, Im not sure I would even discuss this entire thing if the conclusion is that it is negligible. I doubt someone will imagine that the T measurement is not done adequately and that we need to explain. If referee asks we can give hime this calculation.}  
-One source of uncertainty for us is the placement of our temperature sensor. While in the vicinity of the sample and roughly at the same vertical level, we place the sensor a couple inches away in order to minimize possible arcing when ramping up all the way to higher voltages. This results in a slight delay of temperature propagation from the sample, loss of contact heat-transfer, as well as a reduction in correlation from localized temperature changes driven by the heat of the sample itself. In order to characterize the possible extent of this temperature difference, we model our system as a vertical sheet in liquid argon, with one temperature sensor on the sample, and one infinitely far away, and we calculate the steady state difference between the two with heat transfer dynamics governing the system. In other words, we note that, for a sample surrounded by a steady temperature, the heat lost from contact with the liquid argon has to equal the resistive heat generated, or that $\frac{dQ}{dt}=hA(T_{\infty}-T_{sample})+IV=0$, where $h$ is the heat transfer coefficient which needs to be calculated, $A$ is the surface area of the board, and the final term is the power generated from the sample itself.
+One source of uncertainty for us is the placement of our temperature sensor. While in the vicinity of the sample and roughly at the same vertical level, we place the sensor a couple inches away in order to minimize possible arcing when ramping up all the way to higher voltages. This results in a slight delay of temperature propagation from the sample, loss of contact heat-transfer, as well as a reduction in correlation from localized temperature changes driven by the heat of the sample itself. In order to characterize the possible extent of this temperature difference, we model our system as a vertical sheet in LAr, with one temperature sensor on the sample, and one infinitely far away, and we calculate the steady state difference between the two with heat transfer dynamics governing the system. In other words, we note that, for a sample surrounded by a steady temperature, the heat lost from contact with the LAr has to equal the resistive heat generated, or that $\frac{dQ}{dt}=hA(T_{\infty}-T_{sample})+IV=0$, where $h$ is the heat transfer coefficient which needs to be calculated, $A$ is the surface area of the board, and the final term is the power generated from the sample itself.
 
-Following the equations in~\cite{CHURCHILL19751323} for free convection near a vertical wall, where we have adjusted the gravitational constant to reflect the 30 degree incline of our sample as well as ignored the FR4 board on one side of the sample, we insert the characteristic length of our material, 6 inches, as well as approximate thermodynamic and material properties of liquid argon around our pressure. We need a liquid argon density, $\rho=1.396\frac{g}{ml}$, a specific heat, $c_p=45\frac{J}{mole \cdot K}$, a viscosity, $\mu=270.7(10)^{-6}Pa s$, a thermal conductivity, $k=0.1256\frac{W}{m K}$, and a coefficient of thermal expansion $\beta=4.55(10)^{ -3}/K$~\cite{GLADUN1971205}\cite{STREETT197459}\cite{lbnl}. As $h$ is a function of $\Delta T$ as well, we have $\frac{dQ}{dt}(\Delta T)=0$, and thus we can find $\Delta T$ by root-finding. We find that the difference in the two sensors at 12.5kV would be around 0.03K, while the difference in the two sensors at 50kV would be around 1.3K. From these rough estimates, we can conclude that across all measured voltage regimes, the temperature is almost entirely driven by the liquid argon, and the temperature sensor in the vicinity should be an accurate measurement of the temperature of the material. On top of that, our model for the temperature correction includes a constant, $T_0$, which absorbs any overall scaling between the true temperature of the sample and the measured value.
+Following the equations in~\cite{CHURCHILL19751323} for free convection near a vertical wall, where we have adjusted the gravitational constant to reflect the 30 degree incline of our sample as well as ignored the FR4 board on one side of the sample, we insert the characteristic length of our material, 6 inches, as well as approximate thermodynamic and material properties of LAr around our pressure. We need a LAr density, $\rho=1.396\frac{g}{ml}$, a specific heat, $c_p=45\frac{J}{mole \cdot K}$, a viscosity, $\mu=270.7(10)^{-6}Pa s$, a thermal conductivity, $k=0.1256\frac{W}{m K}$, and a coefficient of thermal expansion $\beta=4.55(10)^{ -3}/K$~\cite{GLADUN1971205}\cite{STREETT197459}\cite{lbnl}. As $h$ is a function of $\Delta T$ as well, we have $\frac{dQ}{dt}(\Delta T)=0$, and thus we can find $\Delta T$ by root-finding. We find that the difference in the two sensors at 12.5kV would be around 0.03K, while the difference in the two sensors at 50kV would be around 1.3K. From these rough estimates, we can conclude that across all measured voltage regimes, the temperature is almost entirely driven by the LAr, and the temperature sensor in the vicinity should be an accurate measurement of the temperature of the material. On top of that, our model for the temperature correction includes a constant, $T_0$, which absorbs any overall scaling between the true temperature of the sample and the measured value.
 
-In previous tests, we also noted that at electric fields of approximately 1000V/cm and higher, both a pure FR4 board and a FR4 board with epoxy coating conduct to a degree at room temperature. However, upon immersing these boards in liquid nitrogen, the conductance decreased to the point of immeasurability. We thus conclude that the conduction shown in this paper is a result of purely DR8 conduction modes.
+In previous tests, we also noted that at electric fields of approximately 1000V/cm and higher, both a pure FR4 board and a FR4 board with epoxy coating conduct to a degree at room temperature. However, upon immersing these boards in LN2, the conductance decreased to the point of immeasurability. We thus conclude that the conduction shown in this paper is a result of purely DR8 conduction modes.
 
 %\RI{Zach Can you Add a temperature correction plot, also, can we give a goodness of fit for the temperature fitting?}
 
@@ -692,9 +695,9 @@ In order to analyze the resistive decay of the sample during a time interval at 
 
 \subsubsection{Long Term Results \RI{change title}}
 \label{sec:long_term_results}
-Now, we return to our original goal for this set of runs, to ascertain the viability of DR8 as a material for long term use in liquid Argon at the DUNE near detector. 
+Now, we return to our original goal for this set of runs, to ascertain the viability of DR8 as a material for long term use in LAr at the DUNE near detector. 
 
-Our first point to verify is the resistive properties of this material in liquid argon; specifically, does this material meet the resistive demands from DUNE ND and other TPCs? For DUNE ND specifically, the lower bound on the required resistivity comes from the heat dissipation, while the necessity of dissipating the deposited charge in the system sets a maximum allowable resistivity???
+Our first point to verify is the resistive properties of this material in LAr; specifically, does this material meet the resistive demands from DUNE ND and other TPCs? For DUNE ND specifically, the lower bound on the required resistivity comes from the heat dissipation, while the necessity of dissipating the deposited charge in the system sets a maximum allowable resistivity???
 
 \begin{figure}
 	\begin{center}
