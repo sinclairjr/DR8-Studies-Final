@@ -181,6 +181,8 @@ The smaller SLAC test stand, shown in Figure~\ref{fig:slac_styro_setup}, was use
 The MSU test stand is shown in Figure~\ref{fig:msu_styro_setup}, it was used to characterize construction parameters of the {\DR} samples and for the transmission line measurements.  
 
 \subsection{Test stands}
+
+\todo{perhaps we need an intro to methodology that doesn’t start with the test stands but frames the paper (may be also in introduction) and reorder the sections in outline -> Introduce design then the test stands then production?}
 \subsubsection{SLAC liquid argon test stand}
 
 \begin{figure}[ht]
@@ -237,7 +239,7 @@ The query speed limits the acquisition rate to $\sim$~\SI{10}{\hertz}.
 
 \subsubsection{SLAC liquid nitrogen test stand}
 
-A schematic of the SLAC secondary system is shown in Figure~\ref{fig:slac_styro_setup}. 
+A schematic of the SLAC secondary system\todo{  suggest just to label it as the LN2 stand (no need to have primary nor secondary systems, not really mentioned?)} is shown in Figure~\ref{fig:slac_styro_setup}. 
 It is built around an off-the-shelf cooler box, which provides sufficient insulation to hold $\order{\SI{10}{\liter}}$ of LN2 for periods of a few hours. 
 The walls and the lid of the box consist of $\sim$\SI{5}{\centi\meter} of expanded polystyrene foam (EPS) with inner dimensions of $\sim$\numproduct{30x60x30}~\unit{\centi\metre\cubed}.
 The lid is modified by adding a \SI{5}{\centi\meter} layer of extruded polystyrene foam (XPS), a \SI{20}{\centi\meter} XPS chimney and a removable windowed port. 
@@ -303,7 +305,7 @@ The other end of the sample is then connected to the return BNC line, which in t
 The return path is completed through the outer conductor of the BNC cables, which is tied to ground at the meter, the chamber panel, and the power supply and its housing.
 
 The multimeter is used for measuring both the current through the sample and the voltage probe, and is controlled remotely via computer over a serial interface.
-This meter has a resolution of 10 nA, and so samples for testing in this chamber are designed with a much wider aspect ratio than those used in the SLAC system, meaning a relatively shorter distance between contacts.
+This meter has a resolution of 10 nA, and so samples for testing in this chamber are designed with a much wider aspect ratio\todo{what does wider aspect ratio mean here?} than those used in the SLAC system, meaning a relatively shorter distance between contacts.
 This allows for greater currents through the samples, as well as the ability to reach higher field strengths with lower voltage.
 
 \begin{figure}[htb]
@@ -359,7 +361,7 @@ The cathode panel is covered on both sides with a layer of 25\,$\mu$m-thick Kapt
 
 
 Figure~\ref{fig:shell_designs} shows the three possible shell configurations under consideration. 
-The \textit{full} design corresponds to the baseline, the \textit{zebra} design reduces the Kapton coverage by connecting the anode and cathode with a series of parallel {\DR} strips of fixed width and the \textit{ladder} design steps the voltage discretely between successive copper bands connected by a few strips of {\DR}.
+The \textit{full} design corresponds to the baseline\todo{I found the use of baseline to not be so clear-- maybe “full coverage” design and zebra design.}, the \textit{zebra} design reduces the Kapton coverage by connecting the anode and cathode with a series of parallel {\DR} strips of fixed width and the \textit{ladder} design\todo{ladder design is not shown/mentioned later, right? so omit here?} steps the voltage discretely between successive copper bands connected by a few strips of {\DR}.
 The last two designs have the advantage of reducing the amount of {\DR} needed in each field shell, reducing the cost of the manufacturing and increasing the bulk resistance of the shell, thus reducing the resistive heat load.
 Their electrical properties are briefly investigated in this paper.
 
@@ -436,6 +438,7 @@ Figure~\ref{fig:shell_designs_picture} shows the three aforementioned test panel
 
 \subsection{Measurement plan}
 
+\todo{p10 Measurement plan is an  empty section-- maybe remove and then have an intro paragraph before measurements to frame it?}
 
 \subsection{Experimental Operation}
 \label{sec:ExpOp}
@@ -443,6 +446,8 @@ Figure~\ref{fig:shell_designs_picture} shows the three aforementioned test panel
 \todo{simplify, kill filtering}
 
 \RI{for run 0, we did voltage scan, for run 1 we did drift measurements}
+
+\todo{This section was hard to read without knowing what measurements were planned.  We need to rework the operation section once we know where it sits in the outline — and what key items need to be brought forward to the reader. (It may go well in the test stand section, if the test stand section is after the design is introduced and what tests are planned}
 
 The system was tested  in a series of commissioning runs that included a full cycle of operation: $(a)$ activating the purifier;  $(b)$ filling the system with LAr; $(c)$ collecting data in stable conditions; $(d)$ evacuation of argon. The SC readings for a typical operation of steps $(b) - (d)$ are shown in Figure~\ref{fig:stab}.
 
@@ -462,6 +467,9 @@ At the end of a run, to speed up the evacuation of LAr, the heater attached to t
 \label{sec:stab}
 \todo {does this need it's own section, suggest combine with above.}
 
+\todo{merge Stability section with operation section}
+
+
 \todo{Francois: remake the plot, useful to see how long we ran (better than hours -> days). remake style}
 
 
@@ -473,8 +481,8 @@ At the end of a run, to speed up the evacuation of LAr, the heater attached to t
 \end{figure}
 In this section, we will discuss the long, mostly continuous operation of our system across a range of voltages. The goal of this run is two-fold. First, we wish to explore the behavior of Kapton DR8 at a wide range of electric field intensities and verify its high resistance for use in DUNE ND and other TPCs. Second, we want to verify the behaviour and stability of Kapton DR8 over a long period of time, as, for the intended use case, this material will need to operate at a target voltage uninterrupted in LAr for years without replacement. Finally, we want to characterize its breakdown electric field regime and possible rate of breakdown. We do this so we can be confident that even at electric fields much larger than 500V/cm, the material will remain stable. Presented in Figure~\ref{fig:stab} is the record of our long run. During this approximately 20 week run starting from 11/12/2020, we were interrupted \todo{FILL IN LATER times}: twice due to a software bug in our DAQ, once due to a lab power outage, and finally once due to evaporation of argon below the pill months into the run. However, none of these stoppages were the result of any electrical failure on the part of the system.
 
-We begin our scan with a couple days each at 20kV, 30kV, and 40kV, followed by a return to DUNE ND design electric field of 500 V/cm, or 6.125kV. At this stage we ramp up in voltage in multiples of 6.125kV up to 31.25kV, again taking at most a couple days at each step, before stepping down again to 6.125kV with the same steps, but for approximately a week at each run.
-At the end of this ramp down, we experience a lab power outage, explaining the second gap in Figure~\ref{fig:stab}. We will compare the resistivity before and after the ramp in the following section, in order to ascertain the existence of any resistive decay from this process. With this complete we continue the second ramp up from 31.25kV to 50 kV with the same steps, analyzing the behavior and resistive decay of the sample at these much higher voltages.
+We began our scan with a couple days each at 20kV, 30kV, and 40kV, followed by a return to DUNE ND design electric field of 500 V/cm, or 6.125kV. At this stage we ramp up in voltage in multiples of 6.125kV up to 31.25kV, again taking at most a couple days at each step, before stepping down again to 6.125kV with the same steps, but for approximately a week at each run.
+At the end of this ramp down, we experienced a lab power outage, explaining the second gap in Figure~\ref{fig:stab}. We compare the resistivity before and after the ramp in the following section, in order to ascertain the existence of any resistive decay from this process. With this complete we continued the second ramp up from 31.25kV to 50 kV with the same steps, analyzing the behavior and resistive decay of the sample at these much higher voltages.
 
 
 
@@ -484,7 +492,7 @@ At the end of this ramp down, we experience a lab power outage, explaining the s
 \subsection{Temperature Dependence}
 \label{sec:TNEFit}
 % @zach I think I would start with something that is saying fitrst how do we measure the T dep. say something like, In ordr to quantify the depandance of the resistance with T, the data from the cooling down of the system is used. This data spans over the temperature range of XXXX
-The results in this section are obtained from the LAIR2 apparatus (see section~\ref{sec:expsetup}). The measured current exhibits modest temperature dependence which is well modelled by a general hopping transport model (see eq.~\ref{eq:Tdep}), following~\cite{electronicPhotonicMaterials} for the low temperature regime, we make the assumption that $\beta=0.5$. Using the data obtained when the system is cooling down, spanning the temperature range of (278--90)\,K, we get a temperature dependence that follows
+The results in this section are obtained from the LAIR2\todo{LAIR2 is not defined-- reference which test stand?} apparatus (see section~\ref{sec:expsetup}). The measured current exhibits modest temperature dependence which is well modelled by a general hopping transport model (see eq.~\ref{eq:Tdep}), following~\cite{electronicPhotonicMaterials} for the low temperature regime, we make the assumption that $\beta=0.5$. Using the data obtained when the system is cooling down, spanning the temperature range of (278--90)\,K, we get a temperature dependence that follows
 
 \todo{Francois talk to Dan and decide on best way to remake this plot. Fig 10- nice to show 1/sqrt(T) see linear dependance but the problem is that the reader can’t see it to temperature-- find resistance of operation.
 }
@@ -513,7 +521,8 @@ where $R_s^{meas}(95)$ is the resistance at 95\,K $T'$ is the temperature measur
 
 One source of uncertainty for us is the placement of our temperature sensor. While in the vicinity of the sample and roughly at the same vertical level, we place the sensor a couple inches away in order to minimize possible arcing when ramping up all the way to higher voltages. This results in a slight delay of temperature propagation from the sample, loss of contact heat-transfer, as well as a reduction in correlation from localized temperature changes driven by the heat of the sample itself. In order to characterize the possible extent of this temperature difference, we model our system as a vertical sheet in LAr, with one temperature sensor on the sample, and one infinitely far away, and we calculate the steady state difference between the two with heat transfer dynamics governing the system. In other words, we note that, for a sample surrounded by a steady temperature, the heat lost from contact with the LAr has to equal the resistive heat generated, or that $\frac{dQ}{dt}=hA(T_{\infty}-T_{sample})+IV=0$, where $h$ is the heat transfer coefficient which needs to be calculated, $A$ is the surface area of the board, and the final term is the power generated from the sample itself.
 
-Following the equations in~\cite{CHURCHILL19751323} for free convection near a vertical wall, where we have adjusted the gravitational constant to reflect the 30 degree incline of our sample as well as ignored the FR4 board on one side of the sample, we insert the characteristic length of our material, 6 inches, as well as approximate thermodynamic and material properties of LAr around our pressure. We need a LAr density, $\rho=1.396\frac{g}{ml}$, a specific heat, $c_p=45\frac{J}{mole \cdot K}$, a viscosity, $\mu=270.7(10)^{-6}Pa s$, a thermal conductivity, $k=0.1256\frac{W}{m K}$, and a coefficient of thermal expansion $\beta=4.55(10)^{ -3}/K$~\cite{GLADUN1971205}\cite{STREETT197459}\cite{lbnl}. As $h$ is a function of $\Delta T$ as well, we have $\frac{dQ}{dt}(\Delta T)=0$, and thus we can find $\Delta T$ by root-finding. We find that the difference in the two sensors at 12.5kV would be around 0.03K, while the difference in the two sensors at 50kV would be around 1.3K. From these rough estimates, we can conclude that across all measured voltage regimes, the temperature is almost entirely driven by the LAr, and the temperature sensor in the vicinity should be an accurate measurement of the temperature of the material. On top of that, our model for the temperature correction includes a constant, $T_0$, which absorbs any overall scaling between the true temperature of the sample and the measured value.
+\todo{Need to to decide what we want said here? and then rework text to align to that (individual sentences OK, just hard to see conclusion, or conclusion can be simpler w/o details)}
+Following the equations in~\cite{CHURCHILL19751323} for free convection near a vertical wall, where we have adjusted the gravitational constant to reflect the 30 degree incline of our sample as well as ignored the FR4 board on one side of the sample, we insert the characteristic length of our material, 6 inches, as well as approximate thermodynamic and material properties of LAr around our pressure. We assume a LAr density, $\rho=1.396\frac{g}{ml}$, a specific heat, $c_p=45\frac{J}{mole \cdot K}$, a viscosity, $\mu=270.7(10)^{-6}Pa s$, a thermal conductivity, $k=0.1256\frac{W}{m K}$, and a coefficient of thermal expansion $\beta=4.55(10)^{ -3}/K$~\cite{GLADUN1971205}\cite{STREETT197459}\cite{lbnl}. As $h$ is a function of $\Delta T$ as well, we have $\frac{dQ}{dt}(\Delta T)=0$, and thus we can find $\Delta T$ by root-finding. We find that the difference in the two sensors at 12.5kV would be around 0.03K, while the difference in the two sensors at 50kV would be around 1.3K. From these rough estimates, we can conclude that across all measured voltage regimes, the temperature is almost entirely driven by the LAr, and the temperature sensor in the vicinity should be an accurate measurement of the temperature of the material. On top of that, our model for the temperature correction includes a constant, $T_0$, which absorbs any overall scaling between the true temperature of the sample and the measured value.
 
 In previous tests, we also noted that at electric fields of approximately 1000V/cm and higher, both a pure FR4 board and a FR4 board with epoxy coating conduct to a degree at room temperature. However, upon immersing these boards in LN2, the conductance decreased to the point of immeasurability. We thus conclude that the conduction shown in this paper is a result of purely DR8 conduction modes.
 
@@ -635,7 +644,7 @@ We measure the current in the sample, applying voltages in the range of (0-5)\,k
 \todo{Increase size of this figure after clean up}
 
 
-\subsection{Contact Overlap}
+\subsection{Dependance on contact size}
 \label{sec:contactOverlap}
 
 The contact resistance measured in section~\ref{sec:transLine} is in principle a function of the geometry of the contact patch between the copper and {\DR}.  The nature of this dependence is non-linear, as the current density through the copper-{\DR} interface is much higher close to the inner edges than on the outside of the sample.
@@ -659,7 +668,7 @@ In order to test the dependence on the contact size (i.e., overlap between the {
 		\vspace*{-\baselineskip} \hspace{2em} (b)
 	\end{center}
 \end{subfigure}
-\caption{(a) The measured resistances of the different samples.  These values are constructed in the same manner as in Figure~\ref{fig:TLM_length_I_and_R}.  The measured values are nearly identical from sample to sample. (b) For a given value of the electric field (500\,V/cm), the measured resistance is shown to have very weak dependence upon the width of the contact for the range of (0.06--2.58)\,".} 
+\caption{(a) The measured resistances of the different samples.  These values are constructed in the same manner as in Figure~\ref{fig:TLM_length_I_and_R}.  The measured values are nearly identical from sample to sample. (b) For a given value of the electric field (500\,V/cm), the measured resistance is shown to have very weak dependence upon the width of the contact for the range of (0.06--2.58)\,.} 
 \label{fig:TLM_contact_contactRes}
 \end{figure}
 
@@ -669,12 +678,15 @@ The result of this measurement, shown in Figure~\ref{fig:TLM_contact_contactRes}
 \subsection{Time dependence, and resistivity degradation}
 \label{resdecayfit}
 
+\todo{Can we clarify purpose/main point of this section? it was unclear}
+
 \todo{Frankie this is the aging bit; too old for you}
 
 As we explored higher electric fields, for longer periods of time, we noticed the sheet resistance decreases with time. We try to to characterize this time-dependence using an empirical model of an exponential decay, introducing $\tau$, the decay constant. Notice that this behaviour dependence on the electric field and so $\tau$ is actually a function of the electric field.
 
-During the cooling of the system ($\approx3$\,hrs) this effect is negligible, both because the time scale and as it is less profound in lower voltages (the system is set to $\approx5$\,kV \todo{(Zach please check this number)} during the cooling of it). However, for higher electric fields and longer periods of time, we need to better account for the time dependence in addition to the temperature dependence, in order to quantify the resistance as a function of the applied electric-field. Thus, we simultaneously fit the time, temperature and electric-field using
-we began to notice that fits with the above model were worse and worse. Visual inspection of sheet resistance and temperature curves such as those in Figure\ref{fig:43750} forced us to model a decreasing sheet resistance with time, independent of temperature, in order to fit. As a very simple model, we posit that this behavior is characterized by exponential sheet resistance decay caused by breakdown at such high electric field. 
+During the cooling of the system ($\approx3$\,hrs) this effect is negligible, both because the time scale and as it is less profound in lower voltages (the system is set to $\approx5$\,kV \todo{(Zach please check this number)} during the cooling of it). However, for higher electric fields and longer periods of time, we need to better account for the time dependence in addition to the temperature dependence, in order to quantify the resistance as a function of the applied electric-field. Thus, we simultaneously fit the time, temperature and electric-field. %using
+%we began to notice that fits with the above model were worse and worse. 
+Visual inspection of sheet resistance and temperature curves such as those in Figure\ref{fig:43750} forced us to model a decreasing sheet resistance with time, independent of temperature, in order to fit. As a very simple model, we posit that this behavior is characterized by exponential sheet resistance decay caused by breakdown at such high electric field. 
 
 This is not visible in the cooldown curve because the voltage was is necessarily low before the sample is fully submerged, and thus no resistive decay with time is observed during that period, leading to a good fit with the previous method. However, at higher electric field, we can no longer expect that the resistivity is constant in time, even with arbitrarily constant temperature. Thus for a particular electric field sub-run, in order to isolate and separate these effects, we need to eliminate the time-varying temperature dependence from the time-varying electric-field decay. We model both of these behaviors as 
 
@@ -735,7 +747,7 @@ Second, at what electric field scale does this material begin to decay? Our meas
 \todo{Kendall: Does Dan have this data, if not him then need Zach. Add a new subfigure--  one clear example how the drift looks, see how it is changing. Then, plo  field str not voltage }
 
 %Finally, what can we say about the longevity of this material in operating conditions at DUNE ND?
-As shown in Figure~\ref{fig:resvsvol}, the scaling decay of the sample with voltage is well modeled by the  decay rate exponentially increasing with voltage. At 6.25 kV, the voltage corresponding to 500 V/cm, the time constant is consistent with infinitely long at the 1-sigma level and predicted by this simple model to be at least on the order of decades. Thus, from a longevity point-of-view, our measurements discern no problem with using this material.
+As shown in Figure~\ref{fig:resvsvol}, the scaling decay of the sample with voltage is well modeled by the  decay rate exponentially increasing with voltage. At 6.25 kV, the voltage corresponding to 500 V/cm, the time constant is consistent with infinitely long at the 1-sigma level and predicted by this simple model to be at least on the order of decades. Thus, from a longevity point-of-view, our measurements discern no problem with using this material.\todo{did not get a clear conclusion or purpose out of the long term result section? clarify main conclusion and put that first/simpler?}
 
 
 \section{Discussion and Conclusions}
