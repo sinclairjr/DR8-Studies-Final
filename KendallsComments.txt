@@ -1,25 +1,9 @@
-p4 May be nice to add subsections to the intro paragraph? - Kendall
-p6 mention of SLAC secondary system--- suggest just to label it as the LN2 stand (no need to have primary nor secondary?)
+p4 May be nice to add subsections to the intro paragraph? 
 
-p7 Section 2.2.1 is nicely written, but “wider aspect ratio” is not clear what that means?
 p8 text  2.3 could be moved earlier, and would be useful in the introduction
-p9 At this point I felt we need an intro to methodology that doesn’t start with the test stands but frames the paper (may be also in introduction) and reorder the sections in outline -> Introduce design then the test stands then production?
-p9 “corresponds to the baseline” - I found the use of baseline to not be so clear-- maybe “full coverage” design and zebra design. 
-p9 ladder design is not shown/mentioned later, right? so omit here?
-p10 Measurement plan is an  empty section-- maybe remove and then have an intro paragraph before measurements to frame it?
-p10 Oof experimental operation was hard to read without knowing what measurements were planned.  We need to rework the operation section once we know where it sits in the outline — and what key items need to be brought forward to the reader. (It may go well in the test stand section, if the test stand section is after the design is introduced and what tests are planned
-+1 to stability being merged with operation section
-p12 We begin our scan — I woiuld prefer past tense, began? and needs fixing for next paragraph on p13 “we continue the 2nd ramp” -> past tense
-p13 LAIR 2 is not defined-- refernece which test stand?
+
 <short break>
-p15 “we need a LAr ” -> assume? Need to to decide what we want said here? and then rework text to align to that (individual sentences OK, just hard to see conclusion, or conclusion can be simpler w/o details)
-p18 Instead of “contact overlap” as a section heading, which felt jargony maybe “Dependance on contact size” and define it in the section?
-p19 caption figure 12 “in the range of ” ends with a quotation mark which is solo-- remove?
-p19 remove “using we began to notice the fits with the above model were worse and worse”
-p20 I did not understand p19 section 3.5… can we clarify purpose/main point?
-p20 I also struggled with 3.5.1 can we clarify purpose/main point?
-p20- remove “do you want numbers here” and todo “Zach maybe here..”
-p21 - did not get a clear result out of this section for long term results-- clarify main conclusion and put that first/simpler?
+
 THANK YOU FOR ALL YOU ARE DOING!
 
 
