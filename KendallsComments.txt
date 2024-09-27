@@ -1,16 +1,6 @@
-comments for the version I downloaded Tuesday:
-Outline:
-suggest under heading which is Liquid Argon Test stand -> Change to Test stands. Make SLAC Liquid nitrogen test stand and SLAC Ar test stand subheadings and then MSU liquid nitrogen stands
-Under DR8 sample production, make subheadings Designs, lamination, samples
-Remove single subheading “Temperature measurement uncertainties”
-I didn’t understand “bootstrapping and Time constraints” need a better subheading or just remove subheadings (can also omit Long term results subheadihg)
-p3 ’disordered system” is mentioned but could use a brief summary or reference for what that is?
-p3 “Will be characterized in the following sections (better to state them or “will be characterized in this paper”
 p4 May be nice to add subsections to the intro paragraph?
-p5 DR8sample — is all one word, get a space?
 p6 mention of SLAC secondary system--- suggest just to label it as the LN2 stand (no need to have primary nor secondary?)
-p7 There’s a single sentence paragraph “Both voltage and current…” move this to previous paragraph?
-p7 Single sentence paragraph - “The return path is completed…” can also move to previous paragraph?
+
 p7 Section 2.2.1 is nicely written, but “wider aspect ratio” is not clear what that means?
 p8 There’s a “Francois” floating in space-- remove that text fragment?
 p8 text  2.3 could be moved earlier, and would be useful in the introduction
