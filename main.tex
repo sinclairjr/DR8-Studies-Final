@@ -288,22 +288,19 @@ The thermocouple is read out with Fluke t3000 FC wireless temperature module.
 \todo{eliminate any redundancy with previous section}
 
 A diagram of the MSU test stand is shown in Figure~\ref{fig:msu_styro_setup}. 
-Similar to the SLAC apparatus, the main testing chamber is a re-purposed EPS cooler box with inner dimensions of $\sim 15 \times 20 \times 10\,$cm$^3$, for a total capacity of $\sim 3.2\,$ L.
-The walls of the chamber are of a similar thickness to the SLAC apparatus, $\sim 5\,$ cm, which provides for several hours of operation with little LN2 evaporation.
-Feedthrough of high-voltage power is achieved by a square aluminum panel mounted over a small cutout in the chamber lid.
-This panel features an SHV connector for the power supply side and a BNC connector for the low-voltage return side.
-Internally, the connectors interface with two Polytetrafluoroethylene (PTFE) insulated conductors, each connected to a copper clamp for contacting the sample.
-The HV delivery system for this apparatus does not feature a resistive-core cable and pill assembly for HV delivery as in the other two systems.
+Similar to the SLAC apparatus, the main testing chamber is a re-purposed EPS cooler box with inner dimensions of $\sim$\numproduct{15x20x10}~\unit{\centi\metre\cubed}, for a total capacity of \SI{3.2}{\litre}.
+The walls of the chamber are of a similar thickness to the SLAC LN2 apparatus providing for several hours of operation with little LN2 evaporation.
+HV is supplied via an SHV bulkhead connector mounted to an aluminum plate on the lid of the chamber.  
+The ground return is via a BNC bulkhead connector in the same plate. 
+Internally, the connectors interface with two Polytetrafluoroethylene (PTFE) insulated conductors connected to a copper clamps for contacting the sample.
 
-HV power is supplied by a Bertan model 5900 HVPS.
-This unit is connected directly to the input connection of the testing chamber.
-Inside, the HV line is connected to a 40 kV HV probe, a 1:1000 voltage divider identical to the one used in the SLAC secondary apparatus.
-At this point, the HV line is also connected to one end of the sample under test via copper clamps.
-The other end of the sample is then connected to the return BNC line, which in turn connects to a Kiethley 2000 multimeter.
-The return path is completed through the outer conductor of the BNC cables, which is tied to ground at the meter, the chamber panel, and the power supply and its housing.
-
-The multimeter is used for measuring both the current through the sample and the voltage probe, and is controlled remotely via computer over a serial interface.
-This meter has a resolution of 10 nA, and so samples for testing in this chamber are designed with a much wider aspect ratio than those used in the SLAC system, meaning a relatively shorter distance between contacts.
+The HV power supply\footnote{Bertan 5900 HVPS} is connected directly to the SHV connector.
+A HV probe is connected to the sample as shown in Figure~\ref{fig:msu_styro_setup}. 
+HV is monitored with the same probe plus divider method as the SLAC test stands. 
+Here the probe is connected to a multimeter\footnote{Kiethley 2000}.
+The ground return is also connected via the multimeter to monitor the current through the sample.
+The multimeter is controlled remotely via computer over a serial interface.
+This multimeter has a resolution of \SI{10}{\nano\ampere}, therefore samples test in this chamber are have a much wider aspect ratio than those used in the SLAC systems; by shortening the distance between contacts the resistance is reduced.
 This allows for greater currents through the samples, as well as the ability to reach higher field strengths with lower voltage.
 
 \begin{figure}[htb]
@@ -347,15 +344,12 @@ The field-shaping structure also provides mechanical support for the entire TPC 
 
 \todo{Francois: Add text about material for field shell and replace this figure with a picture of SLAC single cube}
 
-<<<<<<< HEAD
+
 The cathode panel is covered on both sides with a layer of 25\,$\mu$m-thick Kapton XC, a material which provides a $\mathcal{O}(1)\,$M$\Omega/\Box$ sheet resistance, identical to the one used in the protoDUNE-SP cathode~\cite{protodune_sp_tdr}.
 It is not subject to further study in this paper.
 The field shell panels are covered with 100\,$\mu$m-thick sheets of {\DR}, a variant of Kapton XC which exhibits a higher $\mathcal{O}(1)\,$G$\Omega/\Box$ sheet resistance at room temperature and under low voltage loads. 
 This material is a suitable basis to replace traditional field cages as it provides sufficient bulk resistance to constrain the heat load and limit the necessary power supply power.
 The properties of {\DR} are extensively studied in this paper.
-=======
-The cathode panel is covered on both sides with a layer of 25\,$\mu$m-thick Kapton XC, a material which provides a $\mathcal{O}(1)\,$M$\Omega/\Box$ sheet resistance, identical to the one used in the protoDUNE-SP cathode~\cite{protodune_sp_tdr}. It is not subject to further study in this paper. The field shell panels are covered with 100\,$\mu$m-thick sheets of {\DR}, a variant of Kapton XC which exhibits a higher $\mathcal{O}(1)\,$G$\Omega/\Box$ sheet resistance at room temperature and under low voltage loads \todo{ Francois, should we change to e-fields, as this is our claim?}. This material is a suitable basis to replace traditional field cages as it provides sufficient bulk resistance to constrain the heat load and limit the necessary power supply power. The properties of {\DR} are extensively studied in this paper.
->>>>>>> origin/overleaf-2024-09-27-2216
 
 
 Figure~\ref{fig:shell_designs} shows the three possible shell configurations under consideration. 
@@ -500,10 +494,10 @@ where $R_{s}^{meas}(T)\equiv V/I$ is the measured sheet resistance and $R_{s}$ a
 \begin{figure}
 \centering
 \includegraphics[width=0.95\textwidth]{temp_sheetRes_dr8_cooldown.png}
-\caption{The observed resistivity of a sample of DR8 as a function of temperature, taken at a field of 80 V/cm. We also show excellent fit with the model from Eq. \ref{Rmeas}. \todo{Zach is this an old plot, not from the time period I gave you ?}
-}
+\caption{The observed resistivity of a sample of DR8 as a function of temperature, taken at a field of 80 V/cm. We also show excellent fit with the model from Eq. \ref{Rmeas}. }
 \label{fig:cooldown}
 \end{figure}
+\todo{Zach is this an old plot, not from the time period I gave you ?}
 % @Zach, this is unclear, maybe you should say something, like: For the rest of the analysis we integrate-out the temperature depandance by normalizing to a temperature of 95K which is close to the working temperature (question: is this true isnt it better to choose 92) (note that this temeprature choice is arbitrary and is chosen to this value for connivance ) 
 In order to extract the dependence of the resistance on the applied electric field, the temperature dependence needs to be taken into account. We normalize the rest of the measurements to a temperature of (95\,K) using 
 \begin{equation}
