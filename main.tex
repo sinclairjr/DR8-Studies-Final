@@ -287,12 +287,24 @@ The thermocouple is read out with Fluke t3000 FC wireless temperature module.
 
 \todo{eliminate any redundancy with previous section}
 
-A diagram of the MSU test stand is shown in Figure~\ref{fig:msu_styro_setup}.  Similar to the SLAC apparatus, the main testing chamber is a re-purposed EPS cooler box with inner dimensions of $\sim 15 \times 20 \times 10\,$cm$^3$, for a total capacity of $\sim 3.2\,$ L.  The walls of the chamber are of a similar thickness to the SLAC apparatus, $\sim 5\,$ cm, which provides for several hours of operation with little LN2 evaporation.  Feedthrough of high-voltage power is achieved by a square aluminum panel mounted over a small cutout in the chamber lid.  This panel features an SHV connector for the power supply side and a BNC connector for the low-voltage return side.  Internally, the connectors interface with two Polytetrafluoroethylene (PTFE) insulated conductors, each connected to a copper clamp for contacting the sample.  The HV delivery system for this apparatus does not feature a resistive-core cable and pill assembly for HV delivery as in the other two systems.
+A diagram of the MSU test stand is shown in Figure~\ref{fig:msu_styro_setup}. 
+Similar to the SLAC apparatus, the main testing chamber is a re-purposed EPS cooler box with inner dimensions of $\sim 15 \times 20 \times 10\,$cm$^3$, for a total capacity of $\sim 3.2\,$ L.
+The walls of the chamber are of a similar thickness to the SLAC apparatus, $\sim 5\,$ cm, which provides for several hours of operation with little LN2 evaporation.
+Feedthrough of high-voltage power is achieved by a square aluminum panel mounted over a small cutout in the chamber lid.
+This panel features an SHV connector for the power supply side and a BNC connector for the low-voltage return side.
+Internally, the connectors interface with two Polytetrafluoroethylene (PTFE) insulated conductors, each connected to a copper clamp for contacting the sample.
+The HV delivery system for this apparatus does not feature a resistive-core cable and pill assembly for HV delivery as in the other two systems.
 
-HV power is supplied by a Bertan model 5900 HVPS.  This unit is connected directly to the input connection of the testing chamber.  Inside, the HV line is connected to a 40 kV HV probe, a 1:1000 voltage divider identical to the one used in the SLAC secondary apparatus.  At this point, the HV line is also connected to one end of the sample under test via copper clamps.  The other end of the sample is then connected to the return BNC line, which in turn connects to a Kiethley 2000 multimeter.
+HV power is supplied by a Bertan model 5900 HVPS.
+This unit is connected directly to the input connection of the testing chamber.
+Inside, the HV line is connected to a 40 kV HV probe, a 1:1000 voltage divider identical to the one used in the SLAC secondary apparatus.
+At this point, the HV line is also connected to one end of the sample under test via copper clamps.
+The other end of the sample is then connected to the return BNC line, which in turn connects to a Kiethley 2000 multimeter.
 The return path is completed through the outer conductor of the BNC cables, which is tied to ground at the meter, the chamber panel, and the power supply and its housing.
 
-The multimeter is used for measuring both the current through the sample and the voltage probe, and is controlled remotely via computer over a serial interface.  This meter has a resolution of 10 nA, and so samples for testing in this chamber are designed with a much wider aspect ratio than those used in the SLAC system, meaning a relatively shorter distance between contacts.  This allows for greater currents through the samples, as well as the ability to reach higher field strengths with lower voltage.
+The multimeter is used for measuring both the current through the sample and the voltage probe, and is controlled remotely via computer over a serial interface.
+This meter has a resolution of 10 nA, and so samples for testing in this chamber are designed with a much wider aspect ratio than those used in the SLAC system, meaning a relatively shorter distance between contacts.
+This allows for greater currents through the samples, as well as the ability to reach higher field strengths with lower voltage.
 
 \begin{figure}[htb]
 \centering
@@ -319,19 +331,33 @@ The multimeter is used for measuring both the current through the sample and the
 
 \subsection{DR8 Sample production}
 \label{sec:field_shell}
+
 This section summarizes the field shell designs studied in the context of this paper and the techniques developed to make them feasible.
 
 \subsubsection{Designs} 
-Previous prototypes~\cite{bern_lartpc,srmu_tpc} used frames on which the resistive material was attached. Figure~\ref{fig:field_shell} shows schematics of the baseline DUNE-ND field-shaping design as a whole. It is composed of five copper-clad FR4 panels covered with electroconductive Kapton sheets. The central panel in the figure is the cathode -- which splits the TPC module into two drift volumes and sets the maximum potential -- while the other four form the `field shell': a resistive structure which continuously decreases the voltage from the cathode to the grounded anode. The field-shaping structure also provides mechanical support for the entire TPC module and optically isolates it from adjacent modules.
+
+Previous prototypes~\cite{bern_lartpc,srmu_tpc} used frames on which the resistive material was attached.
+Figure~\ref{fig:field_shell} shows schematics of the baseline DUNE-ND field-shaping design as a whole.
+It is composed of five copper-clad FR4 panels covered with electroconductive Kapton sheets.
+The central panel in the figure is the cathode -- which splits the TPC module into two drift volumes and sets the maximum potential -- while the other four form the `field shell': a resistive structure which continuously decreases the voltage from the cathode to the grounded anode.
+The field-shaping structure also provides mechanical support for the entire TPC module and optically isolates it from adjacent modules.
+
 \todo{add single cube figure, drawing and pictures}
 
 
 \todo{Francois: Add text about material for field shell and replace this figure with a picture of SLAC single cube}
 
-The cathode panel is covered on both sides with a layer of 25\,$\mu$m-thick Kapton XC, a material which provides a $\mathcal{O}(1)\,$M$\Omega/\Box$ sheet resistance, identical to the one used in the protoDUNE-SP cathode~\cite{protodune_sp_tdr}. It is not subject to further study in this paper. The field shell panels are covered with 100\,$\mu$m-thick sheets of {\DR}, a variant of Kapton XC which exhibits a higher $\mathcal{O}(1)\,$G$\Omega/\Box$ sheet resistance at room temperature and under low voltage loads \RI{ Francois, should we change to e-fields, as this is our claim?}. This material is a suitable basis to replace traditional field cages as it provides sufficient bulk resistance to constrain the heat load and limit the necessary power supply power. The properties of {\DR} are extensively studied in this paper.
+The cathode panel is covered on both sides with a layer of 25\,$\mu$m-thick Kapton XC, a material which provides a $\mathcal{O}(1)\,$M$\Omega/\Box$ sheet resistance, identical to the one used in the protoDUNE-SP cathode~\cite{protodune_sp_tdr}.
+It is not subject to further study in this paper.
+The field shell panels are covered with 100\,$\mu$m-thick sheets of {\DR}, a variant of Kapton XC which exhibits a higher $\mathcal{O}(1)\,$G$\Omega/\Box$ sheet resistance at room temperature and under low voltage loads. 
+This material is a suitable basis to replace traditional field cages as it provides sufficient bulk resistance to constrain the heat load and limit the necessary power supply power.
+The properties of {\DR} are extensively studied in this paper.
 
 
-Figure~\ref{fig:shell_designs} shows the three possible shell configurations under consideration. The \textit{full} design corresponds to the baseline, the \textit{zebra} design reduces the Kapton coverage by connecting the anode and cathode with a series of parallel {\DR} strips of fixed width and the \textit{ladder} design steps the voltage discretely between successive copper bands connected by a few strips of {\DR}. The last two designs have the advantage of reducing the amount of {\DR} needed in each field shell, reducing the cost of the manufacturing and increasing the bulk resistance of the shell, thus reducing the resistive heat load. Their electrical properties are briefly investigated in this paper.
+Figure~\ref{fig:shell_designs} shows the three possible shell configurations under consideration. 
+The \textit{full} design corresponds to the baseline, the \textit{zebra} design reduces the Kapton coverage by connecting the anode and cathode with a series of parallel {\DR} strips of fixed width and the \textit{ladder} design steps the voltage discretely between successive copper bands connected by a few strips of {\DR}.
+The last two designs have the advantage of reducing the amount of {\DR} needed in each field shell, reducing the cost of the manufacturing and increasing the bulk resistance of the shell, thus reducing the resistive heat load.
+Their electrical properties are briefly investigated in this paper.
 
 \begin{comment}
 	content...
@@ -351,7 +377,8 @@ Figure~\ref{fig:shell_designs} shows the three possible shell configurations und
 
 \subsubsection{Lamination} 
 \label{sec:lamination}
-In order to build field shell panels, a method to laminate the conductive Kapton onto the copper-clad FR4 panels was demonstrated. It employs a purpose-built lamination device or \textit{laminator} (Figure~\ref{fig:field_shell_laminations}a), and follows these steps:
+In order to build field shell panels, a method to laminate the conductive Kapton onto the copper-clad FR4 panels was demonstrated.
+It employs a purpose-built lamination device or \textit{laminator} (Figure~\ref{fig:field_shell_laminations}a), and follows these steps:
 \begin{enumerate}
 	\item Etch copper-clad FR4 panels leaving only a 1.25\,cm-thick bands of copper on the cathode and anode sides;
 	\item Laminate a sheet of protective plastic on the back of the panel, mask part of the copper bands with tape to prevent epoxy from getting on them;
@@ -386,9 +413,15 @@ Three small panels produced using this method are shown on Figure~\ref{fig:field
 \subsubsection{Samples}
 
 \label{sec:alt_samples}
-For both the zebra and ladder designs, several parameters can be adjusted. In the zebra design, the {\DR} strip width, $w_s$, and the number of strips, $n_s$, can be adjusted to yield a bulk resistance of $R_z=\frac{L}{n_sw}R_S$ with $L$, the distance between the cathode and the anode and $R_S$ the sheet resistance of {\DR}. In this study, two sets of parameters were tested: $w=12.7\,$mm and $n_s=6$ (Z1) and $w=19.5$\,mm, $n_s=4$ (Z2).
+For both the zebra and ladder designs, several parameters can be adjusted. 
+In the zebra design, the {\DR} strip width, $w_s$, and the number of strips, $n_s$, can be adjusted to yield a bulk resistance of $R_z=\frac{L}{n_sw}R_S$ with $L$, the distance between the cathode and the anode and $R_S$ the sheet resistance of {\DR}. 
+In this study, two sets of parameters were tested: $w=12.7\,$mm and $n_s=6$ (Z1) and $w=19.5$\,mm, $n_s=4$ (Z2).
 
-In the ladder design, two additional free parameters can be set, the width of the gap between successive ladder steps, $w_g$, and the number of gaps, $n_g$. If the contact resistance between the {\DR} and the copper strips is negligible, the bulk resistance of the ladder is $R_l=\frac{n_gw_g}{n_sw_s}R_S$\RI{this usually doesnt look good, so either try to use \sfrac{1}{2} or make an equation out of it}. In this study, a single panel with $w_s=w_g=12.7\,$mm (L1), $n_s=3$ and $n_g=7$ was used. Note that, for a given $L$, the perceived electric field between ladder steps is greater than in the baseline design, as the width of the steps is finite and the total distance is thus $n_gw_g<L$. Figure~\ref{fig:shell_designs_picture} shows the three aforementioned test panels along with a laminated baseline design panel.
+In the ladder design, two additional free parameters can be set, the width of the gap between successive ladder steps, $w_g$, and the number of gaps, $n_g$.
+If the contact resistance between the {\DR} and the copper strips is negligible, the bulk resistance of the ladder is $R_l=\frac{n_gw_g}{n_sw_s}R_S$.
+In this study, a single panel with $w_s=w_g=12.7\,$mm (L1), $n_s=3$ and $n_g=7$ was used.
+Note that, for a given $L$, the perceived electric field between ladder steps is greater than in the baseline design, as the width of the steps is finite and the total distance is thus $n_gw_g<L$.
+Figure~\ref{fig:shell_designs_picture} shows the three aforementioned test panels along with a laminated baseline design panel.
 
 \begin{figure}[htbp]
 \centering
