@@ -130,7 +130,7 @@ In addition we demonstrate a technique for manufacturing a TPC utilizing {\DR}.
 \label{sec:disorder_Mattrial}
 
 {\DR}, is a carbon-loaded Kapton\footnote{DuPont\texttrademark, Kapton\textregistered \, polyimide film, E. I. du Pont de Nemours and Company, \url{www.dupont.com}.} foil ($\sim$~\SI{100}{\micro\metre}). 
-Its electrical properties are expected to follow disordered system properties. 
+Its electrical properties are expected to follow disordered system~\cite{organicDisorderMaterial} properties. 
 The resistance of a given material $R$ depends on its geometry, and is described by the following equation:
 \begin{equation}
 \label{eq:Res_3D}
@@ -169,20 +169,19 @@ R_s \propto  e^{( \Delta(T) / k_B T)^{\beta}},
 \end{equation}
 
 where $T$ is the temperature, $k_B$ is the Boltzmann constant, $\Delta(T)$ is the activation energy, and $\beta$ is an exponent which depends on the specific material.
-Both the temperature and electric-field dependence will be characterized in the following sections.  
+Both the temperature and electric-field dependence will be characterized in this paper.  
 
 
 \section{Methodology}
 \label{sec:expsetup}
 
- 
-Three test stands we used for characterizing {\DR}; two at SLAC and one at Michigan State University (MSU).
+Three test stands were used for characterizing {\DR}; two at SLAC and one at Michigan State University (MSU).
 The larger of the two SLAC test stands, shown in Figure~\ref{fig:full_sys}, is used for long-term measurements in LAr.    
 The smaller SLAC test stand, shown in Figure~\ref{fig:slac_styro_setup}, was used for initial measurements and validation of prototypes in liquid nitrogen (LN2). 
 The MSU test stand is shown in Figure~\ref{fig:msu_styro_setup}, it was used to characterize construction parameters of the {\DR} samples and for the transmission line measurements.  
 
-
-\subsection{Liquid argon test stand}
+\subsection{Test stands}
+\subsubsection{SLAC liquid argon test stand}
 
 \begin{figure}[ht]
 	{\includegraphics[width=0.6\linewidth]{inside_rans.jpg}}
@@ -215,7 +214,7 @@ The \numproduct{15 x 15}~\unit{\centi\metre\squared} {\DR} sample is metallized 
 The lamination process is explained in section~\ref{sec:lamination}.
 At these dimensions, the {\DR} samples requires a cathode voltage of \SI{12.5}{\kilo\volt} to achieve a field of \SI{1}{\kilo\volt\per\centi\metre}.    
 
-The data acquisition (DAQ) monitors the current running through the sample with a picoammeter~\footnote{Keithley 6485} connected in series with the \DR sample in the ground path. 
+The data acquisition (DAQ) monitors the current running through the sample with a picoammeter~\footnote{Keithley 6485} connected in series with the {\DR} sample in the ground path. 
 A gas discharge tube is connected in parallel to the picoammeter for HV discharge protection. 
 The voltage is monitored with a commercial \SI{40}{\kilo\volt} probe and a multimeter~\footnote{Keithley DMM6500} in a 1:1000 potential divider. 
 The potential divider is composed of a \SI{1}{\giga\ohm} and a \SI{1}{\mega\ohm} resistors connected in series. 
@@ -229,8 +228,6 @@ Figure~\ref{fig:circuit} shows the circuit diagram of the system.
 	\label{fig:circuit}
 \end{figure}
 
-\todo{circuit diagram, fix caption}
-
 The DAQ software consists of a simple Dash\footnote{\href{https://plotly.com/dash/}{https://plotly.com/dash/}}-based GUI\footnote{\href{https://github.com/francois-drielsma/kapton_daq}{https://github.com/francois-drielsma/kapton\_daq}} driving the InstrumentKit\footnote{\href{https://github.com/Galvant/InstrumentKit}{https://github.com/Galvant/InstrumentKit}} API as a back-end. 
 The software periodically queries the picoammeter and the power supply. 
 The picoammeter returns a string at each query which provides a seven-digit signed mantissa and a power of 10 exponent. 
@@ -238,13 +235,13 @@ The power supply returns an unsigned 10-bit hex string for the voltage.
 The string divides the full voltage range from \SIrange{0}{50}{\kilo\volt} (3FF) in 1024 steps of $\sim$~\SI{50}{\volt}, limiting the system's resolution. 
 The query speed limits the acquisition rate to $\sim$~\SI{10}{\hertz}.
 
-\subsection{SLAC liquid nitrogen test stand}
+\subsubsection{SLAC liquid nitrogen test stand}
 
 A schematic of the SLAC secondary system is shown in Figure~\ref{fig:slac_styro_setup}. 
 It is built around an off-the-shelf cooler box, which provides sufficient insulation to hold $\order{\SI{10}{\liter}}$ of LN2 for periods of a few hours. 
 The walls and the lid of the box consist of $\sim$\SI{5}{\centi\meter} of expanded polystyrene foam (EPS) with inner dimensions of $\sim$\numproduct{30x60x30}~\unit{\centi\metre\cubed}.
-The lid is modified by adding a $\sim5$\,cm layer of extruded polystyrene foam (XPS), a $\sim20$\,cm XPS chimney and a removable windowed port. 
-Several holes are drilled to accommodate the HV feedthrough, a ground line, the HV probe and a LN2 supply.
+The lid is modified by adding a \SI{5}{\centi\meter} layer of extruded polystyrene foam (XPS), a \SI{20}{\centi\meter} XPS chimney and a removable windowed port. 
+Several holes are drilled to accommodate the HV feedthrough, a ground line, the HV probe, and a LN2 supply line.
 
 \begin{figure}[htb]
 \centering
@@ -264,26 +261,26 @@ Several holes are drilled to accommodate the HV feedthrough, a ground line, the 
 		(b)
 	\end{center}
 \end{subfigure}
-\caption{(a) Schematics and (b) picture of the secondary apparatus operated at SLAC.}
+\caption{(a) Schematics and (b) picture of the SLAC liquid nitrogen test stand.}
 \label{fig:slac_styro_setup}
 \end{figure}
 
-\todo{fix text significant overlap, put description in previous section.}
-The HV delivery uses the same cable as the LAr system. 
-A Glassman FR50N6 power supply provides up to \SI{50}{\kilo\volt} and \SI{6}{\milli\ampere}.  
-A flange holds the HV cable in place using an 80/20 stand fitted with a Delrin plate. 
+
+The HV delivery uses the same components as the LAr test stand.  
+A flange holds the HV cable in place using an 80/20 frame and a Delrin plate. 
 The cold side of the HV cable is shielded by the XPS chimney and its exposed end is submerged in $\sim$\SI{10}{\centi\meter} of LN2. 
 The HV cable termination is connected to the test sample via 18 AWG wire and an alligator clip.
-
 Both voltage and current are monitored using the same method as the LAr test stand. 
 
 Two classes of samples are tested: 
-Loose sheets of DR8 are clamped on both sides with pairs of copper bars screwed together. 
+Loose sheets of DR8 are clamped on both sides with pairs of copper bars. 
 Laminated samples that are not copper clad are metallized with conductive-adhesive copper tape. 
-Both of them are connected on either side with an alligator clip. 
+Both of these sample types are connected on either side with an alligator clip. 
 The samples can be tested both at room temperature and completely submerged in LN2. 
 The temperature is monitored with a K-type thermocouple placed nearby the ground side of the sample. 
 The thermocouple is read out with Fluke t3000 FC wireless temperature module.
+
+%James is working from here
 
 \subsubsection{MSU liquid nitrogen test stand}
 \label{sec:MSU}
@@ -293,7 +290,6 @@ The thermocouple is read out with Fluke t3000 FC wireless temperature module.
 A diagram of the MSU test stand is shown in Figure~\ref{fig:msu_styro_setup}.  Similar to the SLAC apparatus, the main testing chamber is a re-purposed EPS cooler box with inner dimensions of $\sim 15 \times 20 \times 10\,$cm$^3$, for a total capacity of $\sim 3.2\,$ L.  The walls of the chamber are of a similar thickness to the SLAC apparatus, $\sim 5\,$ cm, which provides for several hours of operation with little LN2 evaporation.  Feedthrough of high-voltage power is achieved by a square aluminum panel mounted over a small cutout in the chamber lid.  This panel features an SHV connector for the power supply side and a BNC connector for the low-voltage return side.  Internally, the connectors interface with two Polytetrafluoroethylene (PTFE) insulated conductors, each connected to a copper clamp for contacting the sample.  The HV delivery system for this apparatus does not feature a resistive-core cable and pill assembly for HV delivery as in the other two systems.
 
 HV power is supplied by a Bertan model 5900 HVPS.  This unit is connected directly to the input connection of the testing chamber.  Inside, the HV line is connected to a 40 kV HV probe, a 1:1000 voltage divider identical to the one used in the SLAC secondary apparatus.  At this point, the HV line is also connected to one end of the sample under test via copper clamps.  The other end of the sample is then connected to the return BNC line, which in turn connects to a Kiethley 2000 multimeter.
-
 The return path is completed through the outer conductor of the BNC cables, which is tied to ground at the meter, the chamber panel, and the power supply and its housing.
 
 The multimeter is used for measuring both the current through the sample and the voltage probe, and is controlled remotely via computer over a serial interface.  This meter has a resolution of 10 nA, and so samples for testing in this chamber are designed with a much wider aspect ratio than those used in the SLAC system, meaning a relatively shorter distance between contacts.  This allows for greater currents through the samples, as well as the ability to reach higher field strengths with lower voltage.
@@ -323,21 +319,9 @@ The multimeter is used for measuring both the current through the sample and the
 
 \subsection{DR8 Sample production}
 \label{sec:field_shell}
-\textcolor{blue}{Francois}
-
-The material studies conducted on Kapton DR8 in this paper are performed with the intention of evaluating its viability in a field shell, i.e. a field-shaping structure which uses continuously resistive sheets to smoothly decrease the voltage. This approach to field-shaping has several key advantages over a traditional TPC field cage:
-
-\todo{move following to the introduction. if not repetition}
-\begin{itemize}
-\item It extends the achievable active volume by having a smaller footprint and also by reducing local field non-uniformity created by field-shaping rings;
-\item The resistive heating is spread over entire panels instead of being localized on the surface of resistors, which drastically stifles LAr nucleation;
-\item It does not suffer from single points of failure, as the whole panel drives the resistance;
-\item The field does not spike around rings, considerably reducing the risk of arcing.
-\end{itemize}
-
 This section summarizes the field shell designs studied in the context of this paper and the techniques developed to make them feasible.
 
-\subsection{Designs}
+\subsubsection{Designs} 
 Previous prototypes~\cite{bern_lartpc,srmu_tpc} used frames on which the resistive material was attached. Figure~\ref{fig:field_shell} shows schematics of the baseline DUNE-ND field-shaping design as a whole. It is composed of five copper-clad FR4 panels covered with electroconductive Kapton sheets. The central panel in the figure is the cathode -- which splits the TPC module into two drift volumes and sets the maximum potential -- while the other four form the `field shell': a resistive structure which continuously decreases the voltage from the cathode to the grounded anode. The field-shaping structure also provides mechanical support for the entire TPC module and optically isolates it from adjacent modules.
 \todo{add single cube figure, drawing and pictures}
 
@@ -351,55 +335,56 @@ Figure~\ref{fig:shell_designs} shows the three possible shell configurations und
 
 \begin{comment}
 	content...
-
-\begin{figure}[htbp]
-\centering
-
-\includegraphics[width=.9\linewidth]{shell_designs_noccc.png} \\
-(a) \hspace{0.25\textwidth} (b) \hspace{0.25\textwidth} (c)
-\caption{Field shell designs under study: (a) full, (b) zebra and (c) ladder.}
-\label{fig:shell_designs}
-\end{figure}
+	
+	\begin{figure}[htbp]
+		\centering
+		
+		\includegraphics[width=.9\linewidth]{shell_designs_noccc.png} \\
+		(a) \hspace{0.25\textwidth} (b) \hspace{0.25\textwidth} (c)
+		\caption{Field shell designs under study: (a) full, (b) zebra and (c) ladder.}
+		\label{fig:shell_designs}
+	\end{figure}
 \end{comment}
 \todo{Francois? removed figure 6, adjust text since Figure 7 will show it}
 
 
-\subsection{Lamination}
+
+\subsubsection{Lamination} 
 \label{sec:lamination}
 In order to build field shell panels, a method to laminate the conductive Kapton onto the copper-clad FR4 panels was demonstrated. It employs a purpose-built lamination device or \textit{laminator} (Figure~\ref{fig:field_shell_laminations}a), and follows these steps:
 \begin{enumerate}
-\item Etch copper-clad FR4 panels leaving only a 1.25\,cm-thick bands of copper on the cathode and anode sides;
-\item Laminate a sheet of protective plastic on the back of the panel, mask part of the copper bands with tape to prevent epoxy from getting on them;
-\item Tape Kapton sheets or strips in the desired pattern onto the laminator table, laminate them with protective film, lift the film off the table;
-\item Apply $250$\,g/m$^2$ of epoxy\footnote{Master Bond EP29LPSP} on the FR4 panel, roll {\DR} onto the glue, ensure $>5\,$mm overlap with each copper band;
-\item Cover the laminate with bleeder cloth, vacuum bag the assembly, cure for seven days at room temperature, with the first two days under vacuum.
+	\item Etch copper-clad FR4 panels leaving only a 1.25\,cm-thick bands of copper on the cathode and anode sides;
+	\item Laminate a sheet of protective plastic on the back of the panel, mask part of the copper bands with tape to prevent epoxy from getting on them;
+	\item Tape Kapton sheets or strips in the desired pattern onto the laminator table, laminate them with protective film, lift the film off the table;
+	\item Apply $250$\,g/m$^2$ of epoxy\footnote{Master Bond EP29LPSP} on the FR4 panel, roll {\DR} onto the glue, ensure $>5\,$mm overlap with each copper band;
+	\item Cover the laminate with bleeder cloth, vacuum bag the assembly, cure for seven days at room temperature, with the first two days under vacuum.
 \end{enumerate}
 Three small panels produced using this method are shown on Figure~\ref{fig:field_shell_laminations}b.
 
 \begin{figure}[htbp]
-\centering
-\begin{subfigure}[c]{0.3575\linewidth}
-	\begin{center}
-		\includegraphics[width=\linewidth]{laminator.jpg}
-		(a)
-	\end{center}
-\end{subfigure}
-\qquad
-\begin{subfigure}[c]{0.5425\linewidth}
-	\begin{center}
-		\includegraphics[width=\linewidth]{laminations.jpg}
-		(b)
-	\end{center}
-\end{subfigure}
-\caption{(a) Lamination device used to adhere Kapton onto FR4 panels. (b) Small $15\times15$\,cm$^2$ test panel laminations; left to right: zebra, alternate material (not discussed), full.}
-\label{fig:field_shell_laminations}
+	\centering
+	\begin{subfigure}[c]{0.3575\linewidth}
+		\begin{center}
+			\includegraphics[width=\linewidth]{laminator.jpg}
+			(a)
+		\end{center}
+	\end{subfigure}
+	\qquad
+	\begin{subfigure}[c]{0.5425\linewidth}
+		\begin{center}
+			\includegraphics[width=\linewidth]{laminations.jpg}
+			(b)
+		\end{center}
+	\end{subfigure}
+	\caption{(a) Lamination device used to adhere Kapton onto FR4 panels. (b) Small $15\times15$\,cm$^2$ test panel laminations; left to right: zebra, alternate material (not discussed), full.}
+	\label{fig:field_shell_laminations}
 \end{figure}
 
 \todo{Francois: Replace with SLAC single cube panels. Consider adding picture of panel being laminated }
 
 
+\subsubsection{Samples}
 
-\subsection{Samples}
 \label{sec:alt_samples}
 For both the zebra and ladder designs, several parameters can be adjusted. In the zebra design, the {\DR} strip width, $w_s$, and the number of strips, $n_s$, can be adjusted to yield a bulk resistance of $R_z=\frac{L}{n_sw}R_S$ with $L$, the distance between the cathode and the anode and $R_S$ the sheet resistance of {\DR}. In this study, two sets of parameters were tested: $w=12.7\,$mm and $n_s=6$ (Z1) and $w=19.5$\,mm, $n_s=4$ (Z2).
 
@@ -488,8 +473,6 @@ R_{s}^{meas}(95)=R_{s}^{meas}(T')\exp\bigg(-\sqrt{\frac{T_0}{T'}}+\sqrt{\frac{T_
 \end{equation}
 where $R_s^{meas}(95)$ is the resistance at 95\,K $T'$ is the temperature measured, and $R_{s}^{meas}(T')$ is the measured resistance at the measured temperature. 
 
-\subsubsection{Temperature Measurement Uncertainties}
-\todo{zach start with there are several sources of unc for this measurements, give a quantification of them or a sentence we conclude they are negligible for the purpose of T dep. also try not to wirte fraction inline use / instead of sfrac. side note, Im not sure I would even discuss this entire thing if the conclusion is that it is negligible. I doubt someone will imagine that the T measurement is not done adequately and that we need to explain. If referee asks we can give hime this calculation.}  
 One source of uncertainty for us is the placement of our temperature sensor. While in the vicinity of the sample and roughly at the same vertical level, we place the sensor a couple inches away in order to minimize possible arcing when ramping up all the way to higher voltages. This results in a slight delay of temperature propagation from the sample, loss of contact heat-transfer, as well as a reduction in correlation from localized temperature changes driven by the heat of the sample itself. In order to characterize the possible extent of this temperature difference, we model our system as a vertical sheet in LAr, with one temperature sensor on the sample, and one infinitely far away, and we calculate the steady state difference between the two with heat transfer dynamics governing the system. In other words, we note that, for a sample surrounded by a steady temperature, the heat lost from contact with the LAr has to equal the resistive heat generated, or that $\frac{dQ}{dt}=hA(T_{\infty}-T_{sample})+IV=0$, where $h$ is the heat transfer coefficient which needs to be calculated, $A$ is the surface area of the board, and the final term is the power generated from the sample itself.
 
 Following the equations in~\cite{CHURCHILL19751323} for free convection near a vertical wall, where we have adjusted the gravitational constant to reflect the 30 degree incline of our sample as well as ignored the FR4 board on one side of the sample, we insert the characteristic length of our material, 6 inches, as well as approximate thermodynamic and material properties of LAr around our pressure. We need a LAr density, $\rho=1.396\frac{g}{ml}$, a specific heat, $c_p=45\frac{J}{mole \cdot K}$, a viscosity, $\mu=270.7(10)^{-6}Pa s$, a thermal conductivity, $k=0.1256\frac{W}{m K}$, and a coefficient of thermal expansion $\beta=4.55(10)^{ -3}/K$~\cite{GLADUN1971205}\cite{STREETT197459}\cite{lbnl}. As $h$ is a function of $\Delta T$ as well, we have $\frac{dQ}{dt}(\Delta T)=0$, and thus we can find $\Delta T$ by root-finding. We find that the difference in the two sensors at 12.5kV would be around 0.03K, while the difference in the two sensors at 50kV would be around 1.3K. From these rough estimates, we can conclude that across all measured voltage regimes, the temperature is almost entirely driven by the LAr, and the temperature sensor in the vicinity should be an accurate measurement of the temperature of the material. On top of that, our model for the temperature correction includes a constant, $T_0$, which absorbs any overall scaling between the true temperature of the sample and the measured value.
@@ -677,7 +660,6 @@ R_{s}^{meas}(t,T)=R_{s}^{meas}(t,T')\exp\bigg(-\sqrt{\frac{T_0}{T'}}+\sqrt{\frac
 where again, we compare all curves at the choice of constant $T=95K$.
 
 
-\subsubsection{Bootstrapping and Time Constants}
 In order to analyze the resistive decay of the sample during a time interval at a given electric field, the quantity of interest is the time constant, $\tau$, which we extract by fitting the sample's sheet resistance as described in section~\ref{resdecayfit}. However, the uncertainties on the fit parameters, specifically $\tau$, are not the relevant uncertainties for a ``measurement'' of $\tau$, as they are suppressed by the Poisson error, while the number of "measurements" of $\tau$ is certainly not this high\RI{do you want to give numbers here}. In order to understand the true uncertainties of our measurement, we make the assumption of constant exponential resistive decay throughout the entire time interval \RI{Zach maybe here add allowing us to use a sequential bootstrapping bla bla}. With this assumption, we remove the temperature dependence across the whole multi-hour sample according to the same methods described in section~\ref{resdecayfit}. With this multi-hour temperature-normalized sample, we take each successive hour-long interval to comprise an independent sample with a corresponding measurement of $\tau$. We fit each interval to an exponential, recording the resulting $\tau$, and this results in an independent measurement of $\tau$'s for each hour of the full sample with a resultant measurement uncertainty. We can see the resulting $\tau$ measurements in Figure~\ref{fig:invtaulog}.
 
 \begin{figure}
@@ -693,7 +675,7 @@ In order to analyze the resistive decay of the sample during a time interval at 
 
 
 
-\subsubsection{Long Term Results \RI{change title}}
+
 \label{sec:long_term_results}
 Now, we return to our original goal for this set of runs, to ascertain the viability of DR8 as a material for long term use in LAr at the DUNE near detector. 
 
