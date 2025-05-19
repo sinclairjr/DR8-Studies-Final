@@ -175,15 +175,15 @@ Both the temperature and electric-field dependence will be characterized in this
 \section{Methodology}
 \label{sec:expsetup}
 
-Three test stands were used for characterizing {\DR}; two at SLAC and one at Michigan State University (MSU).
+As well as characterizing {\DR}, the construction parameters also need to be understood and a transmission line measurements is necessary for the electrode connections.
+Three test stands were used; two at SLAC and one at Michigan State University (MSU).
 The larger of the two SLAC test stands, shown in Figure~\ref{fig:full_sys}, is used for long-term measurements in LAr.    
 The smaller SLAC test stand, shown in Figure~\ref{fig:slac_styro_setup}, was used for initial measurements and validation of prototypes in liquid nitrogen (LN2). 
 The MSU test stand is shown in Figure~\ref{fig:msu_styro_setup}, it was used to characterize construction parameters of the {\DR} samples and for the transmission line measurements.  
 
-\subsection{Test stands}
-
 \todo{perhaps we need an intro to methodology that doesn’t start with the test stands but frames the paper (may be also in introduction) and reorder the sections in outline -> Introduce design then the test stands then production?}
-\subsubsection{SLAC liquid argon test stand}
+
+\subsection{SLAC liquid argon test stand}
 
 \begin{figure}[ht]
 	{\includegraphics[width=0.6\linewidth]{inside_rans.jpg}}
@@ -278,43 +278,27 @@ Two classes of samples are tested:
 Loose sheets of DR8 are clamped on both sides with pairs of copper bars. 
 Laminated samples that are not copper clad are metallized with conductive-adhesive copper tape. 
 Both of these sample types are connected on either side with an alligator clip. 
-The samples can be tested both at room temperature and completely submerged in LN2. 
+The samples can be tested both at room temperature and submerged in LN2. 
 The temperature is monitored with a K-type thermocouple placed nearby the ground side of the sample. 
 The thermocouple is read out with Fluke t3000 FC wireless temperature module.
 
-%James is working from here
-
 \subsubsection{MSU liquid nitrogen test stand}
 \label{sec:MSU}
-
-\todo{eliminate any redundancy with previous section}
 
 A diagram of the MSU test stand is shown in Figure~\ref{fig:msu_styro_setup}. 
 Similar to the SLAC apparatus, the main testing chamber is a re-purposed EPS cooler box with inner dimensions of $\sim$\numproduct{15x20x10}~\unit{\centi\metre\cubed}, for a total capacity of \SI{3.2}{\litre}.
 The walls of the chamber are of a similar thickness to the SLAC LN2 apparatus providing for several hours of operation with little LN2 evaporation.
 HV is supplied via an SHV bulkhead connector mounted to an aluminum plate on the lid of the chamber.  
 The ground return is via a BNC bulkhead connector in the same plate. 
-Internally, the connectors interface with two Polytetrafluoroethylene (PTFE) insulated conductors connected to a copper clamps for contacting the sample.
+Internally, the connectors interface with two Polytetrafluoroethylene (PTFE) insulated conductors connected to copper clamps for contacting the sample.
 
-<<<<<<< HEAD
 The HV power supply\footnote{Bertan 5900 HVPS} is connected directly to the SHV connector.
 A HV probe is connected to the sample as shown in Figure~\ref{fig:msu_styro_setup}. 
-HV is monitored with the same probe plus divider method as the SLAC test stands. 
-Here the probe is connected to a multimeter\footnote{Kiethley 2000}.
+HV is monitored with the same probe and divider method as the SLAC test stands. 
+Here, the probe is connected to a multimeter\footnote{Kiethley 2000}.
 The ground return is also connected via the multimeter to monitor the current through the sample.
 The multimeter is controlled remotely via computer over a serial interface.
-This multimeter has a resolution of \SI{10}{\nano\ampere}, therefore samples test in this chamber are have a much wider aspect ratio than those used in the SLAC systems; by shortening the distance between contacts the resistance is reduced.
-=======
-HV power is supplied by a Bertan model 5900 HVPS.
-This unit is connected directly to the input connection of the testing chamber.
-Inside, the HV line is connected to a 40 kV HV probe, a 1:1000 voltage divider identical to the one used in the SLAC secondary apparatus.
-At this point, the HV line is also connected to one end of the sample under test via copper clamps.
-The other end of the sample is then connected to the return BNC line, which in turn connects to a Kiethley 2000 multimeter.
-The return path is completed through the outer conductor of the BNC cables, which is tied to ground at the meter, the chamber panel, and the power supply and its housing.
-
-The multimeter is used for measuring both the current through the sample and the voltage probe, and is controlled remotely via computer over a serial interface.
-This meter has a resolution of 10 nA, and so samples for testing in this chamber are designed with a much wider aspect ratio\todo{what does wider aspect ratio mean here?} than those used in the SLAC system, meaning a relatively shorter distance between contacts.
->>>>>>> refs/remotes/origin/main
+This multimeter has a resolution of \SI{10}{\nano\ampere}, therefore samples tested in this chamber are have a much wider aspect ratio than those used in the SLAC systems; by shortening the distance between contacts the resistance per square is reduced.
 This allows for greater currents through the samples, as well as the ability to reach higher field strengths with lower voltage.
 
 \begin{figure}[htb]
@@ -342,6 +326,8 @@ This allows for greater currents through the samples, as well as the ability to 
 
 \subsection{DR8 Sample production}
 \label{sec:field_shell}
+
+%James is working from here
 
 This section summarizes the field shell designs studied in the context of this paper and the techniques developed to make them feasible.
 
