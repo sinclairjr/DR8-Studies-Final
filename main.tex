@@ -338,9 +338,7 @@ This section summarizes the field shell designs studied in the context of this p
 Previous prototypes~\cite{bern_lartpc,srmu_tpc} used frames on which the resistive material was mechanically clamped.
 Here, we work to a design that utilizes FR4 panels to provide the structure of the TPC.
 Each FR4 panel has resistive material laminated to its surface. 
-It is composed of five copper-clad FR4 panels covered with electroconductive Kapton sheets.
-The central panel in the figure is the cathode -- which splits the TPC module into two drift volumes and sets the maximum potential -- while the other four form the `field shell': a resistive structure which continuously decreases the voltage from the cathode to the grounded anode.
-The field-shaping structure also provides mechanical support for the entire TPC module and optically isolates it from adjacent modules.
+The FR4 structure also provides dielectric shielding for the entire TPC.
 
 \todo{add single cube figure, drawing and pictures}
 
@@ -348,17 +346,19 @@ The field-shaping structure also provides mechanical support for the entire TPC 
 \todo{James: Add text about material for field shell and replace this figure with a picture of SLAC single cube}
 
 
-The cathode panel is covered on both sides with a layer of 25\,$\mu$m-thick Kapton XC, a material which provides a $\mathcal{O}(1)\,$M$\Omega/\Box$ sheet resistance, identical to the one used in the protoDUNE-SP cathode~\cite{protodune_sp_tdr}.
-It is not subject to further study in this paper.
-The field shell panels are covered with 100\,$\mu$m-thick sheets of {\DR}, a variant of Kapton XC which exhibits a higher $\mathcal{O}(1)\,$G$\Omega/\Box$ sheet resistance at room temperature and under low voltage loads. 
+The cathode panel is covered on both sides with a layer of \SI{25}{\micro\metre} thick Kapton XC, as used in the protoDUNE-SP cathode~\cite{protodune_sp_tdr}.
+The electric field-shaping panels are covered with \SI{100}{\micro\metre}-thick sheets of {\DR}. 
 This material is a suitable basis to replace traditional field cages as it provides sufficient bulk resistance to constrain the heat load and limit the necessary power supply power.
-The properties of {\DR} are extensively studied in this paper.
+\todo{put limits in intro and refere back to them, or describe them here??}
+
 
 
 Figure~\ref{fig:shell_designs} shows the three possible shell configurations under consideration. 
+There is a full fill-factor version as well as several reduced-fill-factor version, tested to investigat options for mimimizing system costs. 
+
 The \textit{full} design corresponds to the baseline\todo{I found the use of baseline to not be so clear-- maybe “full coverage” design and zebra design.}, the \textit{zebra} design reduces the Kapton coverage by connecting the anode and cathode with a series of parallel {\DR} strips of fixed width and the \textit{ladder} design\todo{ladder design is not shown/mentioned later, right? so omit here?} steps the voltage discretely between successive copper bands connected by a few strips of {\DR}.
 The last two designs have the advantage of reducing the amount of {\DR} needed in each field shell, reducing the cost of the manufacturing and increasing the bulk resistance of the shell, thus reducing the resistive heat load.
-Their electrical properties are briefly investigated in this paper.
+Their electrical properties are briefly investigated in this paper.\todo{are they??}
 
 \begin{comment}
 	content...
@@ -469,7 +469,7 @@ At the end of a run, the evaporated LAr is exhausted  and the HV is set to 5\,kV
 	\caption{Our recorded run, with the DR8 temperature, chosen voltage, and recorded current. \RI{Can we make solid rectangles over down times.. also this caption needs much more info, finally can you try to produce this plot a bit less symmetric (maybe make x=1.5y in length)} }
 	\label{fig:stab}
 \end{figure}
-In this section, we will discuss the long, mostly continuous operation of our system across a range of voltages. The goal of this run is two-fold. First, we wish to explore the behavior of Kapton DR8 at a wide range of electric field intensities and verify its high resistance for use in DUNE ND and other TPCs. Second, we want to verify the behaviour and stability of Kapton DR8 over a long period of time, as, for the intended use case, this material will need to operate at a target voltage uninterrupted in LAr for years without replacement. Finally, we want to characterize its breakdown electric field regime and possible rate of breakdown. We do this so we can be confident that even at electric fields much larger than 500V/cm, the material will remain stable. Presented in Figure~\ref{fig:stab} is the record of our long run. During this approximately 20 week run starting from 11/12/2020, we were interrupted \todo{FILL IN LATER times}: twice due to a software bug in our DAQ, once due to a lab power outage, and finally once due to evaporation of argon below the pill months into the run. However, none of these stoppages were the result of any electrical failure on the part of the system.
+In this section, we will discuss the long-term operation across a range of voltages. The goal of these runs is two-fold: Firstly, we wish to explore the behavior of Kapton DR8 at a wide range of electric fields and verify its high resistance for use in TPCs. Secondly, we want to verify the behavior and stability of Kapton DR8 over a long period of time, Finally, we want to characterize its breakdown electric field regime and possible rate of breakdown; to be confident that at electric fields larger than 500V/cm, the material remains stable. Figure~\ref{fig:stab} shows the record of the run period. During this 20-week run starting from 11/12/2020, we were interrupted \todo{FILL IN LATER times}: twice due to a software bug in our DAQ, once due to a lab power outage, and finally once due to evaporation of argon below the pill months into the run. However, none of these stoppages were the result of any electrical failure on the part of the system.
 
 We began our scan with a couple days each at 20kV, 30kV, and 40kV, followed by a return to DUNE ND design electric field of 500 V/cm, or 6.125kV. At this stage we ramp up in voltage in multiples of 6.125kV up to 31.25kV, again taking at most a couple days at each step, before stepping down again to 6.125kV with the same steps, but for approximately a week at each run.
 At the end of this ramp down, we experienced a lab power outage, explaining the second gap in Figure~\ref{fig:stab}. We compare the resistivity before and after the ramp in the following section, in order to ascertain the existence of any resistive decay from this process. With this complete we continued the second ramp up from 31.25kV to 50 kV with the same steps, analyzing the behavior and resistive decay of the sample at these much higher voltages.
