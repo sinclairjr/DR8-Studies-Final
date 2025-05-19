@@ -333,8 +333,11 @@ This section summarizes the field shell designs studied in the context of this p
 
 \subsubsection{Designs} 
 
-Previous prototypes~\cite{bern_lartpc,srmu_tpc} used frames on which the resistive material was attached.
-Figure~\ref{fig:field_shell} shows schematics of the baseline DUNE-ND field-shaping design as a whole.
+\todo{make this reflect single cube, not DUNE}
+
+Previous prototypes~\cite{bern_lartpc,srmu_tpc} used frames on which the resistive material was mechanically clamped.
+Here, we work to a design that utilizes FR4 panels to provide the structure of the TPC.
+Each FR4 panel has resistive material laminated to its surface. 
 It is composed of five copper-clad FR4 panels covered with electroconductive Kapton sheets.
 The central panel in the figure is the cathode -- which splits the TPC module into two drift volumes and sets the maximum potential -- while the other four form the `field shell': a resistive structure which continuously decreases the voltage from the cathode to the grounded anode.
 The field-shaping structure also provides mechanical support for the entire TPC module and optically isolates it from adjacent modules.
@@ -342,7 +345,7 @@ The field-shaping structure also provides mechanical support for the entire TPC 
 \todo{add single cube figure, drawing and pictures}
 
 
-\todo{Francois: Add text about material for field shell and replace this figure with a picture of SLAC single cube}
+\todo{James: Add text about material for field shell and replace this figure with a picture of SLAC single cube}
 
 
 The cathode panel is covered on both sides with a layer of 25\,$\mu$m-thick Kapton XC, a material which provides a $\mathcal{O}(1)\,$M$\Omega/\Box$ sheet resistance, identical to the one used in the protoDUNE-SP cathode~\cite{protodune_sp_tdr}.
@@ -441,19 +444,14 @@ Figure~\ref{fig:shell_designs_picture} shows the three aforementioned test panel
 
 \todo{This section was hard to read without knowing what measurements were planned.  We need to rework the operation section once we know where it sits in the outline — and what key items need to be brought forward to the reader. (It may go well in the test stand section, if the test stand section is after the design is introduced and what tests are planned}
 
-The system was tested  in a series of commissioning runs that included a full cycle of operation: $(a)$ activating the purifier;  $(b)$ filling the system with LAr; $(c)$ collecting data in stable conditions; $(d)$ evacuation of argon. The SC readings for a typical operation of steps $(b) - (d)$ are shown in Figure~\ref{fig:stab}.
-
-To activate the purifier the sieves within are regenerated i.e., water and $O_2$ molecules are evacuated from the sieves. The process of regenerating both sieves is based on Temperature Swing Adsorption (TSA)~\cite{LeVan1989}. For the molecular sieves, the entire nipple is externally heated to ~200\,C$^{\circ}$ using heating tapes and kept at that temperature for 24\,hours, this insures the inner volume is entirely heated, after 24\,hours $N_2$ is flushed through the system and is purged through a designated valve (V5 in Figure~\ref{fig:pnid}). At first water comes out and after a short while only humid $N_2$ does, the humidity level is monitored and when drops below the sensitivity of the meter (few percent) the heating is turned off, valves are closed and the system cools down for about 24\,hours. For the Copper sieve the same procedure is used except argon balanced hydrogen is used (2\% hydrogen). The hydrogen molecules attach to the $O_2$ molecules in the copper sieves to form water, we continue this until the humidity drops to a few percents and let the system cool back down. Additional micrometer filters are mounted between the purifier and the main dewar to prevent debris from the sieves to get into the main dewar.
-
-After the purifier has been regenerated, the process of filling can start. We use certified ultra high pure LAr (six grade) filling dewar with a pressure of 220\,bar. In order to cool down the purifer we position an open mouth dewar around it, and fill it with LAr. Once Purifier is cold the filling of the main dewar can start. The flow supplied to the system is controlled manually by the valve on the filling dewar. The pressure on the purifier is kept at (2-2.5)\,bar. The LAr entering the main dewar evaporates immediately and evacuated through the BPR or PRV. The evaporated LAr also evacuates any gas that was inside the main dewar prior filling. Once the dewar is cold enough LAr starts to accumulate.
-
-When the temperature on the TS drops below 0\,C$^\circ$ the TS is filled gradually with $N_2$. This process continues until the TS is filled with 60 standard liters (at room temperature and pressure) of $N_2$, once steady state is achieved this amount results in the TS bottom part being full. 
 
 The entire filling takes $\sim2.5$\,hours until the liquid level reaches the desired level (one inch above the roll sock). At that point the system is left for 24 hours to reach steady state and more LAr is needed it is added then. Throughout the filling we apply a voltage of 1\,kV to get temperature dependency measurement.
 
-At the end of a run, to speed up the evacuation of LAr, the heater attached to the copper brick at the bottom of the dewar is operated and supplies 150\,W of heating to evaporate the LAr, the evaporated LAr is exhausted through the BPR and PRV until the dewar is empty. The HV is set to 5\,kV to get another temperature dependency measurement. 
+At the end of a run, the evaporated LAr is exhausted  and the HV is set to 5\,kV to get another temperature dependency measurement. 
 
 
+
+%%%%%%James Will Stop Here%%%%%%%%%%%%%%%
 
 \subsection{Stability}
 \label{sec:stab}
