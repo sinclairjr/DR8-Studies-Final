@@ -482,7 +482,7 @@ At the end of this ramp down, we experienced a lab power outage, explaining the 
 \subsection{Temperature Dependence}
 \label{sec:TNEFit}
 % @zach I think I would start with something that is saying fitrst how do we measure the T dep. say something like, In ordr to quantify the depandance of the resistance with T, the data from the cooling down of the system is used. This data spans over the temperature range of XXXX
-The results in this section are obtained from the LAIR2\todo{LAIR2 is not defined-- reference which test stand?} apparatus (see section~\ref{sec:expsetup}). The measured current exhibits modest temperature dependence which is well modelled by a general hopping transport model (see eq.~\ref{eq:Tdep}), following~\cite{electronicPhotonicMaterials} for the low temperature regime, we make the assumption that $\beta=0.5$. Using the data obtained when the system is cooling down, spanning the temperature range of (278--90)\,K, we get a temperature dependence that follows
+The results in this section are obtained from the SLAC liquid argon test stand. The measured current exhibits temperature dependence which is well modelled by a general hopping transport model (see eq.~\ref{eq:Tdep}), following~\cite{electronicPhotonicMaterials} for the low temperature regime, we make the assumption that $\beta=0.5$. Using the data obtained when the system is cooling down, spanning the temperature range of (278--90)\,K, we get a temperature dependence that follows
 
 \todo{Francois talk to Dan and decide on best way to remake this plot. Fig 10- nice to show 1/sqrt(T) see linear dependance but the problem is that the reader can’t see it to temperature-- find resistance of operation.
 }
@@ -492,13 +492,13 @@ The results in this section are obtained from the LAIR2\todo{LAIR2 is not define
 \label{Rmeas}
 R_{s}^{meas}(T)=R_s\exp\bigg(\sqrt{\frac{T_0}{T}}\bigg),
 \end{equation}
-where $R_{s}^{meas}(T)\equiv V/I$ is the measured sheet resistance and $R_{s}$ and $T_0$ are temperature-independent fit coefficients, with $R_s =0.021 G\Omega/\Box$ and $T_0 = 3152.38~K$, see Figure~\ref{fig:cooldown}. 
+where $R_{s}^{meas}(T)\equiv V/I$ is the measured sheet resistance and $R_{s}$ and $T_0$ are temperature-independent fit coefficients, with $R_s =0.021 G\Omega/\Box$ and $T_0 = 3152.38~K$, see Figure~\ref{fig:cooldown}. \todo{This plot's range is wrong, fix it}
 % @Zach Can you say something on how you got these coefficients?
 
 \begin{figure}
 \centering
 \includegraphics[width=0.95\textwidth]{temp_sheetRes_dr8_cooldown.png}
-\caption{The observed resistivity of a sample of DR8 as a function of temperature, taken at a field of 80 V/cm. We also show excellent fit with the model from Eq. \ref{Rmeas}. }
+\caption{The observed resistivity of a sample of DR8 as a function of temperature, taken at a field of 80 V/cm. We also show excellent fit with the model from Eq. \ref{Rmeas}.}
 \label{fig:cooldown}
 \end{figure}
 \todo{Zach is this an old plot, not from the time period I gave you ?}
@@ -665,80 +665,89 @@ In order to test the dependence on the contact size (i.e., overlap between the {
 The result of this measurement, shown in Figure~\ref{fig:TLM_contact_contactRes}, is a very weak dependence on contact width.  This is consistent with the findings in section~\ref{sec:transLine}, which indicate that the overall resistance of the sample is dominated by the {\DR} material itself, and not the contacting method used.  It is also possible that, if a strong dependence on this aspect of the sample exists, it is observable only on scales much smaller than are achievable by our methods (down to $\approx 0.5$ mm).  A TPC using a field cage of this design would typically have 1 cm of contact overlap in the field shaping elements.
 
 
-\subsection{Time dependence, and resistivity degradation}
+\subsection{Time dependence and resistivity degradation}
 \label{resdecayfit}
 
-\todo{Can we clarify purpose/main point of this section? it was unclear}
+This section quantifies the time-dependent evolution of the sheet resistance at fixed electric field and describes the procedure used to separate this effect from temperature variations.
 
-\todo{Frankie this is the aging bit; too old for you}
+At elevated electric fields and over extended periods, we observe a monotonic decrease in the measured sheet resistance. To parameterize this behavior, we adopt a phenomenological exponential decay model with decay constant $\tau$. Since the magnitude of the effect depends on the applied electric field, $\tau$ is treated as a function of electric field.
 
-As we explored higher electric fields, for longer periods of time, we noticed the sheet resistance decreases with time. We try to to characterize this time-dependence using an empirical model of an exponential decay, introducing $\tau$, the decay constant. Notice that this behaviour dependence on the electric field and so $\tau$ is actually a function of the electric field.
+During system cooldown ($\approx 3$\,hrs), the applied voltage is limited ($\approx 5$\,kV\ \todo{Zach please confirm this value}) and the sample is not fully submerged. No measurable time-dependent degradation is observed during this phase, and the data are adequately described by the temperature-dependent model of Eq.~\ref{eq:Tdep}. However, at higher electric fields and longer time intervals, the assumption of time-independent resistivity is no longer valid, even when temperature variations are small.
 
-During the cooling of the system ($\approx3$\,hrs) this effect is negligible, both because the time scale and as it is less profound in lower voltages (the system is set to $\approx5$\,kV \todo{(Zach please check this number)} during the cooling of it). However, for higher electric fields and longer periods of time, we need to better account for the time dependence in addition to the temperature dependence, in order to quantify the resistance as a function of the applied electric-field. Thus, we simultaneously fit the time, temperature and electric-field. %using
-%we began to notice that fits with the above model were worse and worse. 
-Visual inspection of sheet resistance and temperature curves such as those in Figure\ref{fig:43750} forced us to model a decreasing sheet resistance with time, independent of temperature, in order to fit. As a very simple model, we posit that this behavior is characterized by exponential sheet resistance decay caused by breakdown at such high electric field. 
-
-This is not visible in the cooldown curve because the voltage was is necessarily low before the sample is fully submerged, and thus no resistive decay with time is observed during that period, leading to a good fit with the previous method. However, at higher electric field, we can no longer expect that the resistivity is constant in time, even with arbitrarily constant temperature. Thus for a particular electric field sub-run, in order to isolate and separate these effects, we need to eliminate the time-varying temperature dependence from the time-varying electric-field decay. We model both of these behaviors as 
-
-\todo{Zach - Im not sure you discussed the "decay" at this point, I actually think it would be good not to, keep the focus here on the temperature only, I think the next step would be to explain how we "integrate-out" the temperature, which allows us to get the E-field dependency}
-
+Inspection of sheet resistance and temperature curves (e.g. Figure~\ref{fig:43750}) shows that the sheet resistance decreases with time independently of temperature fluctuations. \textbf{We therefore introduce an empirical exponential time-dependent term, without assuming a specific microscopic mechanism.}
 
 \begin{equation}
-	R_{s}^{meas}(t,T)=R_s\exp\bigg(\sqrt{\frac{T_0}{T}}- \frac{t}{\tau}\bigg)=R_s(t)\exp\bigg(\sqrt{\frac{T_0}{T}}\bigg),
+	R_{s}^{\mathrm{meas}}(t,T)
+	=
+	R_s
+	\exp\bigg(
+	\sqrt{\frac{T_0}{T}}
+	-
+	\frac{t}{\tau}
+	\bigg)
+	=
+	R_s(t)\exp\bigg(\sqrt{\frac{T_0}{T}}\bigg),
 \end{equation}
-where $t$ is the measured time and $\tau$ is the time constant of the decay at a particular electric field. In addition to better account for any tim-varying temperature depandance we modufy eq~\ref{eq:Tdep} to
+
+where $t$ is time and $\tau$ is the decay constant corresponding to a given electric field.
+
+To remove residual temperature variations across a sub-run, we define a temperature-normalized sheet resistance relative to a reference temperature $T'$:
+
 \begin{equation}
-	R_{s}^{meas}(t,T)=R_{s}^{meas}(t,T')\exp\bigg(-\sqrt{\frac{T_0}{T'}}+\sqrt{\frac{T_0}{T}}\bigg).
+	R_{s}^{\mathrm{meas}}(t,T)
+	=
+	R_{s}^{\mathrm{meas}}(t,T')
+	\exp\bigg(
+	-\sqrt{\frac{T_0}{T'}}
+	+
+	\sqrt{\frac{T_0}{T}}
+	\bigg).
 \end{equation}
-where again, we choose $T=95$\,K s our reference temperature.
 
-Now with inputs of the temperature as a function of time, $T(t)$ and the resistance as a function of time, $R_{s}^{meas}(t,T)$, we can fit for our three fit constants $R_s,T_0,$ and $\tau$.
-Also, our new temperature "normalization" for sheet resistance curves taken at different temperatures is :
-\begin{equation}
-R_{s}^{meas}(t,T)=R_{s}^{meas}(t,T')\exp\bigg(-\sqrt{\frac{T_0}{T'}}+\sqrt{\frac{T_0}{T}}\bigg).
-\end{equation}
-where again, we compare all curves at the choice of constant $T=95K$.
+All data are normalized to $T' = 95$\,K.
 
+Using measured $T(t)$ and $R_{s}^{\mathrm{meas}}(t,T)$, we perform a simultaneous fit for $R_s$, $T_0$, and $\tau$ at each electric field.
 
-In order to analyze the resistive decay of the sample during a time interval at a given electric field, the quantity of interest is the time constant, $\tau$, which we extract by fitting the sample's sheet resistance as described in section~\ref{resdecayfit}. However, the uncertainties on the fit parameters, specifically $\tau$, are not the relevant uncertainties for a ``measurement'' of $\tau$, as they are suppressed by the Poisson error, while the number of "measurements" of $\tau$ is certainly not this high\todo{do you want to give numbers here}. In order to understand the true uncertainties of our measurement, we make the assumption of constant exponential resistive decay throughout the entire time interval \todo{Zach maybe here add allowing us to use a sequential bootstrapping bla bla}. With this assumption, we remove the temperature dependence across the whole multi-hour sample according to the same methods described in section~\ref{resdecayfit}. With this multi-hour temperature-normalized sample, we take each successive hour-long interval to comprise an independent sample with a corresponding measurement of $\tau$. We fit each interval to an exponential, recording the resulting $\tau$, and this results in an independent measurement of $\tau$'s for each hour of the full sample with a resultant measurement uncertainty. We can see the resulting $\tau$ measurements in Figure~\ref{fig:invtaulog}.
+The statistical uncertainty returned by a single global fit underestimates the true measurement uncertainty on $\tau$, as it scales with the large number of time samples \todo{add approximate number of samples here}. To obtain a more representative uncertainty, we divide each temperature-normalized multi-hour sub-run into successive one-hour intervals and fit each interval independently to an exponential model. This provides a distribution of $\tau$ values from which we extract the measurement uncertainty.
+
+The extracted inverse decay constants as a function of voltage are shown in Figure~\ref{fig:invtaulog}. Runs shorter than 24 hours are excluded.
 
 \begin{figure}
 	\begin{center}
-		
 		\includegraphics[width=0.75\linewidth]{tau.png}
-		\caption{Inverse decay constants as a function of voltage. Runs with less than a 24 hour period are suppressed.} 
+		\caption{Inverse decay constants as a function of voltage. Runs shorter than 24 hours are excluded.} 
 		\label{fig:invtaulog}
 	\end{center}
-	
 \end{figure}
-
-
 
 
 
 \label{sec:long_term_results}
-Now, we return to our original goal for this set of runs, to ascertain the viability of DR8 as a material for long term use in LAr. 
 
-Our first point to verify is the resistive properties of this material in LAr; specifically, does this material meet the resistive demands from DUNE ND and other TPCs? For DUNE ND specifically, the lower bound on the required resistivity comes from the heat dissipation, while the necessity of dissipating the deposited charge in the system sets a maximum allowable resistivity???
+We now evaluate the suitability of DR8 for long-term operation in liquid argon under electric-field conditions relevant to DUNE ND.
+
+The acceptable resistivity range is constrained by two competing requirements:  
+(i) limiting power dissipation at low resistivity, and  
+(ii) ensuring adequate charge dissipation at high resistivity.  
+\todo{Insert quantitative bounds for DUNE ND resistivity window here.}
+
+The measured resistivity values fall within this operational range (Figure~\ref{fig:resvsvol}).
 
 \begin{figure}
 	\begin{center}
-		
 		\includegraphics[width=0.75\linewidth]{Efield_Z.png}
-		\caption{Resistance as a function of the voltage of the subrun, with fit to the Hopping model described previously.\RI{no need for the words fit function, or for the function itself, one is enough. I guess we can leave the function}} 
+		\caption{Sheet resistance as a function of applied voltage, compared to the hopping model described previously.} 
 		\label{fig:resvsvol}
 	\end{center}
 \end{figure}
 
+To determine the electric-field threshold for measurable degradation, we examine the extracted decay constants. Below 2000\,V/cm, the decay rate is consistent with zero within 1$\sigma$ uncertainty, although uncertainties increase at lower fields. At higher electric fields, a clear increase in decay rate is observed (Figure~\ref{fig:invtaulog}).
 
-Second, at what electric field scale does this material begin to decay? Our measurements are consistent with zero decay below 2000V/cm at the 1-sigma level, although increasing measurement uncertainty at lower E-fields does cloud the measurement of the decay there. However, from Figure~\ref{fig:invtaulog}, we can see a clear trend of increasing decay as the E-field increases.
+\todo{Kendall: add representative time-evolution subfigure showing drift of sheet resistance at high field. Plot versus field strength rather than voltage if possible.}
 
+The dependence of decay rate on voltage is consistent with an approximately exponential increase. At 6.25\,kV (corresponding to 500\,V/cm), the decay constant is statistically consistent with no measurable degradation over the duration of the measurement. Extrapolation of the empirical trend indicates characteristic time scales of at least several decades under these operating conditions.
 
-\todo{Kendall: Does Dan have this data, if not him then need Zach. Add a new subfigure--  one clear example how the drift looks, see how it is changing. Then, plo  field str not voltage }
-
-%Finally, what can we say about the longevity of this material in operating conditions at DUNE ND?
-As shown in Figure~\ref{fig:resvsvol}, the scaling decay of the sample with voltage is well modeled by the  decay rate exponentially increasing with voltage. At 6.25 kV, the voltage corresponding to 500 V/cm, the time constant is consistent with infinitely long at the 1-sigma level and predicted by this simple model to be at least on the order of decades. Thus, from a longevity point-of-view, our measurements discern no problem with using this material.\todo{did not get a clear conclusion or purpose out of the long term result section? clarify main conclusion and put that first/simpler?}
-
+\textbf{Within the electric-field regime relevant for DUNE ND, no measurable long-term resistive degradation is observed over the time scale of the experiment.}
 
 \section{Discussion and Conclusions}
 \label{sec:sum}
