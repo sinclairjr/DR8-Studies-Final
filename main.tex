@@ -68,26 +68,7 @@
 \maketitle
 
 \todo{implement new structure}
-\begin{comment}
-	
-	\section{Introduction} and concept of resistive sheet
-	Concept of resistive sheet
-	Possible physics applications -> requirements (which motivate the measurements we did)
-	\section{Methodology}
-	Fabrication of resistive sheet
-	Test stands
-	\section{Results}
-	Voltage dependance
-	Temperature dependance - includes LN temperature
-	Surface area of contact overlap
-	Transmission line measurement - Dan did this, estimate of contact resistance
-	Aging measurement - Not in the paper yet - to be prepared, needs Zach
-	=> Francois will clean up results section except for aging
-	=> Francois, who else do we need and what specific figure edit needs to happen?
-	\section{Discussion  and conclusions} 
-	Suitability of applications
-	
-\end{comment}
+
 
 
 
@@ -95,7 +76,6 @@
 \label{sec:intro}
 \subsection{Motivation}
 The use of time projection chambers (TPC) has increased significantly over the past decades, particularly in the fields of neutrino physics~\cite{Acciarri:2016ooe,Adams:2019bzt,Amerio:2004ze}, direct detection of dark matter~\cite{Aprile:2012zx,Akerib:2019fml,Aalseth:2017fik} and neutrino-less double beta-decay~\cite{Pocar:2020zqz}. 
-The main advantage of TPCs is that they offer an active volume that is simultaneously a tracking and a calorimetric detector.
 
 Most experiments in the aforementioned fields utilize argon or xenon, in either gaseous or liquid form, as the detection medium. 
 The TPC relies on the deposition of energy by charged particles passing through the detector. 
@@ -114,12 +94,6 @@ For small TPC this is not an issue as short drift distances require low cathode 
 However, for kilotonne-scale TPCs like the DUNE far detectors the stored energy is $\order{\SI{100}{\joule}}$~\cite{Acciarri:2016ooe}.
 This issue is compounded by the use of metal in traditional field cages, if a ring is allowed to short to ground the energy at that point in the TPC will be dumped instantaneously. 
 The DUNE collaboration investigated the use of a resistive cathode~\cite{DUNE:2017pqt} to reduce the energy release rate in the case of a discharge.
-To prevent discharges from the metallic field cage to the cryostat or pressure vessel, clearance volumes set by the dielectric strength of the target material are used. 
-In the case of liquid argon (LAr), the dielectric strength is only \SI{40}{\kilo\volt\per\centi\metre}~\cite{MicroBooNE:2014php}, which leads to nearly \SI{7}{\kilo\tonne} of un-instrumented argon per DUNE far detector cryostat~\cite{Acciarri:2016ooe}.
-Neglecting the cost of purchasing, purifying, and cooling the target material, un-instrumented mass is not desirable in any statistics-limited experiment.        
-There are methods to mitigate discharges~\cite{Auger:2014eba}, but is safer to avoid very high electric fields.  
-The ArgonCube collaboration proposed to segment the TPC, reducing the required electric field, and using copper-on-fiberglass printed circuit board technology to produce the TPC~\cite{Auger:2268439}. 
-Fiberglass has a dielectric strength of \SI{200}{\kilo\volt\per\centi\metre}~\cite{5071132}, which allows the clearance volumes to be negated.
 The Bern group built on the DUNE resistive cathode concept and used {\DR} in place of a resistor chain and field cage to produce a TPC with continuous electric field shaping~\cite{bern_lartpc}.   
 
 Here, we build on Bern's efforts in characterizing {\DR} as an electric field shaping technology for cryogenic noble gas TPCs.
@@ -175,13 +149,16 @@ Both the temperature and electric-field dependence will be characterized in this
 \section{Methodology}
 \label{sec:expsetup}
 
-As well as characterizing {\DR}, the construction parameters also need to be understood and a transmission line measurements is necessary for the electrode connections.
+The {\DR} samples are characterized in liquid argon as a function of electric field.
+Their stability over time was also monitored to understand material degradation, which is relevant to long term operation.
+The temperature dependence was characterized in progressively cooled argon gas from \SIrange{295}{90}{\kelvin}, this is relevant for cryogenic systems where temperature fluctuations may occur.
+The construction parameters also needed to be understood and a transmission line measurements was necessary for the electrode connections.
+
 Three test stands were used; two at SLAC and one at Michigan State University (MSU).
 The larger of the two SLAC test stands, shown in Figure~\ref{fig:full_sys}, is used for long-term measurements in LAr.    
 The smaller SLAC test stand, shown in Figure~\ref{fig:slac_styro_setup}, was used for initial measurements and validation of prototypes in liquid nitrogen (LN2). 
 The MSU test stand is shown in Figure~\ref{fig:msu_styro_setup}, it was used to characterize construction parameters of the {\DR} samples and for the transmission line measurements.  
 
-\todo{perhaps we need an intro to methodology that doesn’t start with the test stands but frames the paper (may be also in introduction) and reorder the sections in outline -> Introduce design then the test stands then production?}
 
 \subsection{SLAC liquid argon test stand}
 
@@ -201,16 +178,15 @@ The MSU test stand is shown in Figure~\ref{fig:msu_styro_setup}, it was used to 
 The system, shown in Figure~\ref{fig:full_sys}, is designed to achieve stable cryogenic conditions for periods of multiple months. 
 It consists of a \SI{65}{\litre} vacuum-jacketed cryostat which is filled with LAr. 
 Cooling is provided by a LN2 thermosyphon of the type developed for LUX~\cite{lux}.
-The temperature is maintained between \SIrange{89}{92}{\kelvin} at an accuracy of \SI{0.1}{\kelvin}. 
-This is achieved with control loop using a heater to mitigate freezing at the thermosyphon and an array of Resistance Temperature Detectors (RTDs); the temperature is logged throughout data taking.   
-The high voltage (HV) feedthrough utilizes the nEXO design~\cite{nEXO_pcdr}, as also adopted by DUNE~\cite{DUNE:2021tad}. 
+The temperature is maintained between \SIrange{89}{92}{\kelvin} using a back pressure regulator and monitored at an accuracy of \SI{0.1}{\kelvin} with an array of Resistance Temperature Detectors (RTDs).    
+The high voltage (HV) feedthrough utilizes the nEXO design~\cite{nEXO_pcdr}. 
 The feedthrough is designed for \SI{150}{\kilo\volt}, but the voltage in this application is limited by the power supply~\footnote{Glassman FR50R6} to \SI{50}{\kilo\volt}. 
 
 
 The test assembly is a dielectric fiberglass (FR4) structure connecting in series a HV feedthrough, a cathode made of resistive Kapton XC~\footnote{DuPont High-Performance Materials}, a {\DR} sample, and a ground return line.
 Kapton XC was selected for the cathode as it is four orders of magnitude less restive than {\DR}.  
 The test assembly can be thought of as a partial TPC with the HV feedthrough terminating at a cathode that connects to a ground return via a sample of field-shaping material. 
-Here, {\DR} is used as the field-shaping, but any resistive material could be tested.    
+Here, {\DR} is used as the field-shaping material, but any resistive sample could be tested.    
 All electrical connections are made with stainless-steel brackets.    
 The \numproduct{15 x 15}~\unit{\centi\metre\squared} {\DR} sample is metallized section of FR4 with {\DR} laminated to it.
 The lamination process is explained in section~\ref{sec:lamination}.
@@ -226,7 +202,7 @@ Figure~\ref{fig:circuit} shows the circuit diagram of the system.
 
 \begin{figure}[ht]
 	{\includegraphics[width=0.8\linewidth]{circuit.jpg}}
-	\caption{The circuit diagram of the liquid argon test stand. The voltage is measured via a potential divider, and the current is measured using  picoammeter in the ground path.}
+	\caption{The circuit diagram of the liquid argon test stand. The voltage is measured via a potential divider, and the current is measured using picoammeter in the ground path.}
 	\label{fig:circuit}
 \end{figure}
 
