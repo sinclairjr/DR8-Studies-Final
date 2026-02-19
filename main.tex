@@ -148,8 +148,12 @@ where $T$ is the temperature, $k_B$ is the Boltzmann constant, $\Delta(T)$ is th
 
 \section{The Apparatus}
 \label{sec:expsetup}
-\todo{reduce section, kill most of the description of cryogenic setup, this can be 1 paragraph max!}
-The main apparatus, noted as Liquid Argon at Interaction Region 2 (LAIR2), is designed to achieve stable cryogenic conditions for periods of more than several months. The core of it consists of a system connecting in series an HV cable, a cathode made out of resistive Kapton XC~\footnote{DuPont High-Performance Materials}, a {\DR}~\footnote{DuPont High-Performance Materials} sample, and a return line. In addition, for quick turnaround tests, we use two auxiliary apparatus, both utilizing extruded polystyrene (XPS) boxes for thermal insulation to provide a simple cryostat. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Working From Here:
+
+The main apparatus is designed to achieve stable cryogenic conditions for periods of more than several months. 
+It consists of a system connecting in series a High Volatage (HV) cable, a cathode made out of resistive Kapton XC~\footnote{DuPont High-Performance Materials}, a {\DR} sample, and a ground return line. 
+In addition, for quick turnaround tests, we use two auxiliary apparatus, both utilizing extruded polystyrene boxes to provide simple cryostats. 
 
 LAIR2 is divided into six main subsystems (i) \emph{Piping and Purification System}, which delivers purified LAr to the system, as well as gases for activating the purifier; (ii) \emph{Cryogenic System}, which uses a thermosiphon to supply up to 80W of cooling power; (iii) \emph{High Voltage Delivery System}, which employs a polyethylene-based cable with a warm seal, to deliver up to 50\,kV (limited by the power supply unit); (iv) \emph{Slow Control}, which monitors the condition of the experiment using various sensors and gauges; (v) \emph{Data Acquisition}, through which commands are delivered to the other subsystems and the delivered high voltage and current are measured; and (vi) \emph{The Detector Assembly}, which consists of the dewar holding the LAr and the {\DR} test system. An image of the entire apparatus is shown in Figure~\ref{fig:full_sys}.
 
@@ -160,38 +164,13 @@ LAIR2 is divided into six main subsystems (i) \emph{Piping and Purification Syst
 \label{fig:full_sys}
 \end{figure}
 
-\subsection{Piping and Purification}
-\label{sec:piping}
 
-The piping and purification system is designed to deliver LAr through a designated purifier to the system. The concentration of contaminants, namely \ch{O2} and \ch{N2}, in the LAr as it reaches the detector assembly is at the parts-per-billion (ppb) level. This degree of purity degrades quickly due to outgassing of internal components and small leaks in the system. Although for the purposes of this study a ppb purity might be sufficient, this system also serves as a prototype for future experiments where the electron lifetime and light yield are crucial; therefore, care is taken to understand the performance of the purification system and to purify the LAr to the greatest degree possible. The system also supports the process of activating the purifier (see details below). All pipes are $\sfrac{1}{4}$" diameter stainless steel (SS). A schematic of the piping and purification system is shown in Figure~\ref{fig:pnid}.
-\begin{figure}[ht]
-\centerline{\includegraphics[width=0.95\linewidth]{P&ID_paper.png}}
-
-\caption{Parts and instrumentation diagram of LAIR2 \RI{add legend}}
-\label{fig:pnid}
-\end{figure}
-
-The purifier is made out of a 6" CF Nipple, and its length is 16".  On the upper flange, two pipes are welded with one serving as an inlet for the LAr while the other provides feed-through for safety mechanisms and a pressure gauge (see Figure~\ref{fig:pnid}).  The bottom flange has only one outlet port protected by a 1\,cm mesh to prevent sieves from clogging the port. Inside the nipple are two types of sieves mixed. Half of the sieve material (in volume) is a molecular sieve~\footnote{Research Catalyst, RCI-DRI 13X Mol-Sieve, 4x8 Mesh Beads} designed to absorb any water contamination, and the other half is a Copper-based sieve~\footnote{GetterMax 133 Copper Catalyst, 3x3 mm Tablets}, for absorbing \ch{O2} impurities. Before the first run, and after filtering a large quantity of LAr, these sieves need to be regenerated to remove all water and absorbed \ch{O2} molecules from them (for a detailed description of the regeneration process see section~\ref{sec:ExpOp}). 
-\todo{totally irrelevant to DR8}
-
-
-\subsection{Cryogenic System}
-\label{sec:TS}
-
-The cooling power provided to the system uses a  thermosiphon (TS) developed by the LUX collaboration~\cite{5204619,Akerib:2012ys}.  The TS utilizes freely boiling L\ch{N2} to cool down the LAr, providing about 80\,W of cooling power to the system.  This is the first usage of this type of cryogenic cooling applied in a LAr system. The cold head which provides the actual cooling is referred to as \quotes{evaporator}\ as L\ch{N2} is evaporated in it. The evaporator is slightly modified from the original design which was intended for use in liquid xenon systems; the rest of the design is similar. Unlike liquid xenon, the boiling temperature of argon differs from that of nitrogen by only $\sim10$\,K, this allows it to be used in direct contact with the argon, and not by cooling the vessel (as done in the LUX experiment).  This provides more efficient cooling by exploiting the condensation and evaporation of LAr to transfer the heat. The design of the evaporator is shown in Figure~\ref{fig:TS}. 
-
-\begin{figure}[htb]
-\centerline{\includegraphics[width=0.75\linewidth]{evaporator.png}}
-
-\caption{CAD design of the thermosiphon evaporator.  In this apparatus, the cold head (left) is fed through the top flange of the main dewar and is oriented downwards. The volume left of the yellow disk is filled with L\ch{N2} whose evaporation supplies the cooling for the system. The pt-111 and heater location used for temperature control are marked with arrows, both are attached externally using a Kapton tape.}
-\label{fig:TS}
-\end{figure}
-
-The L\ch{N2} within the evaporator is cooled by a freely boiling L\ch{N2} tank; hence, the steady-state temperature is 77.3\,K which is lower than the working temperature of the main vessel (operating at 19.7\,psi absolute). A simple control loop is implemented such that a dedicated heater heats the evaporator externally to the desired temperatures (89-92)\,K, this is implemented in the SC system (see Sec.~\ref{sec:SC}).
 
 \subsection{High Voltage Delivery}
 \label{sec:HVdel}
 \RI{Add in high voltage splice information if new run}
+
+\todo{replace HVFT description with a cite of exo tech paper}
 
 The high voltage assembly consists of a power supply unit~\footnote{Glassman FR50R6}, a multi-layer polyethylene-based cable, a CF-40 flange with a warm O-ring seal, and a metal pill which provides the contact of the HV supply system to the cathode. For an early design of this assembly see Ref.~\cite{Rebel:2014uia}. The high voltage is first delivered to a splice which connects the copper-core Glassman high voltage cable to the resistive-core high voltage cable. 
 
@@ -206,7 +185,6 @@ The cable~\footnote{Dielectric Science LTS 1/C 150\,kV DC} consists of 5 layers,
 \end{figure}
 
 
-
 The cable is stripped at the cold end and attached to a SS pill that connects to the cathode, layer C (ground) is stripped to a distance of 2.1\," from the pill (HV) to prevent arcs. The layer is then rolled into itself to prevent sharp edges (referred to as ``roll sock''). In addition, 2 polyethylene rings are placed between the pill and layer C endpoint see Figure~\ref{fig:HV}c. 
 
 We use a warm seal, consisting of two Viton O-rings sealing between the cable and the CF-40 flange, see Figure~\ref{fig:HV}b. Layer D is clamped to the sealing mechanism which provides common grounding between the vessel (via the CF flange) and the shielding of the cable (layers D and E).
@@ -217,26 +195,26 @@ The cable is inserted via a Teflon tube to guide it to the socket in case an ins
 
 \subsection{Slow Control}
 \label{sec:SC}
-The slow control system is based on the \quotes{Ignition} software~\footnote{Ignition is developed by Inductive Automation}. Four temperature sensors~\footnote{Lakeshore pt-111 or Omega equivalent} serve as input to the system. The system also controls two 150\,W heaters~\footnote{Watlow, ultramic advanced ceramic heater }, one located at the bottom of the dewar attached to a copper block (bottom heater) the other located on the evaporator (TS heater). For the exact locations of the heaters see Figure~\ref{fig:TS} and Figure~\ref{fig:mainDewar}. Pressure measurements are done via analog dial gauges and are not connected to the SC system.
 
-The four temperature sensors are distributed within the main dewar. One temperature sensor is located on the TS, near the bottom, and is used to measure the temperature of the TS. The second is located one inch above the HV cable roll sock and is used to verify liquid level is above this point. The third sensor is located near the {\DR} to monitor its temperature. Finally, the last sensor is located on a copper block at the bottom of the dewar. For exact locations of all temperature sensors see Figure~\ref{fig:mainDewar}. 
+\todo{maybe keep this bit}
 
 Apart from monitoring and saving the data taken from the temperature sensors, two control loops are implemented in the SC system. The first is to verify the TS temperature does not drop below the argon triple point (83.8\,K). This is a simple feedback loop, turning the heater on when the temperature drops below $T_{\mathrm{low}}$ and turning it off when the temperature rises above $T_{\mathrm{high}}$. The values found to be best for this loop were $T_{\mathrm{low}} = 89$\,K and $T_{\mathrm{high}}=92$\,K.  Once steady state is reached, the temperature of the liquid is constant within 0.1\,K. The second control loop is used when heating the system to evacuate the LAr after data acquisition has concluded. This loop is to ensure that the heater does not continue to run once all LAr has evaporated. 
  
 \subsection{Data Acquisition}
 \label{sec:DAQ}
 
-The goal of this experiment is to characterize the resistive behavior of {\DR} under different regimes, which in practice consists of monitoring the current accurately at a given voltage and temperature. The temperature is monitored via the SC system (see sec~\ref{sec:SC}). The current running through the sample is monitored with a picoammeter~\footnote{Keithley 6485} connected in series which is sensitive to currents as low as 10\,pA. The meter is connected to the return line of the system on one end and the building ground on the other. A gas discharge tube is connected in parallel to the picoammeter to protect it from high voltage discharges. The voltage is measured by the internal voltage monitor of the high voltage power supply~\footnote{Glassman FR50R6} and recorded using the supply's digital serial interface.
+The goal of this experiment is to characterize the resistive behavior of {\DR} under different regimes, which in practice consists of monitoring the current accurately at a given voltage and temperature. 
+The temperature is monitored via the an array of sensors within the cryostat. 
+The current running through the sample is monitored with a picoammeter~\footnote{Keithley 6485} connected in series with the \DR sample in the path of the HV ground. 
+A gas discharge tube is connected in parallel to the picoammeter to protect it from high voltage discharges. 
+The voltage is measured by the internal voltage monitor of the high voltage power supply~\footnote{Glassman FR50R6} and recorded using the supply's digital serial interface.
 
-The data acquisition software (DAQ) consists of a simple Dash\footnote{\href{https://plotly.com/dash/}{https://plotly.com/dash/}}-based GUI\footnote{\href{https://github.com/francois-drielsma/kapton_daq}{https://github.com/francois-drielsma/kapton\_daq}} driving the InstrumentKit\footnote{\href{https://github.com/Galvant/InstrumentKit}{https://github.com/Galvant/InstrumentKit}} API as a back-end. The DAQ is configured with a configuration file which specifies the instruments to readout and their respective communication protocols.
+The data acquisition software (DAQ) consists of a simple Dash\footnote{\href{https://plotly.com/dash/}{https://plotly.com/dash/}}-based GUI\footnote{\href{https://github.com/francois-drielsma/kapton_daq}{https://github.com/francois-drielsma/kapton\_daq}} driving the InstrumentKit\footnote{\href{https://github.com/Galvant/InstrumentKit}{https://github.com/Galvant/InstrumentKit}} API as a back-end. 
 
 The software periodically queries the picoammeter and the high voltage power supply through two serial ports. The picoammeter returns a string at each query which provides a seven-digit signed mantissa and a power of 10 exponent. The power supply returns an unsigned 10-bit hex string for the voltage. The string divides the full voltage range from 0\,kV (000) to 50\,kV (3FF) in 1024 steps of $\sim50$\,V, which limits the voltage resolution of the system. The query speed limits the acquisition rate to about 10\,Hz.
 
 \subsection{The Detector Assembly}
 \label{sec:det_ass}
-The detector assembly refers to the dewar containing the LAr, the device under test, and all of the instruments used in the SC system. The device under test consists of a {\DR} sample connected to a cathode made out of Kapton XC on one side and a return line on the other. The measurements presented in section~\ref{sec:res} are performed on this sample.
-
-The vessel holding the LAr and the {\DR} assembly consists of a 13" inner diameter and 30" height double-walled commercial dewar.  The top flange sealing it is a custom made 20" diameter 0.75" thick SS plate. The seal to the dewar is made using a 14" Viton O-ring. The top flange holds 8 CF ports used for electrical and LAr feed-throughs, viewports, and interface for the TS. The bottom of the flange has an array of 14 tapped holes (1/4-20) for mounting. In addition, a safety mechanism is attached to the top flange consisting of a back pressure regulator (BPR) set to 6\,psig, a pressure relief valve (PRV) set to 10\,psig, and a manual valve. This safety mechanism is used to control the pressure within the vessel.
 
 The {\DR} assembly is constructed in the shape of a triangle to verify it is rigid. The top side (parallel to the top flange) is made of FR4 and is mounted to the top flange via four 14.55\," long 0.25\," threaded rods. perpendicular to the top panel is the cathode and the third side of the triangle is the {\DR} sample itself, see Figure~\ref{fig:mainDewar}. 
 
@@ -328,6 +306,10 @@ The multimeter is used for measuring both the current through the sample and the
     \label{fig:msu_styro_setup}
 \end{figure}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Working until here
+
+
 \section{Field Shell}
 \label{sec:field_shell}
 \textcolor{blue}{Francois}
@@ -345,7 +327,7 @@ This section summarizes the field shell designs studied in the context of this p
 \subsection{Designs}
 Previous prototypes~\cite{bern_lartpc,srmu_tpc} used frames on which the resistive material was attached. Figure~\ref{fig:field_shell} shows schematics of the baseline DUNE-ND field-shaping design as a whole. It is composed of five copper-clad FR4 panels covered with electroconductive Kapton sheets. The central panel in the figure is the cathode -- which splits the TPC module into two drift volumes and sets the maximum potential -- while the other four form the `field shell': a resistive structure which continuously decreases the voltage from the cathode to the grounded anode. The field-shaping structure also provides mechanical support for the entire TPC module and optically isolates it from adjacent modules.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 \centering
 \begin{minipage}[b]{.4\textwidth}
 \includegraphics[width=\linewidth]{field_shell_design.PNG}
@@ -668,7 +650,7 @@ These plots show that the aspect ratio does not fully account for the difference
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%% Begin Comment %%%%%%%%%%%%%%%%%%
 
-\begin{comment}
+% \begin{comment}
 \subsection{Time dependence, and resistivity degradation}
 \label{resdecayfit}
 
@@ -712,7 +694,7 @@ In order to analyze the resistive decay of the sample during a time interval at 
 
 \end{figure}
 
-\end{comment}
+% \end{comment}
 
 \begin{comment}
 \subsubsection{Long Term Results \RI{change title}}
