@@ -178,7 +178,7 @@ The MSU test stand is shown in Figure~\ref{fig:msu_styro_setup}, it was used to 
 The system, shown in Figure~\ref{fig:full_sys}, is designed to achieve stable cryogenic conditions for periods of multiple months. 
 It consists of a \SI{65}{\litre} vacuum-jacketed cryostat which is filled with LAr. 
 Cooling is provided by a LN2 thermosyphon of the type developed for LUX~\cite{lux}.
-The temperature is maintained between \SIrange{89}{92}{\kelvin} using a back pressure regulator and monitored at an accuracy of \SI{0.1}{\kelvin} with an array of Resistance Temperature Detectors (RTDs).    
+The temperature is maintained between \SIrange{89}{92}{\kelvin} using a back pressure regulator and monitored to an accuracy of \SI{0.1}{\kelvin} with an array of Resistance Temperature Detectors (RTDs).    
 The high voltage (HV) feedthrough utilizes the nEXO design~\cite{nEXO_pcdr}. 
 The feedthrough is designed for \SI{150}{\kilo\volt}, but the voltage in this application is limited by the power supply~\footnote{Glassman FR50R6} to \SI{50}{\kilo\volt}. 
 
@@ -215,10 +215,10 @@ The query speed limits the acquisition rate to $\sim$~\SI{10}{\hertz}.
 
 \subsubsection{SLAC liquid nitrogen test stand}
 
-A schematic of the SLAC secondary system\todo{  suggest just to label it as the LN2 stand (no need to have primary nor secondary systems, not really mentioned?)} is shown in Figure~\ref{fig:slac_styro_setup}. 
+A schematic of the SLAC LN2 test stand is shown in Figure~\ref{fig:slac_styro_setup}. 
 It is built around an off-the-shelf cooler box, which provides sufficient insulation to hold $\order{\SI{10}{\liter}}$ of LN2 for periods of a few hours. 
 The walls and the lid of the box consist of $\sim$\SI{5}{\centi\meter} of expanded polystyrene foam (EPS) with inner dimensions of $\sim$\numproduct{30x60x30}~\unit{\centi\metre\cubed}.
-The lid is modified by adding a \SI{5}{\centi\meter} layer of extruded polystyrene foam (XPS), a \SI{20}{\centi\meter} XPS chimney and a removable windowed port. 
+The lid is modified by adding a \SI{5}{\centi\meter} thick layer of extruded polystyrene foam (XPS), a \SI{20}{\centi\meter} XPS chimney and a removable windowed port. 
 Several holes are drilled to accommodate the HV feedthrough, a ground line, the HV probe, and a LN2 supply line.
 
 \begin{figure}[htb]
@@ -251,17 +251,17 @@ The HV cable termination is connected to the test sample via 18 AWG wire and an 
 Both voltage and current are monitored using the same method as the LAr test stand. 
 
 Two classes of samples are tested: 
-Loose sheets of DR8 are clamped on both sides with pairs of copper bars. 
+Loose sheets of DR8 are clamped on both sides between copper bars. 
 Laminated samples that are not copper clad are metallized with conductive-adhesive copper tape. 
 Both of these sample types are connected on either side with an alligator clip. 
-The samples can be tested both at room temperature and submerged in LN2. 
-The temperature is monitored with a K-type thermocouple placed nearby the ground side of the sample. 
+The samples can be tested both at room temperature and in LN2. 
+The temperature is monitored with a K-type thermocouple placed close to the sample ground. 
 The thermocouple is read out with Fluke t3000 FC wireless temperature module.
 
 \subsubsection{MSU liquid nitrogen test stand}
 \label{sec:MSU}
 
-A diagram of the MSU test stand is shown in Figure~\ref{fig:msu_styro_setup}. 
+A diagram of the MSU LN2 test stand is shown in Figure~\ref{fig:msu_styro_setup}. 
 Similar to the SLAC apparatus, the main testing chamber is a re-purposed EPS cooler box with inner dimensions of $\sim$\numproduct{15x20x10}~\unit{\centi\metre\cubed}, for a total capacity of \SI{3.2}{\litre}.
 The walls of the chamber are of a similar thickness to the SLAC LN2 apparatus providing for several hours of operation with little LN2 evaporation.
 HV is supplied via an SHV bulkhead connector mounted to an aluminum plate on the lid of the chamber.  
@@ -295,7 +295,7 @@ This allows for greater currents through the samples, as well as the ability to 
 		(b)
 	\end{center}
 \end{subfigure}
-\caption{Schematic representation (a) and photograph (b) of the secondary apparatus operated at MSU.}
+\caption{Schematic representation (a) and photograph (b) of the MSU liquid nitrogen test stand.}
 \label{fig:msu_styro_setup}
 \end{figure}
 
@@ -311,10 +311,10 @@ This section summarizes the field shell designs studied in the context of this p
 
 \todo{make this reflect single cube, not DUNE}
 
-Previous prototypes~\cite{bern_lartpc,srmu_tpc} used frames on which the resistive material was mechanically clamped.
+Previous prototypes~\cite{bern_lartpc,srmu_tpc} used steel frames on which the resistive material was magnetically clamped, which is not a scalable production method.
 Here, we work to a design that utilizes FR4 panels to provide the structure of the TPC.
 Each FR4 panel has resistive material laminated to its surface. 
-The FR4 structure also provides dielectric shielding for the entire TPC.
+The FR4 structure also provides dielectric shielding.
 
 \todo{add single cube figure, drawing and pictures}
 
