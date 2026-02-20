@@ -149,7 +149,7 @@ Both the temperature and electric-field dependence will be characterized in this
 
 The {\DR} samples are characterized in liquid argon as a function of electric field.
 Their stability over time was also monitored to understand material degradation, which is relevant to long term operation.
-The temperature dependence was characterized in progressively cooled argon gas from \SIrange{295}{90}{\kelvin}, this is relevant for cryogenic systems where temperature fluctuations may occur.
+The temperature dependence was characterized in progressively cooled argon gas from \SIrange{293}{91}{\kelvin}, this is relevant for cryogenic systems where temperature fluctuations may occur.
 The construction parameters also needed to be understood and a transmission line measurements was necessary for the electrode connections.
 
 Three test stands were used; two at SLAC and one at Michigan State University (MSU).
@@ -304,24 +304,27 @@ This allows for greater currents through the samples, as well as the ability to 
 This section summarizes the mechanical design and production method of the samples being characterized.   
 Previous prototypes~\cite{bern_lartpc,srmu_tpc} used resistive material mechanically clamped to conductive frames.
 This manufacturing technique is not easy to scale to large detectors. 
-Here, we work to a design that laminates {\DR} onto an FR4 substrate.
-FR4 is mechanical robust, cryogenically compatible and dielectric which makes it an ideal material for TPC construction. 
+Here, we work to a design that laminates \SI{100}{\micro\metre}-thick sheets of{\DR} onto an copper-clad FR4 substrate.
+FR4 is mechanical robust, cryogenically compatible and dielectric which makes it an ideal material for TPC construction.
+The epoxy\footnote{Master Bond EP29LPSP} used to adhere the {\DR} to the FR4 is cryogenically compatible. 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%James working from here down
-FR4 panels are covered with \SI{100}{\micro\metre}-thick sheets of {\DR}.
-
-\subsubsection{Lamination} 
+\subsubsection{Lamination Process} %%%%HERE
 \label{sec:lamination}
-In order to build field shell panels, a method to laminate the conductive Kapton onto the copper-clad FR4 panels was demonstrated.
-It employs a purpose-built lamination device or \textit{laminator} (Figure~\ref{fig:field_shell_laminations}a), and follows these steps:
-\begin{enumerate}
-	\item Etch copper-clad FR4 panels leaving only a \SI{1.25}{\centi\metre}-thick bands of copper on the cathode and anode sides;
-	\item Laminate a sheet of protective plastic on the back of the panel, mask part of the copper bands with tape to prevent epoxy from getting on them;
-	\item Tape Kapton sheets or strips in the desired pattern onto the laminator table, laminate them with protective film, lift the film off the table;
-	\item Apply $250$\,g/m$^2$ of epoxy\footnote{Master Bond EP29LPSP} on the FR4 panel, roll {\DR} onto the glue, ensure $>5\,$mm overlap with each copper band;
-	\item Cover the laminate with bleeder cloth, vacuum bag the assembly, cure for seven days at room temperature, with the first two days under vacuum.
-\end{enumerate}
+
+The lamination process employs a purpose-built \textit{laminator} (Figure~\ref{fig:field_shell_laminations}a), and follows these steps:
+
+To prepare the substrate, copper-clad FR4 panels are etched to provide \SI{1.25}{\centi\metre}-thick strips of copper for electrodes. 
+A sheet of protective plastic is applied to the back of the FR4 panel.
+Kapton tape is applied as a mask to part of the electrode to prevent epoxy from getting on them.
+
+To prepare {\DR}, sheets of the desired dimension are positioned onto the laminator table and taped in place with kapton.
+A protective film is then laminated on to the {\DR},and the {\DR} is  lifted from the table with the protective film.
+
+	Apply $250$\,g/m$^2$ of epoxy on the FR4 panel, roll {\DR} onto the glue, ensure $>5\,$mm overlap with each copper band;
+
+	Cover the laminate with bleeder cloth, vacuum bag the assembly, cure for seven days at room temperature, with the first two days under vacuum.
+
 Three small panels produced using this method are shown on Figure~\ref{fig:field_shell_laminations}b.
 
 \begin{figure}[htbp]
