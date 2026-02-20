@@ -450,84 +450,92 @@ In this section, we will discuss the long-term operation across a range of volta
 We began our scan with a couple days each at 20kV, 30kV, and 40kV, followed by a return to DUNE ND design electric field of 500 V/cm, or 6.125kV. At this stage we ramp up in voltage in multiples of 6.125kV up to 31.25kV, again taking at most a couple days at each step, before stepping down again to 6.125kV with the same steps, but for approximately a week at each run.
 At the end of this ramp down, we experienced a lab power outage, explaining the second gap in Figure~\ref{fig:stab}. We compare the resistivity before and after the ramp in the following section, in order to ascertain the existence of any resistive decay from this process. With this complete we continued the second ramp up from 31.25kV to 50 kV with the same steps, analyzing the behavior and resistive decay of the sample at these much higher voltages.
 
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% RESULTS %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results}
 \label{sec:res}
-% @Zach: Some sentences here are needed before diving in just to introduce this section, for example we present results from all aperatai, where he specific apparatus used will be mentioned at the beginning of the relevant sections. For LAIR2 we use the data from our run XXX which is described in Sec~XXX, for the rest we use dedicated specific measurements.   
-\subsection{Temperature Dependence}
+
+This section presents the full set of material property measurements performed on DR8.
+These include the sheet resistance as a function of temperature, the electric-field dependence of the resistance, transmission-line measurements, contact-thickness resistance studies, and time-dependent aging effects.
+The relevant apparatus is specified at the beginning of the corresponding subsection.
+
+
+%%%%%%%%%% TEMPERATURE DEPENDENCE %%%%%%%%%%
+\subsection{Temperature dependence}
 \label{sec:TNEFit}
-% @zach I think I would start with something that is saying fitrst how do we measure the T dep. say something like, In ordr to quantify the depandance of the resistance with T, the data from the cooling down of the system is used. This data spans over the temperature range of XXXX
-The results in this section are obtained from the SLAC liquid argon test stand. The measured current exhibits temperature dependence which is well modelled by a general hopping transport model (see eq.~\ref{eq:Tdep}), following~\cite{electronicPhotonicMaterials} for the low temperature regime, we make the assumption that $\beta=0.5$. Using the data obtained when the system is cooling down, spanning the temperature range of (278--90)\,K, we get a temperature dependence that follows
 
-\todo{Francois talk to Dan and decide on best way to remake this plot. Fig 10- nice to show 1/sqrt(T) see linear dependance but the problem is that the reader can’t see it to temperature-- find resistance of operation.
-}
-% 
+The results presented in this subsection are obtained using the SLAC liquid argon test stand.
+To quantify the temperature dependence of the sheet resistance, we use data recorded during the cooldown of the system, which span the temperature range of \SIrange{91}{293}{\kelvin}.
+The measured current exhibits a temperature dependence that follows the hopping transport model (Eq.~\ref{eq:Tdep}).
+We use $\beta=0.5$, as expected in the low-temperature regime~\cite{electronicPhotonicMaterials}.
 
+
+Fitting the cooldown data to this model yields
 \begin{equation}
-\label{Rmeas}
-R_{s}^{meas}(T)=R_s\exp\bigg(\sqrt{\frac{T_0}{T}}\bigg),
+    \label{Rmeas}
+    R_{s}^{meas}(T)=R_s\exp\left(\sqrt{T_0/T}\right),
 \end{equation}
-where $R_{s}^{meas}(T)\equiv V/I$ is the measured sheet resistance and $R_{s}$ and $T_0$ are temperature-independent fit coefficients, with $R_s =0.021 G\Omega/\Box$ and $T_0 = 3152.38~K$, see Figure~\ref{fig:cooldown}. \todo{This plot's range is wrong, fix it}
-% @Zach Can you say something on how you got these coefficients?
+where $R_{s}^{meas}(T)\propto V/I$ is the measured sheet resistance and $R_s=\SI{-1111}{\giga\ohm}/\Box$ and $T_0=\SI{-1111}{\kelvin}$ are temperature-independent fit parameters (Figure~\ref{fig:cooldown}).
 
-\begin{figure}
-\centering
-\includegraphics[width=0.95\textwidth]{temp_sheetRes_dr8_cooldown.png}
-\caption{The observed resistivity of a sample of DR8 as a function of temperature, taken at a field of 80 V/cm. We also show excellent fit with the model from Eq. \ref{Rmeas}.}
-\label{fig:cooldown}
+% @Zach: Briefly describe the fitting procedure (fit range, weighting, uncertainties) and how the quoted parameter values are obtained.
+
+
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.95\textwidth]{2019-12-04_15-36-58_ir2_daq_cooldown_current_temp_scan_r.pdf}
+    \caption{Measured sheet resistance of a DR8 sample as a function of temperature at an applied field of 80~V/cm, together with the fit to Eq.~\ref{Rmeas}.}
+    \label{fig:cooldown}
 \end{figure}
-\todo{Zach is this an old plot, not from the time period I gave you ?}
-% @Zach, this is unclear, maybe you should say something, like: For the rest of the analysis we integrate-out the temperature depandance by normalizing to a temperature of 95K which is close to the working temperature (question: is this true isnt it better to choose 92) (note that this temeprature choice is arbitrary and is chosen to this value for connivance ) 
-In order to extract the dependence of the resistance on the applied electric field, the temperature dependence needs to be taken into account. We normalize the rest of the measurements to a temperature of (95\,K) using 
+
+% @Francois/Dan: Consider reworking this figure.
+% A plot versus $1/\sqrt{T}$ would show the expected linear dependence more clearly.
+% Also verify the plotted temperature range.
+% @Zach: Confirm that this plot corresponds to the data period described in the text.
+
+
+For the remainder of the analysis, the temperature dependence is removed in order to extract the electric-field dependence of the sheet resistance.
+All measurements are normalized to a reference temperature of 95\,K using
 \begin{equation}
-R_{s}^{meas}(95)=R_{s}^{meas}(T')\exp\bigg(-\sqrt{\frac{T_0}{T'}}+\sqrt{\frac{T_0}{95}}\bigg).
+R_{s}^{meas}(95)=R_{s}^{meas}(T')\exp\bigg(-\sqrt{\frac{T_0}{T'}}+\sqrt{\frac{T_0}{95}}\bigg),
 \end{equation}
-where $R_s^{meas}(95)$ is the resistance at 95\,K $T'$ is the temperature measured, and $R_{s}^{meas}(T')$ is the measured resistance at the measured temperature. 
+where $T'$ is the measured temperature and $R_{s}^{meas}(T')$ is the corresponding measured sheet resistance.
 
-One source of uncertainty for us is the placement of our temperature sensor. While in the vicinity of the sample and roughly at the same vertical level, we place the sensor a couple inches away in order to minimize possible arcing when ramping up all the way to higher voltages. This results in a slight delay of temperature propagation from the sample, loss of contact heat-transfer, as well as a reduction in correlation from localized temperature changes driven by the heat of the sample itself. In order to characterize the possible extent of this temperature difference, we model our system as a vertical sheet in LAr, with one temperature sensor on the sample, and one infinitely far away, and we calculate the steady state difference between the two with heat transfer dynamics governing the system. In other words, we note that, for a sample surrounded by a steady temperature, the heat lost from contact with the LAr has to equal the resistive heat generated, or that $\frac{dQ}{dt}=hA(T_{\infty}-T_{sample})+IV=0$, where $h$ is the heat transfer coefficient which needs to be calculated, $A$ is the surface area of the board, and the final term is the power generated from the sample itself.
-
-\todo{Need to to decide what we want said here? and then rework text to align to that (individual sentences OK, just hard to see conclusion, or conclusion can be simpler w/o details)}
-Following the equations in~\cite{CHURCHILL19751323} for free convection near a vertical wall, where we have adjusted the gravitational constant to reflect the 30 degree incline of our sample as well as ignored the FR4 board on one side of the sample, we insert the characteristic length of our material, 6 inches, as well as approximate thermodynamic and material properties of LAr around our pressure. We assume a LAr density, $\rho=1.396\frac{g}{ml}$, a specific heat, $c_p=45\frac{J}{mole \cdot K}$, a viscosity, $\mu=270.7(10)^{-6}Pa s$, a thermal conductivity, $k=0.1256\frac{W}{m K}$, and a coefficient of thermal expansion $\beta=4.55(10)^{ -3}/K$~\cite{GLADUN1971205}\cite{STREETT197459}\cite{lbnl}. As $h$ is a function of $\Delta T$ as well, we have $\frac{dQ}{dt}(\Delta T)=0$, and thus we can find $\Delta T$ by root-finding. We find that the difference in the two sensors at 12.5kV would be around 0.03K, while the difference in the two sensors at 50kV would be around 1.3K. From these rough estimates, we can conclude that across all measured voltage regimes, the temperature is almost entirely driven by the LAr, and the temperature sensor in the vicinity should be an accurate measurement of the temperature of the material. On top of that, our model for the temperature correction includes a constant, $T_0$, which absorbs any overall scaling between the true temperature of the sample and the measured value.
-
-In previous tests, we also noted that at electric fields of approximately 1000V/cm and higher, both a pure FR4 board and a FR4 board with epoxy coating conduct to a degree at room temperature. However, upon immersing these boards in LN2, the conductance decreased to the point of immeasurability. We thus conclude that the conduction shown in this paper is a result of purely DR8 conduction modes.
-
-%\RI{Zach Can you Add a temperature correction plot, also, can we give a goodness of fit for the temperature fitting?}
+% @Zach: Clarify whether 95\,K corresponds to the nominal operating temperature, or whether 92\,K would be more appropriate.
+% State explicitly that the reference temperature choice does not affect relative comparisons.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%    Begin Comment %%%%%%%%%%%%%%%%%%%%%
-
-\begin{comment}
-
-%Ran Itay Im here
-
-As we discovered during and after the run, a noticeable measurement uncertainty characterizes our low-voltage results, which we believe to be from a combination of factors. For one, our system does not have an independent measurement of the voltage from the power supply, although the power supply itself does record a value. From analysis of the experiment after the fact, we also found a small coupling between our temperature sensors and the return line. Separating these two systems after the run resulted in a cleaner signal at low voltages.
-
-This noise decreases markedly at higher voltage, which allows us to continue with the analysis. However, we are unable to definitively model the source and size of the measurement uncertainty, independently of data.
+One potential source of systematic uncertainty arises from the placement of the temperature sensor.
+The sensor is positioned a few inches from the sample at approximately the same vertical height in order to reduce the risk of electrical discharge at high voltage.
+This configuration may introduce a small temperature offset due to finite heat transfer between the sample and the surrounding liquid argon.
 
 
-We also experienced infrequent and unphysical spikes in the recorded measured current which subtracted from both the fits and the presentation of the signal. In order to counter this, after computing $\ln(R_s)$, we assign a local standard deviation and mean at each point in time, corresponding to a minute's worth of points. Then, we subtract any point which is more than 5 local standard deviations away from the local mean as an unphysical artifact.
+To estimate the magnitude of this effect, we model the sample as a vertical plate immersed in liquid argon, with the sensor located in the bulk fluid.
+In steady state, the resistive power dissipated in the sample must be balanced by convective heat transfer to the liquid:
+\[
+\frac{dQ}{dt}=hA(T_{\infty}-T_{sample})+IV=0,
+\]
+where $h$ is the convective heat transfer coefficient, $A$ is the surface area of the sample, and $IV$ is the electrical power dissipated.
 
-As a final note, the very beginning of each voltage interval, after having changed from one voltage to the next and thus from one stable local temperature to the next, exhibits transient temperature behavior, and thus in our fits, we ignore the first 2 hours of any voltage interval, although we still plot these points.
+
+Following~\cite{CHURCHILL19751323}, we use correlations for free convection near a vertical wall, adjusting the effective gravitational acceleration to account for the 30$^\circ$ inclination of the sample.
+The characteristic length is taken to be 6~inches.
+Thermophysical properties of liquid argon at the operating pressure are assumed to be $\rho=1.396~\mathrm{g/ml}$, $c_p=45~\mathrm{J/(mol\,K)}$, $\mu=270.7\times10^{-6}~\mathrm{Pa\,s}$, $k=0.1256~\mathrm{W/(m\,K)}$, and $\beta=4.55\times10^{-3}~\mathrm{K^{-1}}$~\cite{GLADUN1971205,STREETT197459,lbnl}.
+Because $h$ depends on $\Delta T$, the steady-state temperature difference is obtained numerically from the condition $dQ/dt=0$.
 
 
+The resulting temperature difference between the sample and the bulk liquid is estimated to be approximately 0.03\,K at 12.5\,kV and 1.3\,K at 50\,kV.
+These values indicate that, across the voltage range studied, the sample temperature is dominated by the liquid argon bath and that the nearby sensor provides an adequate approximation of the sample temperature.
+In addition, the temperature-dependent fit parameter $T_0$ partially absorbs any overall calibration offset between the measured and true sample temperature.
 
-%We record the sheet resistances across a wide range of voltages and at various temperatures, and thus we require a convention for what "the sheet resistance" at a particular voltage means. To eliminate the temperature dependence from each curve in a consistent way, and to compare each sheet resistance curve in similar conditions, we employ the following temperature "normalization" for sheet resistance curves taken at different temperatures:
-%\begin{equation}
-%R_{s}^{meas}(T)=R_{s}^{meas}(T')\exp\bigg(-\sqrt{\frac{T_0}{T'}}+\sqrt{\frac{T_0}{T}}\bigg).
-%\end{equation}
-%In this paper we compare all curves at the choice of constant $T=95K$, so all plots of sheet resistance are plots of $R_{s}^{meas}(95~K)$. Thus this equation represents our corrections of sheet resistance variations due to temperature.
-\end{comment}
-%%%%%%%%%%%%%%%%%%%%%%%%%    End Comment %%%%%%%%%%%%%%%%%%%%%
+
+Previous measurements were performed on bare FR4 boards and FR4 boards coated with epoxy at room temperature and in liquid nitrogen.
+At electric fields above approximately 1000~V/cm, measurable conduction was observed at room temperature.
+When immersed in liquid nitrogen, the conductance decreased below the measurement threshold.
+These control measurements indicate that the conduction reported here arises from DR8 rather than from the substrate material.
+
 \subsection{Electric Field Dependence}
 \label{sec:efield_dep}
-\begin{figure}
-\begin{center}
-	\includegraphics[width=.75\linewidth]{Efield.png}
-	\caption{Resistance as a function of square root electric field, with fit to the Hopping model plus additional parameter.}
-	\label{fig:resvsvol}
-\end{center}
-\end{figure}
 
 \todo{FD: Fig 11, should be log scale for y axis; talk to Dan to remake it. Also, are there any lower field measurements?}
 
@@ -542,7 +550,15 @@ We will include an additional fit parameter to the functional form of the materi
 \begin{equation}
 R=R_0 e^{( E / E_0)^{-\frac{1}{2}}+a_0 E}.
 \end{equation}
-We have added a term linear in electric field in the exponent corresponding to a higher order term in the expansion of $\ln(R_s)$ with corresponding fit parameter, $a_0$. Shown in Figure~\ref{fig:resvsvol} is the result of the voltage scan and the excellent agreement with the fitted function. 
+We have added a term linear in electric field in the exponent corresponding to a higher order term in the expansion of $\ln(R_s)$ with corresponding fit parameter, $a_0$. Shown in Figure~\ref{fig:resvsvol} is the result of the voltage scan and the excellent agreement with the fitted function
+
+\begin{figure}[htb]
+    \begin{center}
+    	\includegraphics[width=.75\linewidth]{Efield.png}
+    	\caption{Resistance as a function of square root electric field, with fit to the Hopping model plus additional parameter.}
+    	\label{fig:resvsvol}
+    \end{center}
+\end{figure}. 
 
 
 \subsection{Transmission Line Measurement}
