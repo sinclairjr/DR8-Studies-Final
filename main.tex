@@ -431,7 +431,7 @@ Fitting the cooldown data to this model yields
     \label{Rmeas}
     R_{s}^{meas}(T)=R_s\exp\left(\sqrt{T_0/T}\right),
 \end{equation}
-where $R_{s}^{meas}(T)\propto V/I$ is the measured sheet resistance and $R_s=\SI{-1111}{\giga\ohm}/\Box$ and $T_0=\SI{-1111}{\kelvin}$ are temperature-independent fit parameters (Figure~\ref{fig:cooldown}).
+where $R_{s}^{meas}(T)\propto V/I$ is the measured sheet resistance and $R_s=\SI{18.50\pm0.02}{\mega\ohm}/\Box$ and $T_0=\SI{3324.0\pm1.6}{\kelvin}$ are temperature-independent fit parameters (Figure~\ref{fig:cooldown}).
 
 % @Zach: Briefly describe the fitting procedure (fit range, weighting, uncertainties) and how the quoted parameter values are obtained.
 
@@ -443,22 +443,12 @@ where $R_{s}^{meas}(T)\propto V/I$ is the measured sheet resistance and $R_s=\SI
     \label{fig:cooldown}
 \end{figure}
 
-% @Francois/Dan: Consider reworking this figure.
-% A plot versus $1/\sqrt{T}$ would show the expected linear dependence more clearly.
-% Also verify the plotted temperature range.
-% @Zach: Confirm that this plot corresponds to the data period described in the text.
-
-
 For the remainder of the analysis, the temperature dependence is removed in order to extract the electric-field dependence of the sheet resistance.
-All measurements are normalized to a reference temperature of 95\,K using
+All measurements are normalized to a reference temperature of 91\,K, i.e. the average temperature of the system, using
 \begin{equation}
-R_{s}^{meas}(95)=R_{s}^{meas}(T')\exp\bigg(-\sqrt{\frac{T_0}{T'}}+\sqrt{\frac{T_0}{95}}\bigg),
+R_{s}^{meas}(91)=R_{s}^{meas}(T')\exp\bigg(-\sqrt{\frac{T_0}{T'}}+\sqrt{\frac{T_0}{91}}\bigg),
 \end{equation}
-where $T'$ is the measured temperature and $R_{s}^{meas}(T')$ is the corresponding measured sheet resistance.
-
-% @Zach: Clarify whether 95\,K corresponds to the nominal operating temperature, or whether 92\,K would be more appropriate.
-% State explicitly that the reference temperature choice does not affect relative comparisons.
-
+where $T'$ is the measured temperature and $R_{s}^{meas}(T')$ is the corresponding measured sheet resistance at that temperature. The choice of temperature does not affect relative comparisons between voltage settings or over time.
 
 One potential source of systematic uncertainty arises from the placement of the temperature sensor.
 The sensor is positioned a few inches from the sample at approximately the same vertical height in order to reduce the risk of electrical discharge at high voltage.
