@@ -381,14 +381,27 @@ The laminator described here is able to produce panels up to \numproduct{120 x 6
 \end{figure}
 
 
-
 \subsection{Measurement plan}
+A series of measurements were devised to characterize {\DR} as an electric field shaping material. 
 
-\todo{p10 Measurement plan is an  empty section-- maybe remove and then have an intro paragraph before measurements to frame it?}
+Temperature dependence must first be characterized to remove its effects from subsequent measurements.
+The dependence is expedited to follow Equation~\ref{eq:Tdep}.
+As mentioned, the temperature dependence is characterized in the LAr test stand between \SIrange{293}{91}{\kelvin}.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%% RESULTS %%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+After the temperature dependence is know the electric-field dependence can be characterized.
+The electric-field dependence is expected to follow Equation~\ref{eq:efield}.
+The electric-field dependence is characterized in the LAr test stand between \SIrange{416}{3200}{\kilo\volt\per\centi\metre}. 
+Given the dimensions of the sample this corresponds to an applied voltage range of \SIrange{000}{0000}{\kilo\volt}.
+\todo{voltage range, confirm when we know actual range and where data came from; Dan?}
+  
+A Transmission Line Measurement (TLM) is performed to characterize the resistance associated with the contact between the {\DR} and the copper. 
+In this method, a series of samples are constructed with varying distances between contacts, and the resulting resistance is measured.  
+The resistance of a given sample is modeled as the sum of the resistance of the two contact patches and the resistance of the material itself. 
+The contact resistance is then measured as half of the limit of the measured resistance as the distance between contacts approaches zero.
+
+Lastly the resistance degradation as a function of time is characterized in the LAr test stand over a period of three months. 
+
+
 \section{Results}
 \label{sec:res}
 
@@ -420,7 +433,7 @@ The applied voltage was varied over the range corresponding to $416$--$3200$\,V/
 
 The full run period spans approximately 20 weeks starting from 11/12/2020.
 Data-taking interruptions occurred due to external factors, including DAQ software issues, a laboratory power outage, and depletion of liquid argon below the target level.
-% @All: fill in exact durations of interruptions
+
 No interruptions were associated with electrical failure of the sample or test stand.
 
 The voltage scan was performed in multiple stages.
@@ -430,7 +443,7 @@ Subsequently, measurements were performed at the DUNE ND design field of 500\,V/
 A corresponding stepped decrease in voltage was then performed, with extended dwell periods of up to approximately one week at each step.
 A laboratory power outage occurred during this phase, producing a gap in the data.
 
-Following recovery, a second ramp to higher voltage was perf¸ormed, extending from 31.25\,kV to 50\,kV using the same step structure.
+Following recovery, a second ramp to higher voltage was performed, extending from 31.25\,kV to 50\,kV using the same step structure.
 These measurements provide the basis for evaluating both stability and potential resistive degradation at high electric field.
 
 
@@ -506,7 +519,7 @@ As discussed in Sec.~\ref{sec:disorder_Mattrial}, in the temperature and electri
 To test this behavior, electric fields between \SI{416}{\volt\per\cm} and \SI{3200}{\volt\per\cm} were scanned and the resulting current was measured.
 The scan was performed in steps of $40$\,V/cm from $400$\,V/cm to $2400$\,V/cm, with multi-hour dwell periods at $1200$\,V/cm and $2400$\,V/cm, followed by shorter increments up to $3200$\,V/cm.
 
-% @Zach Re-phrase, say in addition we bla bla , or we improve the fit bla bla, or to get something we add bla bla. sayign we almost od this is more of a street talk, than scientific writing.
+
 
 The measured current was converted to sheet resistance using the voltage recorded from the power supply and compared to the functional form
 \begin{equation}
