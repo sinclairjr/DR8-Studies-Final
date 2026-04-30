@@ -386,45 +386,6 @@ The laminator described here is able to produce panels up to \numproduct{120 x 6
 
 \todo{p10 Measurement plan is an  empty section-- maybe remove and then have an intro paragraph before measurements to frame it?}
 
-\subsection{Experimental Operation}
-\label{sec:ExpOp}
-
-\todo{simplify, kill filtering}
-
-\RI{for run 0, we did voltage scan, for run 1 we did drift measurements}
-
-\todo{This section was hard to read without knowing what measurements were planned.  We need to rework the operation section once we know where it sits in the outline — and what key items need to be brought forward to the reader. (It may go well in the test stand section, if the test stand section is after the design is introduced and what tests are planned}
-
-
-The entire filling takes $\sim2.5$\,hours until the liquid level reaches the desired level (one inch above the roll sock). At that point the system is left for 24 hours to reach steady state and more LAr is needed it is added then. Throughout the filling we apply a voltage of 1\,kV to get temperature dependency measurement.
-
-At the end of a run, the evaporated LAr is exhausted  and the HV is set to 5\,kV to get another temperature dependency measurement. 
-
-
-
-%%%%%%James Will Stop Here%%%%%%%%%%%%%%%
-
-\subsection{Stability}
-\label{sec:stab}
-\todo {does this need it's own section, suggest combine with above.}
-
-\todo{merge Stability section with operation section}
-
-
-\todo{Francois: remake the plot, useful to see how long we ran (better than hours -> days). remake style}
-
-
-\begin{figure}[htb]
-	\centerline{\includegraphics[width=\linewidth]{longrun.png}}
-	
-	\caption{Our recorded run, with the DR8 temperature, chosen voltage, and recorded current. \RI{Can we make solid rectangles over down times.. also this caption needs much more info, finally can you try to produce this plot a bit less symmetric (maybe make x=1.5y in length)} }
-	\label{fig:stab}
-\end{figure}
-In this section, we will discuss the long-term operation across a range of voltages. The goal of these runs is two-fold: Firstly, we wish to explore the behavior of Kapton DR8 at a wide range of electric fields and verify its high resistance for use in TPCs. Secondly, we want to verify the behavior and stability of Kapton DR8 over a long period of time, Finally, we want to characterize its breakdown electric field regime and possible rate of breakdown; to be confident that at electric fields larger than 500V/cm, the material remains stable. Figure~\ref{fig:stab} shows the record of the run period. During this 20-week run starting from 11/12/2020, we were interrupted \todo{FILL IN LATER times}: twice due to a software bug in our DAQ, once due to a lab power outage, and finally once due to evaporation of argon below the pill months into the run. However, none of these stoppages were the result of any electrical failure on the part of the system.
-
-We began our scan with a couple days each at 20kV, 30kV, and 40kV, followed by a return to DUNE ND design electric field of 500 V/cm, or 6.125kV. At this stage we ramp up in voltage in multiples of 6.125kV up to 31.25kV, again taking at most a couple days at each step, before stepping down again to 6.125kV with the same steps, but for approximately a week at each run.
-At the end of this ramp down, we experienced a lab power outage, explaining the second gap in Figure~\ref{fig:stab}. We compare the resistivity before and after the ramp in the following section, in order to ascertain the existence of any resistive decay from this process. With this complete we continued the second ramp up from 31.25kV to 50 kV with the same steps, analyzing the behavior and resistive decay of the sample at these much higher voltages.
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%% RESULTS %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -434,6 +395,43 @@ At the end of this ramp down, we experienced a lab power outage, explaining the 
 This section presents the full set of material property measurements performed on DR8.
 These include the sheet resistance as a function of temperature, the electric-field dependence of the resistance, transmission-line measurements, contact-thickness resistance studies, and time-dependent aging effects.
 The relevant apparatus is specified at the beginning of the corresponding subsection.
+
+Operational measurements were performed during controlled filling and long-duration running of the test stand.
+Filling of the system required approximately $2.5$\,hours, after which the liquid level reached the target height.
+The system was then allowed to stabilize for approximately 24 hours before measurements were taken.
+
+During filling, a voltage of $1$\,kV was applied to record temperature-dependent data.
+At the end of a run, the system was allowed to warm while maintaining a voltage of $5$\,kV to obtain an additional temperature dependence measurement.
+% @Zach: confirm these voltage values
+
+Long-term measurements were conducted to evaluate stability and electric-field dependence over extended time periods.
+The applied voltage was varied over the range corresponding to $416$--$3200$\,V/cm, with dwell periods at selected values to allow stabilization and to study time-dependent behavior.
+
+\begin{figure}[htb]
+	\centerline{\includegraphics[width=\linewidth]{longrun.png}}
+	\caption{Time evolution of temperature, applied voltage, and measured current over the full run period.
+	% @Francois: remake plot with time axis in days rather than hours
+	% @Francois: improve visualization (aspect ratio, remove symmetry)
+	% @Francois: indicate downtime periods explicitly
+	% @All: expand caption with full description of plotted quantities
+	}
+	\label{fig:stab}
+\end{figure}
+
+The full run period spans approximately 20 weeks starting from 11/12/2020.
+Data-taking interruptions occurred due to external factors, including DAQ software issues, a laboratory power outage, and depletion of liquid argon below the target level.
+% @All: fill in exact durations of interruptions
+No interruptions were associated with electrical failure of the sample or test stand.
+
+The voltage scan was performed in multiple stages.
+Initial measurements were taken at 20\,kV, 30\,kV, and 40\,kV.
+Subsequently, measurements were performed at the DUNE ND design field of 500\,V/cm (6.125\,kV), followed by stepped increases in multiples of 6.125\,kV up to 31.25\,kV.
+
+A corresponding stepped decrease in voltage was then performed, with extended dwell periods of up to approximately one week at each step.
+A laboratory power outage occurred during this phase, producing a gap in the data.
+
+Following recovery, a second ramp to higher voltage was perf¸ormed, extending from 31.25\,kV to 50\,kV using the same step structure.
+These measurements provide the basis for evaluating both stability and potential resistive degradation at high electric field.
 
 
 %%%%%%%%%% TEMPERATURE DEPENDENCE %%%%%%%%%%
@@ -486,7 +484,6 @@ Correlations for free convection near a vertical wall are taken from~\cite{CHURC
 The characteristic length is 6~inches.
 Liquid argon properties at operating pressure are assumed to be $\rho=1.396~\mathrm{g/ml}$, $c_p=45~\mathrm{J/(mol\,K)}$, $\mu=270.7\times10^{-6}~\mathrm{Pa\,s}$, $k=0.1256~\mathrm{W/(m\,K)}$, and $\beta=4.55\times10^{-3}~\mathrm{K^{-1}}$~\cite{GLADUN1971205,STREETT197459,lbnl}.
 Because $h$ depends on $\Delta T$, the steady-state temperature difference is obtained numerically from the condition $dQ/dt=0$.
-
 
 The temperature difference between the sample and the bulk liquid is estimated to be approximately 0.03\,K at 12.5\,kV and 1.3\,K at 50\,kV.
 Across the studied voltage range, the sample temperature is therefore dominated by the liquid argon bath, and the nearby sensor provides an adequate approximation of the sample temperature.
