@@ -382,7 +382,7 @@ The laminator described here is able to produce panels up to \numproduct{120 x 6
 
 
 \subsection{Measurement plan}
-\todo{rewrite this after the result section is complete, put motivations and general descriptions here}
+\todo{James: rewrite this after the result section is complete, put motivations and general descriptions here}
 
 A series of measurements were devised to characterize {\DR} as an electric field shaping material. 
 
@@ -431,15 +431,17 @@ This procedure yields
 \end{equation}
 where $R_{s}^{meas}(T)\equiv V/I$ is the measured sheet resistance, and $R_s=\SI{18.50\pm0.02}{\mega\ohm}/\Box$ and $T_0=\SI{3324.0\pm1.6}{\kelvin}$ are temperature-independent fit parameters (Figure~\ref{fig:cooldown}).
 
-\todo{add description of V dependence on T0}
+\todo{Frankie: add description of V dependence on T0}
 
 For the remainder of the analysis, the temperature dependence is removed to isolate the electric-field dependence of the sheet resistance.
-All measurements are normalized to a reference temperature of \SI{91}{\kelvin}, corresponding to the average operating temperature of the system, using
+All measurements are normalized to a reference temperature of \SI{89}{\kelvin}, corresponding to a typical operating temperature of LArTPCs~\cite{pdune-op}, using
 \begin{equation}
-R_{s}^{meas}(91)=R_{s}^{meas}(T')\exp\bigg(-\sqrt{\frac{T_0}{T'}}+\sqrt{\frac{T_0}{91}}\bigg),
+R_{s}^{meas}(89)=R_{s}^{meas}(T')\exp\bigg(-\sqrt{\frac{T_0}{T'}}+\sqrt{\frac{T_0}{89}}\bigg),
 \end{equation}
 where $T'$ is the measured temperature and $R_{s}^{meas}(T')$ is the corresponding sheet resistance.
 The choice of reference temperature does not affect relative comparisons between voltage settings or time intervals.
+
+\todo{Frankie: add findings for temp effect and correction}
 
 \subsubsection{Temperature sensor location}
 
@@ -456,7 +458,7 @@ where $h$ is the convective heat transfer coefficient, $A$ is the sample surface
 
 Correlations for free convection near a vertical wall are taken from~\cite{CHURCHILL19751323}, with the effective gravitational acceleration adjusted for the 30$^\circ$ inclination of the sample.
 The characteristic length is \SI{15}{\centi\metre}.
-LAr properties at operating pressure are taken from~\cite{GLADUN1971205,STREETT197459,lbnl}.
+LAr properties at operating pressure are taken from~\cite{GLADUN1971205,STREETT197459,nist}.
 Because $h$ depends on $\Delta T$, the steady-state temperature difference is obtained numerically from the condition $dQ/dt=0$.
 
 The temperature difference between the sample and the bulk liquid is estimated to be approximately \SI{0.03}{\kelvin} at \SI{12.5}{\kilo\volt} and \SI{1.3}{\kelvin} at \SI{50}{\kilo\volt}.
@@ -473,9 +475,9 @@ The conduction reported here is therefore attributed to DR8 rather than to the s
 \subsection{Electric Field Dependence}
 \label{sec:efield_dep}
 
-\todo{FD: Fig 11, should be log scale for y axis; talk to Dan to remake it. Also, are there any lower field measurements?}
+\todo{Dan: Fig 11, should be log scale for y axis; remake it. Also, are there any lower field measurements?}
 
-\todo{data set details}
+\todo{Frankie: data set details}
 
 
 Using the SLAC LAr test stand, the electric-field was scanned between \SI{0.416}{\kilo\volt\per\centi\metre} and \SI{3.2}{\kilo\volt\per\centi\metre} while measuring the current.
@@ -502,7 +504,7 @@ The results of the voltage scan and the agreement with the fitted function are s
     \end{center}
 \end{figure}. 
 
-\todo{add discussion of why this is needed and what it shows}
+\todo{Frankie/Dan: add discussion of why this is needed and what it shows}
 
 
 \subsection{Transmission Line Measurement}
@@ -521,7 +523,7 @@ The contact resistance is then measured as half of the limit of the measured res
 where $L$ is the distance between contacts, $R_{\mathrm{total}}(L)$ is the total resistance of a sample of linear size $L$, $R_\mathrm{contact}$ is the contact resistance, and $R_{\mathrm{sample}}(L)$ is the bulk resistance of a sample of linear size $L$.
 
 This measurement used a designated {\DR} sample cut to length and cleaned with ethanol, on one side a fixed contact was made with conductive copper tape\footnote{3M 1181}, aligned with the edges of the sample.
-\todo{confirm width with Dan}
+\todo{Dan: What was the width of the sample}
 A second temporary contact was made at various distances from the first.
 Care was taken to arrange the contacts so that their edges were as parallel as possible, to an accuracy of $\pm$\SI{0.2}{\milli\metre}, so that the direction of current flow is perpendicular to the edges of the copper contacts.
 The recorded length is taken to be the average distance between the edges of the copper strip, the deviation from the average value is considered as an uncertainty to the measurement.
@@ -532,7 +534,7 @@ The results of these measurements are shown in Figure~\ref{fig:TLM_length_I_and_
 The resulting resistance associated with the contact interfaces, is shown in Figure~\ref{fig:TLM_length_contactRes}.  
 The measured contact resistance at \SI{0.5}{\kilo\volt\per\centi\metre} is \SI{107.4 \pm 54.6}{\mega\ohm}.
 
-\todo{Dan: change colour of plots and change lengths to metric units}
+\todo{Dan: change colour of plots (consistent with Frankie) and change lengths to metric units(see text)}
 
 \begin{figure}[htb]
 \centering
@@ -555,8 +557,6 @@ The measured contact resistance at \SI{0.5}{\kilo\volt\per\centi\metre} is \SI{1
 	Note that the plotted model fits are essentially parallel, differing only by a multiplicative factor.} 
 \label{fig:TLM_length_I_and_R}
 \end{figure}
-
-\todo{Increase size of this figure after clean up}
 
 
 \begin{figure}[htb]
@@ -582,14 +582,14 @@ The measured contact resistance at \SI{0.5}{\kilo\volt\per\centi\metre} is \SI{1
 \label{fig:TLM_length_contactRes}
 \end{figure}
 
-\todo{Increase size of this figure after clean up}
 
-\todo{add findings discussion}
+\todo{Dan: add findings discussion}
 
 \subsection{Dependence on contact size}
 \label{sec:contactOverlap}
 
-\todo{Dan add width of sample}
+\todo{Dan: add width of sample}
+
 The contact resistance measured in section~\ref{sec:transLine} is in principle a function of the geometry of the contact patch between the copper and {\DR}.  
 The nature of this dependence is non-linear, as the current density through the copper-{\DR} interface is much higher close to the inner edges than on the outside of the sample.
 
@@ -621,7 +621,7 @@ This method preserves the geometry and material features of the {\DR} sample whi
 	(b) For a given value of the electric field \SI{0.5}{\kilo\volt\per\centi\metre}, the measured resistance is shown to have very weak dependence upon the width of the contact for the range of \SIrange{0.06}{2.58}{\centi\metre}.} 
 \label{fig:TLM_contact_contactRes}
 \end{figure}
-\todo{Dan confirm range and units.}
+\todo{Dan: confirm range and units in caption.}
 
 
 The result of this measurement, shown in Figure~\ref{fig:TLM_contact_contactRes}, is a very weak dependence on contact width.  
@@ -632,7 +632,6 @@ A TPC using a field cage of this design would typically have \SI{1}{\centi\metre
 
 \subsection{Time dependence and resistivity degradation}
 \label{resdecayfit}
-
 
 Long-duration measurements were performed to evaluate the stability and electric-field dependence of the material.
 The applied voltage was varied in discrete steps corresponding to electric fields between \SIrange{0.25}{3}{\kilo\volt\per\centi\metre} for an electrode spacing of \SI{12.5}{\centi\metre}.
@@ -691,7 +690,7 @@ To parameterize this behavior, we adopt a phenomenological exponential decay mod
 Since the magnitude of the effect depends on the applied electric field, $\tau$ is treated as a function of electric field.
 
 During $\approx$\SI{3}{\hour} system cool-down, the applied voltage is limited to $\approx$\SI{5}{\kilo\volt} as the sample is not fully submerged.
-\todo{confirm value, this is different to the number mentioned previously} 
+\todo{Frankie: confirm value, this is different to the number mentioned previously(5 vs. 1)} 
 
 No measurable time-dependent degradation is observed during this phase, and the data is adequately described by the temperature-dependent model of Eq.~\ref{eq:Tdep}. 
 However, at higher electric fields and longer time intervals, the assumption of time-independent resistivity is no longer valid, even when temperature variations are small.
@@ -727,8 +726,8 @@ To remove residual temperature variations across a sub-run, we define a temperat
 	\bigg).
 \end{equation}
 
-All data are normalized to $T' = \SI{95}{\kelvin}$.
-\todo{confirm 91 is mentioned before, 95 here?}
+As mentioned all temperature data is normalized to $T' = \SI{89}{\kelvin}$.
+
 
 Using measured $T(t)$ and $R_{s}^{\mathrm{meas}}(t,T)$, we perform a simultaneous fit for $R_s$, $T_0$, and $\tau$ at each electric field.
 
