@@ -147,7 +147,7 @@ Both the temperature and electric-field dependence will be characterized in this
 \section{Methodology}
 \label{sec:expsetup}
 
-The {\DR} samples are characterized in liquid argon as a function of electric field.
+The {\DR} samples are characterized in Liquid Argon (LAr) as a function of electric field.
 Their stability over time was also monitored to understand material degradation, which is relevant to long term operation.
 The temperature dependence was characterized in progressively cooled argon gas from \SIrange{293}{91}{\kelvin}, this is relevant for cryogenic systems where temperature fluctuations may occur.
 The construction parameters also needed to be understood and a transmission line measurements was necessary for the electrode connections.
@@ -382,6 +382,8 @@ The laminator described here is able to produce panels up to \numproduct{120 x 6
 
 
 \subsection{Measurement plan}
+\todo{rewrite this after the result section is complete, put motivations and general descriptions here}
+
 A series of measurements were devised to characterize {\DR} as an electric field shaping material. 
 
 Temperature dependence was first be characterized to remove its effects from subsequent measurement, it is expected to follow Equation~\ref{eq:Tdep}.
@@ -416,7 +418,7 @@ Figure~\ref{Rmeas} shows the sheet resistance measurement as a function of the s
 \begin{figure}[htb]
     \centering
     \includegraphics[width=0.95\textwidth]{2019-12-04_15-36-58_ir2_daq_cooldown_current_temp_scan_r.pdf}
-    \caption{Measured sheet resistance of a DR8 sample as a function of temperature at an applied field of \SI{80}{\volt\per\centi\metre}, together with the fit to Eq.~\ref{Rmeas}.}
+    \caption{Measured sheet resistance of a DR8 sample as a function of temperature at an applied field of \SI{0.08}{\kilo\volt\per\centi\metre}, together with the fit to Eq.~\ref{Rmeas}.}
     \label{fig:cooldown}
 \end{figure}
 
@@ -443,9 +445,9 @@ The choice of reference temperature does not affect relative comparisons between
 
 There is a systematic uncertainty associated with the location of the temperature sensor.
 The sensor is positioned on the rear of the {\DR} sample at the grounded edge to reduce the risk of high-voltage discharge.
-This configuration may introduce a small temperature offset due to finite heat transfer between the sample and the surrounding liquid argon.
+This configuration may introduce a small temperature offset due to finite heat transfer between the sample and the surrounding LAr.
 
-The magnitude of this effect is estimated by modeling the sample as a vertical plate immersed in liquid argon, with the sensor positioned in the bulk fluid.
+The magnitude of this effect is estimated by modeling the sample as a vertical plate immersed in LAr, with the sensor positioned in the bulk fluid.
 In steady state, resistive power dissipation is balanced by convective heat transfer:
 \begin{equation}
 \frac{dQ}{dt}=hA(T_{\infty}-T_{sample})+IV=0,
@@ -454,18 +456,18 @@ where $h$ is the convective heat transfer coefficient, $A$ is the sample surface
 
 Correlations for free convection near a vertical wall are taken from~\cite{CHURCHILL19751323}, with the effective gravitational acceleration adjusted for the 30$^\circ$ inclination of the sample.
 The characteristic length is \SI{15}{\centi\metre}.
-Liquid argon properties at operating pressure are taken from~\cite{GLADUN1971205,STREETT197459,lbnl}.
+LAr properties at operating pressure are taken from~\cite{GLADUN1971205,STREETT197459,lbnl}.
 Because $h$ depends on $\Delta T$, the steady-state temperature difference is obtained numerically from the condition $dQ/dt=0$.
 
 The temperature difference between the sample and the bulk liquid is estimated to be approximately \SI{0.03}{\kelvin} at \SI{12.5}{\kilo\volt} and \SI{1.3}{\kelvin} at \SI{50}{\kilo\volt}.
-Across the studied voltage range, the sample temperature is therefore dominated by the liquid argon bath, and the sensor provides an adequate approximation of the sample temperature.
+Across the studied voltage range, the sample temperature is therefore dominated by the LAr bath, and the sensor provides an adequate approximation of the sample temperature.
 The temperature-dependent fit parameter $T_0$ further absorbs any overall calibration offset between the measured and true sample temperature.
 
-\subsubsection{Substrate conductivity considerations}
+\subsubsection{Substrate Conductivity Considerations}
 
-Control measurements were performed on bare FR4 boards and FR4 boards coated with epoxy at room temperature and in liquid nitrogen.
+Control measurements were performed on bare FR4 samples and FR4 samples coated with epoxy at room temperature and in LN2.
 At electric fields above \SI{1}{\kilo\volt\per\centi\metre}, measurable conduction was observed in air at room temperature.
-However, when immersed in liquid nitrogen, the conductance decreased below the measurement threshold.
+However, when immersed in LN2, the conductance decreased below the measurement threshold.
 The conduction reported here is therefore attributed to DR8 rather than to the substrate material.
 
 \subsection{Electric Field Dependence}
@@ -473,10 +475,12 @@ The conduction reported here is therefore attributed to DR8 rather than to the s
 
 \todo{FD: Fig 11, should be log scale for y axis; talk to Dan to remake it. Also, are there any lower field measurements?}
 
+\todo{data set details}
 
-The electric-field was scanned between \SI{416}{\volt\per\centi\metre} and \SI{3200}{\volt\per\centi\metre} while measuring the current.
 
-The scan was performed in steps of \SI{40}{\volt\per\centi\metre} from \SI{400}{\volt\per\centi\metre} to \SI{2400}{\volt\per\centi\metre}, with multi-hour dwell periods at \SI{1200}{\volt\per\centi\metre} and \SI{24000}{\volt\per\centi\metre}, followed by shorter increments up to \SI{3200}{\volt\per\centi\metre}.
+Using the SLAC LAr test stand, the electric-field was scanned between \SI{0.416}{\kilo\volt\per\centi\metre} and \SI{3.2}{\kilo\volt\per\centi\metre} while measuring the current.
+
+The scan was performed in steps of \SI{0.04}{\kilo\volt\per\centi\metre} from \SI{0.4}{\kilo\volt\per\centi\metre} to \SI{2.4}{\kilo\volt\per\centi\metre}, with multi-hour dwell periods at \SI{1.2}{\kilo\volt\per\centi\metre} and \SI{2.4}{\kilo\volt\per\centi\metre}, followed by shorter increments up to \SI{3.2}{\kilo\volt\per\centi\metre}.
 
 The measured current was converted to sheet resistance using the voltage recorded from the power supply and compared to the functional form
 \begin{equation}
@@ -498,6 +502,8 @@ The results of the voltage scan and the agreement with the fitted function are s
     \end{center}
 \end{figure}. 
 
+\todo{add discussion of why this is needed and what it shows}
+
 
 \subsection{Transmission Line Measurement}
 \label{sec:transLine}
@@ -514,18 +520,19 @@ The contact resistance is then measured as half of the limit of the measured res
 \end{equation}
 where $L$ is the distance between contacts, $R_{\mathrm{total}}(L)$ is the total resistance of a sample of linear size $L$, $R_\mathrm{contact}$ is the contact resistance, and $R_{\mathrm{sample}}(L)$ is the bulk resistance of a sample of linear size $L$.
 
-
-This measurement used a designated {\DR} sample cut to length and cleaned with ethanol, on one side a fixed contact was made with conductive copper tape\footnote{3M 1181}, square with the edges of the sample.
+This measurement used a designated {\DR} sample cut to length and cleaned with ethanol, on one side a fixed contact was made with conductive copper tape\footnote{3M 1181}, aligned with the edges of the sample.
 \todo{confirm width with Dan}
 A second temporary contact was made at various distances from the first.
 Care was taken to arrange the contacts so that their edges were as parallel as possible, to an accuracy of $\pm$\SI{0.2}{\milli\metre}, so that the direction of current flow is perpendicular to the edges of the copper contacts.
 The recorded length is taken to be the average distance between the edges of the copper strip, the deviation from the average value is considered as an uncertainty to the measurement.
 
 We measure the current in the sample by applying voltages in the range of \SIrange{0}{5}{\kilo\volt}.
-We repeat this measurement for five different distances (\sfrac{1}{2}", \sfrac{3}{4}", 1", 1 \sfrac{1}{4}", and 1 \sfrac{1}{2}").
+We repeat this measurement for five different distances (\SI{12.7}{\milli\metre}, \SI{19.0}{\milli\metre}, \SI{25.4}{\milli\metre}, \SI{31.8}{\milli\metre}, and \SI{38.1}{\milli\metre}).
 The results of these measurements are shown in Figure~\ref{fig:TLM_length_I_and_R}. 
 The resulting resistance associated with the contact interfaces, is shown in Figure~\ref{fig:TLM_length_contactRes}.  
-The measured contact resistance at \SI{500}{\volt\per\centi\metre} is \SI{107.4 \pm 54.6}{\mega\ohm}.
+The measured contact resistance at \SI{0.5}{\kilo\volt\per\centi\metre} is \SI{107.4 \pm 54.6}{\mega\ohm}.
+
+\todo{Dan: change colour of plots and change lengths to metric units}
 
 \begin{figure}[htb]
 \centering
@@ -543,7 +550,9 @@ The measured contact resistance at \SI{500}{\volt\per\centi\metre} is \SI{107.4 
 		\vspace*{-\baselineskip} \hspace{2em} (b)
 	\end{center}
 \end{subfigure}
-\caption{(a) The current measured as a function of voltage from each of the five samples considered. (b) The corresponding resistance as a function of the square root of the applied electric field values calculated from those measurements.  Note that the plotted model fits are essentially parallel, differing only by a multiplicative factor.} 
+\caption{(a) The current measured as a function of voltage from each of the five samples considered. 
+	(b) The corresponding resistance as a function of the square root of the applied electric field values calculated from those measurements.  
+	Note that the plotted model fits are essentially parallel, differing only by a multiplicative factor.} 
 \label{fig:TLM_length_I_and_R}
 \end{figure}
 
@@ -566,19 +575,28 @@ The measured contact resistance at \SI{500}{\volt\per\centi\metre} is \SI{107.4 
 		\vspace*{-\baselineskip} \hspace{2em} (b)
 	\end{center}
 \end{subfigure}
-\caption{(a) For a single value of the electric field, the model-fit values follow a very linear trend as a function of contact-to-contact distance.  The y-intercept of the linear fit corresponds to the resistance of both contacts. (b) The measured contact resistance as a function of the electric field (central dark orange line) and the associated uncertainty band in light orange. The associated uncertainty is obtained from the variance of the intercept parameter in the TLM fit.} 
+\caption{(a) For a single value of the electric field, the model-fit values follow a very linear trend as a function of contact-to-contact distance.  
+	The y-intercept of the linear fit corresponds to the resistance of both contacts. 
+	(b) The measured contact resistance as a function of the electric field (central dark orange line) and the associated uncertainty band in light orange. 
+	The associated uncertainty is obtained from the variance of the intercept parameter in the TLM fit.} 
 \label{fig:TLM_length_contactRes}
 \end{figure}
 
 \todo{Increase size of this figure after clean up}
 
+\todo{add findings discussion}
 
-\subsection{Dependance on contact size}
+\subsection{Dependence on contact size}
 \label{sec:contactOverlap}
 
-The contact resistance measured in section~\ref{sec:transLine} is in principle a function of the geometry of the contact patch between the copper and {\DR}.  The nature of this dependence is non-linear, as the current density through the copper-{\DR} interface is much higher close to the inner edges than on the outside of the sample.
+\todo{Dan add width of sample}
+The contact resistance measured in section~\ref{sec:transLine} is in principle a function of the geometry of the contact patch between the copper and {\DR}.  
+The nature of this dependence is non-linear, as the current density through the copper-{\DR} interface is much higher close to the inner edges than on the outside of the sample.
 
-In order to test the dependence on the contact size (i.e., overlap between the {\DR} and copper strip), here onward referred to as contact overlap, a  sample with an $\approx 1$\," wide copper strip on either side of the {\DR} is used to measure the dependence on the contact overlap.  The sample is tested through a voltage range of (0--5)\,kV in an L\ch{N2} bath, as in the previous section.  After each test, the sample is allowed to warm to room temperature and then the contact width is reduced by cutting the {\DR} sample by a small amount on the outer side.  This method preserves the geometry and material features of the {\DR} sample while changing only the amount of copper-{\DR} interface through which current is allowed to flow.
+In order to test the dependence on the contact size (i.e., overlap between the {\DR} and copper strip), here onward referred to as contact overlap, a  sample with an \SI{25.4}{\milli\metre} wide copper strip on either side of the {\DR} is used to measure the dependence on the contact overlap.  
+The sample is tested through a voltage range of \SIrange{0}{5}{\kilo\volt} in an LN2 bath, as in the TLM.  
+After each test, the sample is allowed to warm to room temperature and then the contact width is reduced by cutting the {\DR} sample by a small amount on the outer side.  
+This method preserves the geometry and material features of the {\DR} sample while changing only the amount of copper-{\DR} interface through which current is allowed to flow.
 
 
 \begin{figure}[htb]
@@ -597,41 +615,40 @@ In order to test the dependence on the contact size (i.e., overlap between the {
 		\vspace*{-\baselineskip} \hspace{2em} (b)
 	\end{center}
 \end{subfigure}
-\caption{(a) The measured resistances of the different samples.  These values are constructed in the same manner as in Figure~\ref{fig:TLM_length_I_and_R}.  The measured values are nearly identical from sample to sample. (b) For a given value of the electric field (500\,V/cm), the measured resistance is shown to have very weak dependence upon the width of the contact for the range of (0.06--2.58)\,.} 
+\caption{(a) The measured resistances of the different samples.  
+	These values are constructed in the same manner as in Figure~\ref{fig:TLM_length_I_and_R}.  
+	The measured values are nearly identical from sample to sample. 
+	(b) For a given value of the electric field \SI{0.5}{\kilo\volt\per\centi\metre}, the measured resistance is shown to have very weak dependence upon the width of the contact for the range of \SIrange{0.06}{2.58}{\centi\metre}.} 
 \label{fig:TLM_contact_contactRes}
 \end{figure}
+\todo{Dan confirm range and units.}
 
-The result of this measurement, shown in Figure~\ref{fig:TLM_contact_contactRes}, is a very weak dependence on contact width.  This is consistent with the findings in section~\ref{sec:transLine}, which indicate that the overall resistance of the sample is dominated by the {\DR} material itself, and not the contacting method used.  It is also possible that, if a strong dependence on this aspect of the sample exists, it is observable only on scales much smaller than are achievable by our methods (down to $\approx 0.5$ mm).  A TPC using a field cage of this design would typically have 1 cm of contact overlap in the field shaping elements.
+
+The result of this measurement, shown in Figure~\ref{fig:TLM_contact_contactRes}, is a very weak dependence on contact width.  
+This is consistent with the findings in section~\ref{sec:transLine}, which indicate that the overall resistance of the sample is dominated by the {\DR} material itself, and not the contacting method used.  
+It is also possible that, if a strong dependence on this aspect of the sample exists, it is observable only on scales much smaller than are achievable by our methods (down to $\approx$\SI{1}{\milli\meter}).  
+A TPC using a field cage of this design would typically have \SI{1}{\centi\metre} of contact overlap in the field shaping elements.
 
 
 \subsection{Time dependence and resistivity degradation}
 \label{resdecayfit}
 
 
-
-
 Long-duration measurements were performed to evaluate the stability and electric-field dependence of the material.
-The applied voltage was varied in discrete steps corresponding to electric fields between 0.25 and 3\,kV/cm for an electrode spacing of 12.5\,cm.
+The applied voltage was varied in discrete steps corresponding to electric fields between \SIrange{0.25}{3}{\kilo\volt\per\centi\metre} for an electrode spacing of \SI{12.5}{\centi\metre}.
 
 
-At each voltage setting, data were recorded after an initial transient period to ensure steady-state conditions.
+At each voltage setting, data was recorded after an initial transient period to ensure steady-state conditions.
 The dwell times ranged from several days to approximately two weeks, enabling both stable resistance measurements and sensitivity to time-dependent effects.
 
 The full run period spans approximately 20 weeks starting from 11/12/2020.
-Interruptions in data-taking occurred due to external factors, including DAQ software issues, a laboratory power outage, and temporary depletion of liquid argon below the target level.
+Interruptions in data-taking occurred due to external factors, including DAQ software issues, a laboratory power outage, and temporary depletion of LAr below the target level.
 No interruptions were associated with electrical failure of the sample or test stand.
 
-Following completion of the main scan up to 3\,kV/cm, measurements at 1.0\,kV/cm and 0.5\,kV/cm were repeated.
+Following completion of the main scan up to \SI{3.0}{\kilo\volt\per\centi\metre}, measurements at \SI{1.0}{\kilo\volt\per\centi\metre} and \SI{0.5}{\kilo\volt\per\centi\metre} were repeated.
 These post-scan measurements were used to assess potential permanent changes in resistivity after exposure to high electric field.
 
-
-
-
 The voltage settings and corresponding data-taking periods are summarized in Table~\ref{tab:voltage_scan}.
-
-
-
-
 
 \begin{table}[htb]
 	\centering
@@ -651,7 +668,8 @@ The voltage settings and corresponding data-taking periods are summarized in Tab
 		0.5  & 6.25  & 2022-12-09 & 2022-12-21 & $\sim$12 days (post-scan) \\
 		\hline
 	\end{tabular}
-	\caption{Summary of voltage settings and data-taking periods for the DR8 long-duration run in 2022. The electrode spacing is 12.5\,cm.}
+	\caption{Summary of voltage settings and data-taking periods for the DR8 long-duration run in 2022. 
+		The electrode spacing is \SI{12.5}{\centi\metre}.}
 	\label{tab:voltage_scan}
 \end{table}
 
@@ -668,11 +686,18 @@ The voltage settings and corresponding data-taking periods are summarized in Tab
 
 This section quantifies the time-dependent evolution of the sheet resistance at fixed electric field and describes the procedure used to separate this effect from temperature variations.
 
-At elevated electric fields and over extended periods, we observe a monotonic decrease in the measured sheet resistance. To parameterize this behavior, we adopt a phenomenological exponential decay model with decay constant $\tau$. Since the magnitude of the effect depends on the applied electric field, $\tau$ is treated as a function of electric field.
+At elevated electric fields and over extended periods, we observe a monotonic decrease in the measured sheet resistance. 
+To parameterize this behavior, we adopt a phenomenological exponential decay model with decay constant $\tau$. 
+Since the magnitude of the effect depends on the applied electric field, $\tau$ is treated as a function of electric field.
 
-During system cooldown ($\approx 3$\,hrs), the applied voltage is limited ($\approx 5$\,kV\ \todo{Zach please confirm this value}) and the sample is not fully submerged. No measurable time-dependent degradation is observed during this phase, and the data are adequately described by the temperature-dependent model of Eq.~\ref{eq:Tdep}. However, at higher electric fields and longer time intervals, the assumption of time-independent resistivity is no longer valid, even when temperature variations are small.
+During $\approx$\SI{3}{\hour} system cool-down, the applied voltage is limited to $\approx$\SI{5}{\kilo\volt} as the sample is not fully submerged.
+\todo{confirm value, this is different to the number mentioned previously} 
 
-Inspection of sheet resistance and temperature curves (e.g. Figure~\ref{fig:43750}) shows that the sheet resistance decreases with time independently of temperature fluctuations. \textbf{We therefore introduce an empirical exponential time-dependent term, without assuming a specific microscopic mechanism.}
+No measurable time-dependent degradation is observed during this phase, and the data is adequately described by the temperature-dependent model of Eq.~\ref{eq:Tdep}. 
+However, at higher electric fields and longer time intervals, the assumption of time-independent resistivity is no longer valid, even when temperature variations are small.
+
+Inspection of sheet resistance and temperature curves (e.g. Figure~\ref{fig:43750}) shows that the sheet resistance decreases with time independently of temperature fluctuations. 
+We therefore introduce an empirical exponential time-dependent term, without assuming a specific microscopic mechanism.
 
 \begin{equation}
 	R_{s}^{\mathrm{meas}}(t,T)
@@ -702,32 +727,35 @@ To remove residual temperature variations across a sub-run, we define a temperat
 	\bigg).
 \end{equation}
 
-All data are normalized to $T' = 95$\,K.
+All data are normalized to $T' = \SI{95}{\kelvin}$.
+\todo{confirm 91 is mentioned before, 95 here?}
 
 Using measured $T(t)$ and $R_{s}^{\mathrm{meas}}(t,T)$, we perform a simultaneous fit for $R_s$, $T_0$, and $\tau$ at each electric field.
 
-The statistical uncertainty returned by a single global fit underestimates the true measurement uncertainty on $\tau$, as it scales with the large number of time samples \todo{add approximate number of samples here}. To obtain a more representative uncertainty, we divide each temperature-normalized multi-hour sub-run into successive one-hour intervals and fit each interval independently to an exponential model. This provides a distribution of $\tau$ values from which we extract the measurement uncertainty.
+The statistical uncertainty returned by a single global fit underestimates the true measurement uncertainty on $\tau$, as it scales with the large number of time samples.
+\todo{add approximate number of samples here}
+To obtain a more representative uncertainty, we divide each temperature-normalized multi-hour sub-run into successive one-hour intervals and fit each interval independently to an exponential model. 
+This provides a distribution of $\tau$ values from which we extract the measurement uncertainty.
 
-The extracted inverse decay constants as a function of voltage are shown in Figure~\ref{fig:invtaulog}. Runs shorter than 24 hours are excluded.
+The extracted inverse decay constants as a function of voltage are shown in Figure~\ref{fig:invtaulog}. 
+Runs shorter than \SI{24}{\hour} are excluded.
 
 \begin{figure}
 	\begin{center}
 		\includegraphics[width=0.75\linewidth]{tau.png}
-		\caption{Inverse decay constants as a function of voltage. Runs shorter than 24 hours are excluded.} 
+		\caption{Inverse decay constants as a function of voltage. Runs shorter than \SI{24}{\hour} are excluded.} 
 		\label{fig:invtaulog}
 	\end{center}
 \end{figure}
 
 
-
-\label{sec:long_term_results}
-
-We now evaluate the suitability of DR8 for long-term operation in liquid argon under electric-field conditions relevant to DUNE ND.
+We now evaluate the suitability of DR8 for long-term operation in LAr under electric-field conditions.
 
 The acceptable resistivity range is constrained by two competing requirements:  
 (i) limiting power dissipation at low resistivity, and  
 (ii) ensuring adequate charge dissipation at high resistivity.  
-\todo{Insert quantitative bounds for DUNE ND resistivity window here.}
+\todo{quantify}
+
 
 The measured resistivity values fall within this operational range (Figure~\ref{fig:resvsvol}).
 
@@ -739,13 +767,17 @@ The measured resistivity values fall within this operational range (Figure~\ref{
 	\end{center}
 \end{figure}
 
-To determine the electric-field threshold for measurable degradation, we examine the extracted decay constants. Below 2000\,V/cm, the decay rate is consistent with zero within 1$\sigma$ uncertainty, although uncertainties increase at lower fields. At higher electric fields, a clear increase in decay rate is observed (Figure~\ref{fig:invtaulog}).
+To determine the electric-field threshold for measurable degradation, we examine the extracted decay constants. 
+Below \SI{2}{\kilo\volt\per\centi\metre}, the decay rate is consistent with zero within 1$\sigma$ uncertainty, although uncertainties increase at lower fields. 
+At higher electric fields, a clear increase in decay rate is observed (Figure~\ref{fig:invtaulog}).
 
 \todo{Kendall: add representative time-evolution subfigure showing drift of sheet resistance at high field. Plot versus field strength rather than voltage if possible.}
 
-The dependence of decay rate on voltage is consistent with an approximately exponential increase. At 6.25\,kV (corresponding to 500\,V/cm), the decay constant is statistically consistent with no measurable degradation over the duration of the measurement. Extrapolation of the empirical trend indicates characteristic time scales of at least several decades under these operating conditions.
+The dependence of decay rate on voltage is consistent with an approximately exponential increase. 
+At \SI{0.5}{\kilo\volt\per\centi\metre}, the decay constant is statistically consistent with no measurable degradation over the duration of the measurement. 
+Extrapolation of the empirical trend indicates characteristic time scales of at least several decades under these operating conditions.
 
-\textbf{Within the electric-field regime relevant for DUNE ND, no measurable long-term resistive degradation is observed over the time scale of the experiment.}
+Within the electric-field regime relevant for TPCs, no measurable long-term resistive degradation is observed over the time scale of the experiment.
 
 \section{Discussion and Conclusions}
 \label{sec:sum}
