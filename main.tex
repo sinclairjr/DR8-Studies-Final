@@ -384,15 +384,13 @@ The laminator described here is able to produce panels up to \numproduct{120 x 6
 \subsection{Measurement plan}
 A series of measurements were devised to characterize {\DR} as an electric field shaping material. 
 
-Temperature dependence was first be characterized to remove its effects from subsequent measurements.
-The dependence is expected to follow Equation~\ref{eq:Tdep}.
+Temperature dependence was first be characterized to remove its effects from subsequent measurement, it is expected to follow Equation~\ref{eq:Tdep}.
 As mentioned, the temperature dependence is characterized in the LAr test stand between \SIrange{293}{91}{\kelvin} during the filling process with a voltage of \SI{1}{\kilo\volt} applied to the {\DR} sample.
 After filling, the system was then allowed to stabilize for approximately 24~hours before further measurements.
 
-The electric-field dependence is characterized in the LAr test stand between \SIrange{416}{3200}{\kilo\volt\per\centi\metre}. 
+The electric-field dependence is characterized in the LAr test stand between \SIrange{0.5}{3.0}{\kilo\volt\per\centi\metre}. 
 The electric-field dependence is expected to follow Equation~\ref{eq:efield}.
-Given the dimensions of the sample this corresponds to an applied voltage range of \SIrange{000}{0000}{\kilo\volt}.
-\todo{voltage range, confirm when we know actual range and where data came from; Dan?}
+Given the dimensions of the sample, this corresponds to an applied voltage range of \SIrange{6250}{37500}{\volt}.
   
 Using the MSU LN2 test stand, a Transmission Line Measurement (TLM) was performed to characterize the resistance associated with the contact between the {\DR} and the copper. 
 {\DR} samples with varying distances between contacts, were produced to determine the material and contact resistance. 
@@ -405,63 +403,10 @@ After each test, overlap width is reduced by removing a small strip of {\DR}, pr
 Lastly the resistance degradation as a function of time was characterized in the LAr test stand over a period of approximately four months. 
 
 
-\section{Results}\todo{The intro describes the data taking specific to the aging measurement. Should explain the different runs we had or move the data taking description to each subsection}
+\section{Results}
 \label{sec:res}
 
-This section presents the material property measurements performed on DR8.
-These include the sheet resistance as a function of temperature, the electric-field dependence of the resistance, transmission-line measurements, contact-thickness resistance studies, and time-dependent aging effects.
-The relevant apparatus is specified at the beginning of each subsection.
-
-
-Measurements were conducted in a liquid argon test stand following a controlled filling procedure.
-The system reached the target liquid level after approximately 2.5 hours and was subsequently allowed to stabilize for approximately 24 hours prior to data-taking.
-
-
-Long-duration measurements were performed to evaluate the stability and electric-field dependence of the material.
-The applied voltage was varied in discrete steps corresponding to electric fields between 0.25 and 3\,kV/cm for an electrode spacing of 12.5\,cm.
-The voltage settings and corresponding data-taking periods are summarized in Table~\ref{tab:voltage_scan}.
-
-
-\begin{table}[htb]
-\centering
-\begin{tabular}{c c c c l}
-\hline
-Field [kV/cm] & Voltage [kV] & Start & End & Duration \\
-\hline
-0.5  & 6.25  & 2022-09-12 & 2022-09-26 & $\sim$14 days \\
-1.0  & 12.5  & 2022-09-26 & 2022-10-13 & $\sim$17 days \\
-0.25 & 3.125 & 2022-10-13 & 2022-10-24 & $\sim$11 days \\
-1.5  & 18.75 & 2022-10-24 & 2022-11-02 & $\sim$9 days \\
-2.0  & 25.0  & 2022-11-02 & 2022-11-13 & $\sim$11 days \\
-2.5  & 31.25 & 2022-11-13 & 2022-11-21 & $\sim$8 days \\
-3.0  & 37.5  & 2022-11-21 & 2022-12-02 & $\sim$11 days \\
-\hline
-1.0  & 12.5  & 2022-12-02 & 2022-12-09 & $\sim$7 days (post-scan) \\
-0.5  & 6.25  & 2022-12-09 & 2022-12-21 & $\sim$12 days (post-scan) \\
-\hline
-\end{tabular}
-\caption{Summary of voltage settings and data-taking periods for the DR8 long-duration run in 2022. The electrode spacing is 12.5\,cm.}
-\label{tab:voltage_scan}
-\end{table}
-
-At each voltage setting, data were recorded after an initial transient period to ensure steady-state conditions.
-The dwell times ranged from several days to approximately two weeks, enabling both stable resistance measurements and sensitivity to time-dependent effects.
-
-The full run period spans approximately 20 weeks starting from 11/12/2020.
-Interruptions in data-taking occurred due to external factors, including DAQ software issues, a laboratory power outage, and temporary depletion of liquid argon below the target level.
-No interruptions were associated with electrical failure of the sample or test stand.
-
-Following completion of the main scan up to 3\,kV/cm, measurements at 1.0\,kV/cm and 0.5\,kV/cm were repeated.
-These post-scan measurements were used to assess potential permanent changes in resistivity after exposure to high electric field.
-
-\begin{figure}[htb]
-	\centerline{\includegraphics[width=\linewidth]{dr8_temp_stability.pdf}}
-\caption{Time evolution of temperature (top), applied voltage (middle), and measured current (bottom) over the full run period in 2022.
-The temperature traces correspond to sensors located at the dewar bottom, at the liquid level, and on the DR8 sample.
-The applied voltage was varied in discrete steps to probe a range of electric fields, with extended dwell periods at selected values.
-Between 10/08 and 10/24, the liquid level dropped below the level probe, producing the discontinuity in the corresponding temperature trace; this does not affect the data quality.}
-	\label{fig:stab}
-\end{figure}
+This section presents the material property measurements performed on {\DR}.
 
 \subsection{Temperature dependence}
 \label{sec:TNEFit}
@@ -484,6 +429,8 @@ This procedure yields
 \end{equation}
 where $R_{s}^{meas}(T)\equiv V/I$ is the measured sheet resistance, and $R_s=\SI{18.50\pm0.02}{\mega\ohm}/\Box$ and $T_0=\SI{3324.0\pm1.6}{\kelvin}$ are temperature-independent fit parameters (Figure~\ref{fig:cooldown}).
 
+\todo{add description of V dependence on T0}
+
 For the remainder of the analysis, the temperature dependence is removed to isolate the electric-field dependence of the sheet resistance.
 All measurements are normalized to a reference temperature of \SI{91}{\kelvin}, corresponding to the average operating temperature of the system, using
 \begin{equation}
@@ -492,19 +439,18 @@ R_{s}^{meas}(91)=R_{s}^{meas}(T')\exp\bigg(-\sqrt{\frac{T_0}{T'}}+\sqrt{\frac{T_
 where $T'$ is the measured temperature and $R_{s}^{meas}(T')$ is the corresponding sheet resistance.
 The choice of reference temperature does not affect relative comparisons between voltage settings or time intervals.
 
-\subsubsection{Temperature probe considerations}
+\subsubsection{Temperature sensor location}
 
-The dominant systematic uncertainty is associated with the placement of the temperature sensor.
-The sensor is located a few inches from the sample at approximately the same vertical height to reduce the risk of high-voltage discharge.
+There is a systematic uncertainty associated with the location of the temperature sensor.
+The sensor is positioned on the rear of the {\DR} sample at the grounded edge to reduce the risk of high-voltage discharge.
 This configuration may introduce a small temperature offset due to finite heat transfer between the sample and the surrounding liquid argon.
 
 The magnitude of this effect is estimated by modeling the sample as a vertical plate immersed in liquid argon, with the sensor positioned in the bulk fluid.
 In steady state, resistive power dissipation is balanced by convective heat transfer:
-\[
+\begin{equation}
 \frac{dQ}{dt}=hA(T_{\infty}-T_{sample})+IV=0,
-\]
+\end{equation}
 where $h$ is the convective heat transfer coefficient, $A$ is the sample surface area, and $IV$ is the electrical power dissipated.
-
 
 Correlations for free convection near a vertical wall are taken from~\cite{CHURCHILL19751323}, with the effective gravitational acceleration adjusted for the 30$^\circ$ inclination of the sample.
 The characteristic length is \SI{15}{\centi\metre}.
@@ -512,7 +458,7 @@ Liquid argon properties at operating pressure are taken from~\cite{GLADUN1971205
 Because $h$ depends on $\Delta T$, the steady-state temperature difference is obtained numerically from the condition $dQ/dt=0$.
 
 The temperature difference between the sample and the bulk liquid is estimated to be approximately \SI{0.03}{\kelvin} at \SI{12.5}{\kilo\volt} and \SI{1.3}{\kelvin} at \SI{50}{\kilo\volt}.
-Across the studied voltage range, the sample temperature is therefore dominated by the liquid argon bath, and the nearby sensor provides an adequate approximation of the sample temperature.
+Across the studied voltage range, the sample temperature is therefore dominated by the liquid argon bath, and the sensor provides an adequate approximation of the sample temperature.
 The temperature-dependent fit parameter $T_0$ further absorbs any overall calibration offset between the measured and true sample temperature.
 
 \subsubsection{Measurement substrate considerations}
@@ -660,6 +606,65 @@ The result of this measurement, shown in Figure~\ref{fig:TLM_contact_contactRes}
 
 \subsection{Time dependence and resistivity degradation}
 \label{resdecayfit}
+
+
+
+
+Long-duration measurements were performed to evaluate the stability and electric-field dependence of the material.
+The applied voltage was varied in discrete steps corresponding to electric fields between 0.25 and 3\,kV/cm for an electrode spacing of 12.5\,cm.
+
+
+At each voltage setting, data were recorded after an initial transient period to ensure steady-state conditions.
+The dwell times ranged from several days to approximately two weeks, enabling both stable resistance measurements and sensitivity to time-dependent effects.
+
+The full run period spans approximately 20 weeks starting from 11/12/2020.
+Interruptions in data-taking occurred due to external factors, including DAQ software issues, a laboratory power outage, and temporary depletion of liquid argon below the target level.
+No interruptions were associated with electrical failure of the sample or test stand.
+
+Following completion of the main scan up to 3\,kV/cm, measurements at 1.0\,kV/cm and 0.5\,kV/cm were repeated.
+These post-scan measurements were used to assess potential permanent changes in resistivity after exposure to high electric field.
+
+
+
+
+The voltage settings and corresponding data-taking periods are summarized in Table~\ref{tab:voltage_scan}.
+
+
+
+
+
+\begin{table}[htb]
+	\centering
+	\begin{tabular}{c c c c l}
+		\hline
+		Field [kV/cm] & Voltage [kV] & Start & End & Duration \\
+		\hline
+		0.5  & 6.25  & 2022-09-12 & 2022-09-26 & $\sim$14 days \\
+		1.0  & 12.5  & 2022-09-26 & 2022-10-13 & $\sim$17 days \\
+		0.25 & 3.125 & 2022-10-13 & 2022-10-24 & $\sim$11 days \\
+		1.5  & 18.75 & 2022-10-24 & 2022-11-02 & $\sim$9 days \\
+		2.0  & 25.0  & 2022-11-02 & 2022-11-13 & $\sim$11 days \\
+		2.5  & 31.25 & 2022-11-13 & 2022-11-21 & $\sim$8 days \\
+		3.0  & 37.5  & 2022-11-21 & 2022-12-02 & $\sim$11 days \\
+		\hline
+		1.0  & 12.5  & 2022-12-02 & 2022-12-09 & $\sim$7 days (post-scan) \\
+		0.5  & 6.25  & 2022-12-09 & 2022-12-21 & $\sim$12 days (post-scan) \\
+		\hline
+	\end{tabular}
+	\caption{Summary of voltage settings and data-taking periods for the DR8 long-duration run in 2022. The electrode spacing is 12.5\,cm.}
+	\label{tab:voltage_scan}
+\end{table}
+
+
+
+\begin{figure}[htb]
+	\centerline{\includegraphics[width=\linewidth]{dr8_temp_stability.pdf}}
+	\caption{Time evolution of temperature (top), applied voltage (middle), and measured current (bottom) over the full run period in 2022.
+		The temperature traces correspond to sensors located at the dewar bottom, at the liquid level, and on the DR8 sample.
+		The applied voltage was varied in discrete steps to probe a range of electric fields, with extended dwell periods at selected values.
+		Between 10/08 and 10/24, the liquid level dropped below the level probe, producing the discontinuity in the corresponding temperature trace; this does not affect the data quality.}
+	\label{fig:stab}
+\end{figure}
 
 This section quantifies the time-dependent evolution of the sheet resistance at fixed electric field and describes the procedure used to separate this effect from temperature variations.
 
