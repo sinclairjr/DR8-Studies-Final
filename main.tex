@@ -405,11 +405,54 @@ After each test, overlap width is reduced by removing a small strip of {\DR}, pr
 Lastly the resistance degradation as a function of time was characterized in the LAr test stand over a period of approximately four months. 
 
 
-\section{Results}
+\section{Results}\todo{The intro describes the data taking specific to the aging measurement. Should explain the different runs we had or move the data taking description to each subsection}
 \label{sec:res}
 
-This section presents the full set of material property measurements performed on DR8.
+This section presents the material property measurements performed on DR8.
+These include the sheet resistance as a function of temperature, the electric-field dependence of the resistance, transmission-line measurements, contact-thickness resistance studies, and time-dependent aging effects.
+The relevant apparatus is specified at the beginning of each subsection.
 
+
+Measurements were conducted in a liquid argon test stand following a controlled filling procedure.
+The system reached the target liquid level after approximately 2.5 hours and was subsequently allowed to stabilize for approximately 24 hours prior to data-taking.
+
+
+Long-duration measurements were performed to evaluate the stability and electric-field dependence of the material.
+The applied voltage was varied in discrete steps corresponding to electric fields between 0.25 and 3\,kV/cm for an electrode spacing of 12.5\,cm.
+The voltage settings and corresponding data-taking periods are summarized in Table~\ref{tab:voltage_scan}.
+
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{c c c c l}
+\hline
+Field [kV/cm] & Voltage [kV] & Start & End & Duration \\
+\hline
+0.5  & 6.25  & 2022-09-12 & 2022-09-26 & $\sim$14 days \\
+1.0  & 12.5  & 2022-09-26 & 2022-10-13 & $\sim$17 days \\
+0.25 & 3.125 & 2022-10-13 & 2022-10-24 & $\sim$11 days \\
+1.5  & 18.75 & 2022-10-24 & 2022-11-02 & $\sim$9 days \\
+2.0  & 25.0  & 2022-11-02 & 2022-11-13 & $\sim$11 days \\
+2.5  & 31.25 & 2022-11-13 & 2022-11-21 & $\sim$8 days \\
+3.0  & 37.5  & 2022-11-21 & 2022-12-02 & $\sim$11 days \\
+\hline
+1.0  & 12.5  & 2022-12-02 & 2022-12-09 & $\sim$7 days (post-scan) \\
+0.5  & 6.25  & 2022-12-09 & 2022-12-21 & $\sim$12 days (post-scan) \\
+\hline
+\end{tabular}
+\caption{Summary of voltage settings and data-taking periods for the DR8 long-duration run in 2022. The electrode spacing is 12.5\,cm.}
+\label{tab:voltage_scan}
+\end{table}
+
+At each voltage setting, data were recorded after an initial transient period to ensure steady-state conditions.
+The dwell times ranged from several days to approximately two weeks, enabling both stable resistance measurements and sensitivity to time-dependent effects.
+
+The full run period spans approximately 20 weeks starting from 11/12/2020.
+Interruptions in data-taking occurred due to external factors, including DAQ software issues, a laboratory power outage, and temporary depletion of liquid argon below the target level.
+No interruptions were associated with electrical failure of the sample or test stand.
+
+Following completion of the main scan up to 3\,kV/cm, measurements at 1.0\,kV/cm and 0.5\,kV/cm were repeated.
+These post-scan measurements were used to assess potential permanent changes in resistivity after exposure to high electric field.
 
 \begin{figure}[htb]
 	\centerline{\includegraphics[width=\linewidth]{dr8_temp_stability.pdf}}
@@ -419,21 +462,6 @@ The applied voltage was varied in discrete steps to probe a range of electric fi
 Between 10/08 and 10/24, the liquid level dropped below the level probe, producing the discontinuity in the corresponding temperature trace; this does not affect the data quality.}
 	\label{fig:stab}
 \end{figure}
-
-The full run period spans approximately twenty weeks starting from 11/12/2020.
-Data-taking interruptions occurred due to external factors, including DAQ software issues, a laboratory power outage, and depletion of liquid argon below the target level.
-
-No interruptions were associated with electrical failure of the sample or test stand.
-
-The voltage scan was performed in multiple stages.
-Initial measurements were taken at \SI{20}{\kilo\volt}, \SI{30}{\kilo\volt}, and \SI{40}{\kilo\volt}.
-Subsequently, measurements were performed at an electric field of \SI{500}{\volt\per\centi\metre}, or \SI{6.125}{\kilo\volt}, followed by stepped increases in multiples of \SI{6.125}{\kilo\volt} up to \SI{31.25}{\kilo\volt}.
-
-A corresponding stepped decrease in voltage was then performed, with extended dwell periods of up to approximately one week at each step.
-A laboratory power outage occurred during this phase, producing a gap in the data.
-
-Following recovery, a second ramp to higher voltage was performed, extending from \SI{31.25}{\kilo\volt} to \SI{50}{\kilo\volt} using the same increments.
-These measurements provide the basis for evaluating both stability and potential resistive degradation at high electric field.
 
 \subsection{Temperature dependence}
 \label{sec:TNEFit}
