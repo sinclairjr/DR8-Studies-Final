@@ -186,7 +186,7 @@ Kapton XC was selected for the cathode as it is four orders of magnitude less re
 The test assembly can be thought of as a partial TPC with the HV feedthrough terminating at a cathode that connects to a ground return via a sample of field-shaping material. 
 Here, {\DR} is used as the field-shaping material, but any resistive sample could be tested.    
 All electrical connections are made with stainless-steel brackets.    
-The \numproduct{15 x 15}~\unit{\centi\metre\squared} {\DR} sample is metallized section of FR4 with {\DR} laminated to it.
+The \numproduct{15 x 15}~\unit{\centi\metre\squared} {\DR} sample is metallized section of FR4 with 1.25 cm electrodes on either side and {\DR} laminated to it.
 The lamination process is explained in section~\ref{sec:lamination}.
 At these dimensions, the {\DR} samples requires a cathode voltage of \SI{12.5}{\kilo\volt} to achieve a field of \SI{1}{\kilo\volt\per\centi\metre}.    
 
@@ -475,7 +475,7 @@ The conduction reported here is therefore attributed to DR8 rather than to the s
 \subsection{Electric Field Dependence}
 \label{sec:efield_dep}
 
-\todo{Dan: Fig 11, should be log scale for y axis; remake it. Also, are there any lower field measurements?}
+\todo{Dan: Fig 11, should be log scale for y axis; remake it. Also, are there any lower field measurements? \color{blue}{JAMES: I don't think I made this plot originally.  I can replace it with a single series from 9b, if that is okay}}
 
 \todo{Frankie: data set details}
 
@@ -522,8 +522,8 @@ The contact resistance is then measured as half of the limit of the measured res
 \end{equation}
 where $L$ is the distance between contacts, $R_{\mathrm{total}}(L)$ is the total resistance of a sample of linear size $L$, $R_\mathrm{contact}$ is the contact resistance, and $R_{\mathrm{sample}}(L)$ is the bulk resistance of a sample of linear size $L$.
 
-This measurement used a designated {\DR} sample cut to length and cleaned with ethanol, on one side a fixed contact was made with conductive copper tape\footnote{3M 1181}, aligned with the edges of the sample.
-\todo{Dan: What was the width of the sample}
+This measurement used a designated {\DR} sample with width \SI{25.4}{\milli\meter}, cut to length and cleaned with ethanol.  On one side, a fixed contact was made with conductive copper tape\footnote{3M 1181}, aligned with the edges of the sample.
+
 A second temporary contact was made at various distances from the first.
 Care was taken to arrange the contacts so that their edges were as parallel as possible, to an accuracy of $\pm$\SI{0.2}{\milli\metre}, so that the direction of current flow is perpendicular to the edges of the copper contacts.
 The recorded length is taken to be the average distance between the edges of the copper strip, the deviation from the average value is considered as an uncertainty to the measurement.
@@ -533,8 +533,6 @@ We repeat this measurement for five different distances (\SI{1.29}{\centi\metre}
 The results of these measurements are shown in Figure~\ref{fig:TLM_length_I_and_R}. 
 The resulting resistance associated with the contact interfaces, is shown in Figure~\ref{fig:TLM_length_contactRes}.  
 The measured contact resistance at \SI{0.5}{\kilo\volt\per\centi\metre} is \SI{107.4 \pm 54.6}{\mega\ohm}.
-
-\todo{Dan: change colour of plots (consistent with Frankie) and change lengths to metric units(see text)}
 
 \begin{figure}[htb]
 \centering
@@ -588,15 +586,13 @@ The measured contact resistance at \SI{0.5}{\kilo\volt\per\centi\metre} is \SI{1
 \subsection{Dependence on contact size}
 \label{sec:contactOverlap}
 
-\todo{Dan: add width of sample}
-
 The contact resistance measured in section~\ref{sec:transLine} is in principle a function of the geometry of the contact patch between the copper and {\DR}.  
 The nature of this dependence is non-linear, as the current density through the copper-{\DR} interface is much higher close to the inner edges than on the outside of the sample.
 
-In order to test the dependence on the contact size (i.e., overlap between the {\DR} and copper strip), here onward referred to as contact overlap, a  sample with an \SI{25.4}{\milli\metre} wide copper strip on either side of the {\DR} is used to measure the dependence on the contact overlap.  
+In order to test the dependence on the contact size (i.e., overlap between the {\DR} and copper strip), here onward referred to as contact overlap, a  sample with two \SI{25.4}{\milli\metre} $\times$ \SI{25.4}{\milli\meter} copper contacts on either side of a \SI{28.7}{\milli\meter} span of {\DR} is used to measure the dependence on the contact overlap.  
 The sample is tested through a voltage range of \SIrange{0}{5}{\kilo\volt} in an LN2 bath, as in the TLM.  
 After each test, the sample is allowed to warm to room temperature and then the contact width is reduced by cutting the {\DR} sample by a small amount on the outer side.  
-This method preserves the geometry and material features of the {\DR} sample while changing only the amount of copper-{\DR} interface through which current is allowed to flow.
+This method preserves the geometry and material features of the {\DR} sample while changing only the amount of copper-{\DR} interface through which current is allowed to flow.  This sample was trimmed and measured from its original contact width of \SI{25.4}{\milli\meter}} to \SI{0.68}{\milli\meter}.
 
 
 \begin{figure}[htb]
@@ -621,8 +617,6 @@ This method preserves the geometry and material features of the {\DR} sample whi
 	(b) For a given value of the electric field \SI{0.5}{\kilo\volt\per\centi\metre}, the measured resistance is shown to have very weak dependence upon the width of the contact for the range of \SIrange{0.06}{2.58}{\centi\metre}.} 
 \label{fig:TLM_contact_contactRes}
 \end{figure}
-\todo{Dan: confirm range and units in caption.}
-
 
 The result of this measurement, shown in Figure~\ref{fig:TLM_contact_contactRes}, is a very weak dependence on contact width.  
 This is consistent with the findings in section~\ref{sec:transLine}, which indicate that the overall resistance of the sample is dominated by the {\DR} material itself, and not the contacting method used.  
@@ -753,10 +747,18 @@ We now evaluate the suitability of DR8 for long-term operation in LAr under elec
 The acceptable resistivity range is constrained by two competing requirements:  
 (i) limiting power dissipation at low resistivity, and  
 (ii) ensuring adequate charge dissipation at high resistivity.  
-\todo{James: quantify}
-
-
 The measured resistivity values fall within this operational range (Figure~\ref{fig:resvsvol}).
+
+
+The power, $P$, dissipated by the DR8 is given by  
+\begin{equation}
+    P=\frac{V^2}{R}=\frac{E^2d^{2}}{\frac{dR_{sheet}}{w}}=\frac{E^2dw}{R_{sheet}}=\frac{E^2A}{R_{sheet}},
+\end{equation}
+where $V$ is the cathode voltage, $E$ is the e-field, $d$ is the drift distance or length, $w$ is the width, and $A$ is the area of the DR8.
+Therefore, at a given e-field and sheet resistance the power scales linearly with the area. 
+For example, $R_{sheet}=$\SI{1}{\giga\ohm\per\Box} at $E=$\SI{500}{\volt\per\centi\metre} yields \SI{1}{\watt} at \SI{0.4}{\metre\squared}, and \SI{100}{\watt} at \SI{40}{\metre\squared}.
+This is an important consideration when designing a TPC and its associated cooling capacity. 
+
 
 \begin{figure}
 	\begin{center}
@@ -787,7 +789,7 @@ summary
 
 \section{Acknowledgment} 
 
-\todo{James: add DOE grant info}
+SLAC is managed by Stanford University under DOE/SU Contract DE-AC02-76SF00515.
 
 \clearpage
 % ========================================================================
